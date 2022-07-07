@@ -12,7 +12,7 @@
 
 - Create a new branch for every seprate feature or fixies from  `develop` and ones the feature is done you will be allowed to merge your `feat-branch `to `develo` and `develop` to `main` then `main` tp production .
 
-## prons and cons of doing this
+## pros of doing this
  - To avoid unnecesssary merging conflicts
  - Merging our commits for every separate features or fixes
 
