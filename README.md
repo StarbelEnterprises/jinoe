@@ -1,4 +1,4 @@
-# jinoe Project
+# Jinoe Project
 
 ## Collabration Guide for a team
 
