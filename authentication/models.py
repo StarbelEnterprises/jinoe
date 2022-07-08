@@ -12,11 +12,6 @@ from django.dispatch import receiver
 from django.db import models
 from django.contrib.auth.models import User
 
-
-# class Audit(models.Model):
-#     create_at = models.DateTimeField(auto_created=True)
-#     updated_at = models.DateField(auto_created=True)
-
    
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE,)

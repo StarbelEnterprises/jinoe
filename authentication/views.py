@@ -2,10 +2,14 @@ from django.shortcuts import render
 from . models import UserProfile
 
 # Create your views here.
-def index(request):
-    query  = UserProfile.objects.all()
-    context_data = {
-        'user_profile': query
-    }
+def login(request):
+    #login logic    
+    return render(request, template_name='auth/login.html')
 
-    return render(request, template_name='auth/user_profile.html', context= context_data)
+def register(request):
+    # register logic
+    return render(request, template_name='auth/register.html')
+
+def Logout(request):
+    # logout logic
+    return render(request, template_name='auth/logout.html')
