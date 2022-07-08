@@ -25,7 +25,7 @@ Note: Remember to Create PR  to `develop` one you feature or fix is done.
 
     cd jinoe
     
-    Do you have new feature to work on? Do this >
+    Do you have  a new feature to work on? Do this >
         1:  git checkout develop
         2:  create your feature branch `develop
         3: work on your feature
@@ -34,8 +34,11 @@ Note: Remember to Create PR  to `develop` one you feature or fix is done.
     done
    
    `  
-
 ```
+
+# For more reference
+ [Learn more about PRS](https://eliteionic.com/tutorials/requiring-pull-requests-and-reviews-in-your-git-workflow/)
+
 
 
  
