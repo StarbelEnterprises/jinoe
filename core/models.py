@@ -3,6 +3,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime, timezone
 from authentication.models import UserProfile
+from enum import Enum
 
 class Levels(models.Model):
     userprofile = models.ForeignKey(UserProfile, on_delete=models.CASCADE,)
@@ -39,16 +40,32 @@ class Subjects(models.Model):
     module = models.ForeignKey(Modules, on_delete=models.CASCADE)
     name = models.CharField(max_length=60,null=True,blank=True)
     subject_type = models.CharField(max_length=60, null=True,blank=True)
+    STATUS_CHOICES = (
+    ('ST', 'STARTED'),
+    ('NST', 'NOT_STARTED'),
+    ('DL', 'DELAYED'),
+    ('CMP', 'COMPLETED'),
+    ('DISC', 'DISQUALIFIED'),
+)
+    progress_status = models.CharField(max_length=30, null=True,blank=True,choices=STATUS_CHOICES)
     create_at = models.DateTimeField(auto_created=True, null = True)
     updated_at = models.DateField(default=datetime.now)    
     create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sbj_created_by', null=True)
 
+    def is_upperclass(self):
+        return self.name in (self.YearInSchool.JUNIOR, self.YearInSchool.SENIOR)
+
     class Meta:
         verbose_name_plural = 'Module Subjects'
-        db_table = 'jinoe_module_subjects'
+        db_table = 'jinoe_module_subjects'    
     
     def __str__(self):
         return str(self.name)
+
+class Topics(models.Model):
+    subject = models.ForeignKey(Subjects, on_delete=models.CASCADE)
+    name = models.CharField(max_length=60,null=True,blank=True)
+
 
 
 
