@@ -2,6 +2,9 @@ from django.shortcuts import render
 from . models import UserProfile
 
 # Create your views here.
+def landing(request):
+    return render(request, template_name='auth/landing.html')
+    
 def login(request):
     #login logic    
     return render(request, template_name='auth/login.html')
