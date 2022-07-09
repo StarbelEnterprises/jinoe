@@ -47,13 +47,11 @@ class Subjects(models.Model):
     ('CMP', 'COMPLETED'),
     ('DISC', 'DISQUALIFIED'),
 )
-    progress_status = models.CharField(max_length=30, null=True,blank=True,choices=STATUS_CHOICES)
+    progress_status = models.CharField(max_length=30, null=False,blank=False,choices=STATUS_CHOICES)
     create_at = models.DateTimeField(auto_created=True, null = True)
     updated_at = models.DateField(default=datetime.now)    
     create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sbj_created_by', null=True)
 
-    def is_upperclass(self):
-        return self.name in (self.YearInSchool.JUNIOR, self.YearInSchool.SENIOR)
 
     class Meta:
         verbose_name_plural = 'Module Subjects'
@@ -65,6 +63,26 @@ class Subjects(models.Model):
 class Topics(models.Model):
     subject = models.ForeignKey(Subjects, on_delete=models.CASCADE)
     name = models.CharField(max_length=60,null=True,blank=True)
+    STATUS_CHOICES = (
+    ('ST', 'STARTED'),
+    ('NST', 'NOT_STARTED'),
+    ('DL', 'DELAYED'),
+    ('CMP', 'COMPLETED'),
+    ('DISC', 'DISQUALIFIED'),
+)
+    topic_status = models.CharField(max_length=30,choices=STATUS_CHOICES,null=False,blank=False)
+    media = models.CharField(max_length=200,null=True,blank=True)
+    create_at = models.DateTimeField(auto_created=True, null = True)
+    updated_at = models.DateField(default=datetime.now)    
+    create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='topic_created_by', null=True)
+    
+    class Meta:
+        verbose_name_plural = 'Subject topics'
+        db_table = 'jinoe_subject_topics'    
+    
+    def __str__(self):
+        return str(self.name)
+
 
 
 
