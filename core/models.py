@@ -77,7 +77,7 @@ class Topics(models.Model):
     create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='topic_created_by', null=True)
     
     class Meta:
-        verbose_name_plural = 'Subject topics'
+        verbose_name_plural = 'Subject Topics'
         db_table = 'jinoe_subject_topics'    
     
     def __str__(self):
@@ -100,7 +100,7 @@ class SubTopics(models.Model):
     create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sub_topic_created_by', null=True)
 
     class Meta:
-        verbose_name_plural = 'Topic subtopics'
+        verbose_name_plural = 'Topic Subtopics'
         db_table = 'jinoe_topic_subtopics'    
     
     def __str__(self):
