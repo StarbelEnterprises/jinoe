@@ -2188,3 +2188,18 @@ section {
   font-size: 13px;
   color: var(--color-secondary);
 }
+
+.login-form input {
+  height: 50px;
+   background-color: var(--color-secondary);
+   color:white;
+}
+
+.login-links p{
+  color: var(--color-primary);
+}
+
+
+
+
+
