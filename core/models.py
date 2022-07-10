@@ -47,7 +47,7 @@ class Subjects(models.Model):
     ('CMP', 'COMPLETED'),
     ('DISC', 'DISQUALIFIED'),
 )
-    progress_status = models.CharField(max_length=30, null=False,blank=False,choices=STATUS_CHOICES)
+    progress_status = models.CharField(max_length=30,choices=STATUS_CHOICES)
     create_at = models.DateTimeField(auto_created=True, null = True)
     updated_at = models.DateField(default=datetime.now)    
     create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sbj_created_by', null=True)
@@ -70,7 +70,7 @@ class Topics(models.Model):
     ('CMP', 'COMPLETED'),
     ('DISC', 'DISQUALIFIED'),
 )
-    topic_status = models.CharField(max_length=30,choices=STATUS_CHOICES,null=False,blank=False)
+    topic_status = models.CharField(max_length=30,choices=STATUS_CHOICES,default='NOT_STARTED')
     media = models.CharField(max_length=200,null=True,blank=True)
     create_at = models.DateTimeField(auto_created=True, null = True)
     updated_at = models.DateField(default=datetime.now)    
@@ -82,6 +82,32 @@ class Topics(models.Model):
     
     def __str__(self):
         return str(self.name)
+
+class SubTopics(models.Model):
+    topic = models.ForeignKey(Topics, on_delete=models.CASCADE)
+    name = models.CharField(max_length=60,null=True,blank=True)
+    STATUS_CHOICES = (
+    ('ST', 'STARTED'),
+    ('NST', 'NOT_STARTED'),
+    ('DL', 'DELAYED'),
+    ('CMP', 'COMPLETED'),
+    ('DISC', 'DISQUALIFIED'),
+     )
+    sub_topic_status = models.CharField(max_length=30,choices=STATUS_CHOICES,default='NOT_STARTED')
+    media = models.CharField(max_length=200,null=True,blank=True)
+    create_at = models.DateTimeField(auto_created=True, null = True)
+    updated_at = models.DateField(default=datetime.now)    
+    create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sub_topic_created_by', null=True)
+
+    class Meta:
+        verbose_name_plural = 'Topic subtopics'
+        db_table = 'jinoe_topic_subtopics'    
+    
+    def __str__(self):
+        return str(self.name)
+
+
+
 
 
 
