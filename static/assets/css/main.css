@@ -545,6 +545,15 @@ section {
   font-family: var(--font-secondary);
 }
 
+.hero h4 {
+  margin: 0;
+  /* font-size: 48px; */
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+  font-family: var(--font-secondary);
+}
+
 .hero blockquote {
   color: #fff;
   padding-left: 20px;
@@ -2190,6 +2199,12 @@ section {
 }
 
 .login-form input {
+  height: 50px;
+   background-color: var(--color-secondary);
+   color:white;
+}
+
+.login-form select {
   height: 50px;
    background-color: var(--color-secondary);
    color:white;
