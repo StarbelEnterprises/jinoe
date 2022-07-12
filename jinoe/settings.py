@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'authentication',
     'core',
     'interactive',
-    'sub_topic_interactive'
+    'sub_topic_interactive',
+    'schedules'
 ]
 
 MIDDLEWARE = [
