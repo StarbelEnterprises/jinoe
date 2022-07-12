@@ -2214,6 +2214,16 @@ section {
   color: var(--color-primary);
 }
 
+.login-form input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: white;
+}
+
+.login-form input::-moz-placeholder,
+textarea:-moz-placeholder {
+  color: white;
+}
+
 
 
 
