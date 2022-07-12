@@ -46,7 +46,7 @@ class Subjects(models.Model):
     ('DL', 'DELAYED'),
     ('CMP', 'COMPLETED'),
     ('DISC', 'DISQUALIFIED'),
-)
+    )
     progress_status = models.CharField(max_length=30,choices=STATUS_CHOICES)
     create_at = models.DateTimeField(auto_created=True, null = True)
     updated_at = models.DateField(default=datetime.now)    
@@ -69,7 +69,7 @@ class Topics(models.Model):
     ('DL', 'DELAYED'),
     ('CMP', 'COMPLETED'),
     ('DISC', 'DISQUALIFIED'),
-)
+    )
     topic_status = models.CharField(max_length=30,choices=STATUS_CHOICES,default='NOT_STARTED')
     media = models.CharField(max_length=200,null=True,blank=True)
     create_at = models.DateTimeField(auto_created=True, null = True)
@@ -105,14 +105,6 @@ class SubTopics(models.Model):
     
     def __str__(self):
         return str(self.name)
-
-
-
-
-
-
-
-
 
 # class Subjects(models.model):
     
