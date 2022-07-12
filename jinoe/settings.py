@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'authentication',
     'core',
-    'interactive'
+    'interactive',
+    'sub_topic_interactive'
 ]
 
 MIDDLEWARE = [
