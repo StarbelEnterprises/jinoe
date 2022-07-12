@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'interactive',
     'sub_topic_interactive',
     'schedules',
-    'performance_management'
+    'performance_management',
+    'assessments'
 ]
 
 MIDDLEWARE = [
