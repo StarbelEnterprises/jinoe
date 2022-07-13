@@ -39,7 +39,7 @@ class PerformanceObjectives(models.Model):
               db_table = 'jinoe_performance_objectives'
      
     def __str__(self):
-              return  str(self.startTime)
+              return  str(self.objective)
 
 class PerformanceEvaluation(models.Model):
     user_id = models.ForeignKey(User,on_delete=models.CASCADE)
@@ -54,7 +54,7 @@ class PerformanceEvaluation(models.Model):
               db_table = 'jinoe_performance_evaluations'
      
     def __str__(self):
-              return  str(self.startTime)
+              return  str(self.test_standards)
 
 class ReputationQuality(models.Model):
     reputation_quality_evaluation_id = models.ForeignKey(PerformanceEvaluation,on_delete=models.CASCADE)
@@ -71,7 +71,7 @@ class ReputationQuality(models.Model):
               db_table = 'jinoe_performance_reputation_quality'
      
     def __str__(self):
-              return  str(self.startTime)
+              return  str(self.reputation_quality)
 
     @receiver(post_save, sender=PerformanceEvaluation)
     def create_or_update_evaluation_reputations(sender, instance, created, **kwargs):
@@ -90,20 +90,9 @@ class ObjectiveResources(models.Model):
               db_table = 'jinoe_performance_objective_resources'
      
     def __str__(self):
-              return  str(self.startTime)
+              return  str(self.name)
     
     @receiver(post_save,sender=PerformanceObjectives)
     def create_or_update_objective_resources(sender, instance, created, **kwargs):
         if created:
             ObjectiveResources.objects.create(resources_objective_id=instance)
-
-
-
-
-
-
-
-
-
-
-

@@ -6,26 +6,23 @@ from core.models import *
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.core.exceptions import NON_FIELD_ERRORS, ValidationError
+from django.utils.translation import gettext_lazy as _
 
 class SubjectSchedules(models.Model):
-    try:
-        NOT_STARTED ='NST'
-        DELAYED = 'DL'
-        COMPLETED ='CMP'
-        POSTPONED = 'PS'
+    try:        
 
-        STATUS_CHOICES = (
-        ('ST', 'STARTED'),
-        ('NST', 'NOT_STARTED'),
-        ('DL', 'DELAYED'),
-        ('CMP', 'COMPLETED'),
-        ('PS', 'POSTPONED'),
-        )
+        class ScheduleStatuses(models.TextChoices):
+            NOT_STARTED = 'NST',_('Not_Started')
+            DELAYED = 'DL',_('Delayed')
+            COMPLETED  = 'CMP',_('Completed')
+            POSTPONED = 'PS',_('Postponed')
+
         subject_id = models.ForeignKey(Subjects,on_delete=models.CASCADE)
         user_id = models.ForeignKey(User,on_delete=models.CASCADE)
         startTime = models.DateTimeField()
         endTime = models.DateTimeField()
-        status = models.CharField(max_length=30,choices=STATUS_CHOICES,default=NOT_STARTED)
+        status = models.CharField(max_length=30,choices=ScheduleStatuses.choices, 
+        default=ScheduleStatuses.NOT_STARTED,)
         remarks = models.TextField(null=False,blank=True)
         create_at = models.DateTimeField(auto_now_add=True)
         updated_at = models.DateField(auto_now=True) 
