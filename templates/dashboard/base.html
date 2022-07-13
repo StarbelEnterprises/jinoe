@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{% static 'dashboard/assets/css/bootstrap.css' %}">
 
     <link rel="stylesheet" href="{% static 'dashboard/assets/vendors/iconly/bold.css' %}">
+    <link rel="stylesheet" href="{% static 'dashboard/assets/css/widgets/chat.css' %}">
 
     <link rel="stylesheet" href="{% static 'dashboard/assets/vendors/perfect-scrollbar/perfect-scrollbar.css' %}">
     <link rel="stylesheet" href="{% static 'dashboard/assets/vendors/bootstrap-icons/bootstrap-icons.css' %}">
@@ -36,7 +37,7 @@
                     <ul class="menu">
                         <!-- <li class="sidebar-title">Menu</li> -->
                         <li class="sidebar-item active ">
-                            <a href="{% url 'home' %}" class='sidebar-link'>
+                            <a href="{% url 'welcome' %}" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span>Dashboard</span>
                             </a>
@@ -49,22 +50,22 @@
                             </a>
                             <ul class="submenu">
                                 <li class="submenu-item ">
-                                    <a href="">-Primary School Teacher course</a>
+                                    <a href="{% url 'modules' %}">-Primary School Teacher course</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="">-Primary School Teacher course</a>
+                                    <a href=" {% url 'modules' %}">-Primary School Teacher course</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="">-Special Needs Education</a>
+                                    <a href="{% url 'modules' %}">-Special Needs Education</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="">-Earl Childhood Education</a>
+                                    <a href="{% url 'modules' %}">-Earl Childhood Education</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="">-Technical and vocational Education Training course</a>
+                                    <a href="{% url 'modules' %}">-Technical and vocational Education Training course</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="">-Lesson Plan</a>
+                                    <a href="{% url 'modules' %}">-Lesson Plan</a>
                                 </li>
                            
                               
@@ -123,7 +124,7 @@
                          
                         </li>
                         <li class="sidebar-item">
-                            <a href="#" class='sidebar-link'>
+                            <a href="{% url 'live_discussion' %}" class='sidebar-link'>
                                 <i class="bi bi-chat-left-dots-fill"></i>
                                 <span>Live Discussion</span>
                             </a>

@@ -1,0 +1,144 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block contents %}
+            <!-- <div class="page-heading">
+                <h3>Welcome to Jinoe</h3>
+            </div> -->
+            <div class="page-content">
+                <section class="row">
+                    <div class="col-12 col-lg-9">
+                        <div class="row">
+                            <div class="col-6 col-lg-4 col-md-6">
+                                <div class="card">
+                                    <div class="card-body px-3 py-4-5">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="stats-icon bg-brown">
+                                                    <i style="font-size:19px;" class="bi bi-stack"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <h6 class="text-muted font-semibold">Training Course</h6>
+                                                <h6 class="font-extrabold mb-0">1</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-4 col-md-6">
+                                <div class="card">
+                                    <div class="card-body px-3 py-4-5">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class=" text-center stats-icon bg-brown">
+                                                    <i style="font-size:19px;" class="bi bi-book"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <h6 class="text-muted font-semibold">Subjects completed</h6>
+                                                <h6 class="font-extrabold mb-0">2</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-4 col-md-6">
+                                <div class="card">
+                                    <div class="card-body px-3 py-4-5">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="stats-icon bg-brown">
+                                                    <i style="font-size:19px;" class="bi bi-newspaper"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <h6 class="text-muted font-semibold">Topics completed</h6>
+                                                <h6 class="font-extrabold mb-0">5</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                         
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4>Your Lessons and Schedule</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <table class="table" >
+                                            <thead>
+                                                <th>#</th>
+                                                <th>Lessons</th>
+                                                <th>Star Date</th>
+                                                <th>Finish Date</th>
+                                                <th>Actions</th>
+                                            </thead>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Kusoma Module</td>
+                                                <td> July, 28 2022.</td>
+                                                <td> August, 28 2022.</td>
+                                                <td>
+                                                    <span><i class="bi bi-pencil-square" ></i></span>
+                                                    <span class="ms-4" ><i class="bi bi-trash" ></i></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Hesabu Module</td>
+                                                <td> July, 28 2022.</td>
+                                                <td> August, 28 2022.</td>
+                                                <td>
+                                                    <span><i class="bi bi-pencil-square" ></i></span>
+                                                    <span class="ms-4" ><i class="bi bi-trash" ></i></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Uraia Module</td>
+                                                <td> July, 28 2022.</td>
+                                                <td> August, 28 2022.</td>
+                                                <td>
+                                                    <span><i class="bi bi-pencil-square" ></i></span>
+                                                    <span class="ms-4" ><i class="bi bi-trash" ></i></span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-3">
+                        
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Recent Nofifications</h4>
+                            </div>
+                            <div class="card-content pb-4">
+                                <div class="recent-message d-flex px-4 py-3">
+                                    <div class="name ms-4">
+                                        <h6 class="mb-1">New Message</h6>
+                                        <h6 class="text-muted mb-0">from John Doe - 2 hour ago</h6>
+                                    </div>
+                                </div>
+                                <div class="recent-message d-flex px-4 py-3">
+                                    <div class="name ms-4">
+                                        <h6 class="mb-1">New Updates</h6>
+                                        <h6 class="text-muted mb-0">from administration - 55 mins ago</h6>
+                                    </div>
+                                </div>
+                              
+                                <div class="px-4">
+                                    <button class='btn btn-block btn-sm  btn-brown rounded-pill font-bold mt-3'>Clear All</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            {% endblock contents %}

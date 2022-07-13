@@ -1376,5 +1376,16 @@ p{
     color: var(--color-secondary);
 }
 
+.modal-body li {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.modal-body li a {
+    color: var(--color-secondary);
+}
+
+
+
 
 
