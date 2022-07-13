@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'sub_topic_interactive',
     'schedules',
     'performance_management',
-    'assessments'
+    'assessments',
+    'forums'
 ]
 
 MIDDLEWARE = [
