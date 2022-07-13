@@ -5,6 +5,7 @@ from . models import UserProfile
 def home(request):
     return render(request, 'dashboard/home.html')
 
+
 def modules(request):
     return render(request, template_name='dashboard/modules.html')
 

@@ -40,6 +40,7 @@
 
 
 
+
 .alert {
     border: none;
 }
@@ -775,11 +776,15 @@
 }
 #sidebar.active .sidebar-wrapper {
     left: 0;
+
     
 }
 #sidebar:not(.active) .sidebar-wrapper {
     left: -300px;
    
+}
+#sidebar:not(.active) .sidebar-wrapper {
+    left: -300px;
 }
 #sidebar:not(.active) ~ #main {
     margin-left: 0;
@@ -836,7 +841,7 @@
     text-decoration: none;
     color: var(--color-secondary);
     border-radius: 1.5rem;
-}
+
 .sidebar-wrapper .menu .sidebar-link i,
 .sidebar-wrapper .menu .sidebar-link svg {
     color: #b57c7c;
@@ -851,7 +856,7 @@
     list-style: none;
     margin-top: 0.5rem;
     position: relative;
-    
+
 }
 .sidebar-wrapper .menu .sidebar-item.has-sub .sidebar-link:after {
     content: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><path stroke="gray" stroke-width="1" d="M6 9l6 6 6-6"/></svg>');
@@ -863,8 +868,7 @@
 }
 .sidebar-wrapper .menu .sidebar-item.active .sidebar-link {
     background-color: var(--color-secondary);
-    
-}
+
 .sidebar-wrapper .menu .sidebar-item.active .sidebar-link span {
     color: #fff;
 }
@@ -1213,10 +1217,12 @@
     font-weight: 700;
     color: var(--color-secondary);
 }
+
 .page-heading h5 {
     font-weight: 700;
     color: var(--color-secondary);
 }
+
 .page-heading h4 {
     font-weight: 700;
     color: var(--color-secondary);
@@ -1334,6 +1340,7 @@ a {
     vertical-align: middle;
 }
 
+
 .btn-brown{
     background-color: var(--color-secondary);
     color: white;
@@ -1389,8 +1396,6 @@ p{
 .modal-body li a {
     color: var(--color-secondary);
 }
-
-
 
 
 
