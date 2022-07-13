@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'schedules',
     'performance_management',
     'assessments',
-    'forums'
+    'forums',
+    'chatroom'
 ]
 
 MIDDLEWARE = [
