@@ -6,6 +6,33 @@
   }
 
 
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateX(20%);
+    }
+    .0%{
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeUp {
+    0% {
+      transform: translateY(15%);
+    }
+    .0%{
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+
 
 
 
@@ -1181,6 +1208,10 @@
     font-weight: 700;
     color: var(--color-secondary);
 }
+.page-heading h5 {
+    font-weight: 700;
+    color: var(--color-secondary);
+}
 .page-heading h4 {
     font-weight: 700;
     color: var(--color-secondary);
@@ -1297,3 +1328,53 @@ a {
 .icon-mid:before {
     vertical-align: middle;
 }
+
+.btn-brown{
+    background-color: var(--color-secondary);
+    color: white;
+    
+}
+.btn-brown:hover{
+    background-color: var(--color-secondary);
+    color: white;
+}
+.bg-brown{
+    background-color: var(--color-secondary);
+    color: white;
+}
+.card{
+    animation: ease-in-out .8s fadeUp;
+}
+.sidebar-wrapper{
+    animation: ease-in-out .8s fadeUp;
+}
+.video i{
+    color: var(--color-secondary);
+    
+}
+
+.video video{
+    width: 100%;
+    height: 400px;
+}
+
+.rate-value{
+    border-radius: 5px;
+    height: 100%;
+}
+h6{
+    font-size: 13.5px;
+}
+h5{
+    color: var(--color-secondary);
+}
+h6{
+    color: var(--color-secondary);
+}
+
+p{
+    color: var(--color-secondary);
+}
+
+
+
