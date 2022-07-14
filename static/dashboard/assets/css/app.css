@@ -34,7 +34,9 @@
 
 
 
-
+.card-img-top{
+    height:130px;
+}
 
 
 
@@ -343,7 +345,7 @@
     font-size: 1.2rem;
 }
 .card .card-body {
-    padding: 1.5rem;
+    padding:  1.5rem  1.5rem  0rem  1.5rem;
 }
 .card .card-heading {
     color: #555;
@@ -1387,4 +1389,15 @@ p{
 
 .logo{
     width: 100%;
+}
+
+.welcome-msg{
+    height: 60px;
+    /* border-radius: 10px; */
+    text-align: center;
+}
+
+.welcome-msg h4{
+    line-height: 60px;
+    color: white;
 }
