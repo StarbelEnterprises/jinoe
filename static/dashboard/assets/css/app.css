@@ -1447,5 +1447,23 @@ p{
     overflow: scroll;
 }
 
+.current {
+    background-color: var(--color-secondary);
+}
+
+ .current span:hover{
+    color: var(--color-secondary);;
+}
+.current i:hover{
+    color: var(--color-secondary);;
+}
+.current span{
+    color: white;
+}
+
+.sidebar-item.active{
+    background-color: transparent
+}
+
 
 
