@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contents %}
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex align-items-center" >
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-4">
+          <h4 data-aos="fade-up">Welcome to Jinoe Plaform</h4>
+          <blockquote data-aos="fade-up" data-aos-delay="100">
+            <p>Register now to get started</p>
+          </blockquote>
+          <div class="d-block" data-aos="fade-up" data-aos-delay="200">
+              <form action="" class="login-form">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control mb-3 " placeholder="Username">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" class="form-control mb-3 " placeholder="Email">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control mb-3 " placeholder="First Name">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control mb-3 " placeholder="Last Name">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="password" class="form-control mb-3" placeholder="Password">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="password" class="form-control mb-3" placeholder="Confirm Password">
+                        </div>
+                        <div class="col-md-12">
+                            <select name="" id="" class="form-control mb-3" >
+                                <option value="">select your course category</option>
+                                <option value="">Primary School Course</option>
+                                <option value="">Primary School Course</option>
+                                <option value="">Primary School Course</option>
+                            </select>
+                        </div>
+                    </div>
+                
+                <a href="" class="btn-get-started">Register</a>
+              </form>
+              <div class="d-block login-links" data-aos="fade-up" data-aos-delay="200">
+                <p class="mt-3" >Already have an account? <a class="text-white" href="{% url 'login' %}">Login Here</a></p>
+              </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+  </main>
+  <!-- End #main -->
+
+{% endblock contents %}
