@@ -6,8 +6,7 @@ urlpatterns = [
     path('register/',  views.register , name='register'),
     path('logout/',  views.login , name='logout'),
 
-
-
+    #these shoul go to repective app on phase 2
     path('home/',  views.home , name='home'),
     path('modules/',  views.modules , name='modules'),
     path('welcome/',  views.welcome , name='welcome'),
