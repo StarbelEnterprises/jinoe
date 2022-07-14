@@ -4,6 +4,7 @@ from . import views
 urlpatterns = [
     path('', views.landing, name='landing'),
     path('register/',  views.register , name='register'),
+    path('login/',  views.login , name='login'),
     path('logout/',  views.login , name='logout'),
 
     #these shoul go to repective app on phase 2

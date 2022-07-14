@@ -1385,7 +1385,6 @@ p{
     color: var(--color-secondary);
 }
 
-
-
-
-
+.logo{
+    width: 100%;
+}
