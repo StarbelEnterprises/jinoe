@@ -1,26 +1,25 @@
 
 
 
-remove exams word
+Remove exams word
 final score should be repeated
 no pass or fail/you have not cleared
 repeat module when fail
 
-remove the side bar add full screen
+Remove the side bar add full screen
 break to ask if questions have understood in contents
 text to speech
 object recognition
 
-remove the left menu on the carrier profile
+Remove the left menu on the carrier profile
 
 
- regiseter fields
+Regiseter fields
     school name
-    teacher service commission number
+    Teacher service commission number
 
 
-facial recognition on login
-
+Facial recognition on login
 
 modules layout
     core module
