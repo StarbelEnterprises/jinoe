@@ -1,3 +1,25 @@
+/* width */
+::-webkit-scrollbar {
+    width: 1.2px;
+    height: 0;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+
 /* Colors */
 :root {
     --color-default: #2b180d;
@@ -1406,13 +1428,24 @@ p{
 }
 
 .card-x{
-    /* background-color: red */
     border:  2px black ;
     transition: all .2s ease-in-out;
     
 }
 .card-x:hover{
-    /* background-color: #198754; */
     transform: scale(.9);
 }
+
+.card-text{
+    height: 45px;
+    overflow: scroll;
+
+}
+
+.card-title{
+    height: 45px;
+    overflow: scroll;
+}
+
+
 
