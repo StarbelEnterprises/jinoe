@@ -23,6 +23,7 @@
 
 <body>
     <div id="app">
+        {% block sidebar %}
         <div id="sidebar" class="active">
             <div class="sidebar-wrapper active">
                 <div class="sidebar-header">
@@ -38,37 +39,31 @@
                 <div class="sidebar-menu" style="margin-top:-2rem;">
                     <ul class="menu">
                         <!-- <li class="sidebar-title">Menu</li> -->
-                        <li class="sidebar-item active ">
-            <a href="{% url 'welcome' %}" class='sidebar-link'>
+            
 
-                                <i class="bi bi-grid-fill"></i>
-                                <span>Dashboard</span>
-                            </a>
-                        </li>
-
-                        <li class="sidebar-item  has-sub">
+                        <li class="sidebar-item  has-sub active">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-stack"></i>
-                                <span>Training courses</span>
+                                <span>Early Childhood Care Education</span>
                             </a>
                             <ul class="submenu">
                                 <li class="submenu-item ">
-                                    <a href="{% url 'modules' %}">-Primary School Teacher course</a>
+                                    <a href="{% url 'modules' %}">Personality, Social and Emotional development</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href=" {% url 'modules' %}">-Primary School Teacher course</a>
+                                    <a href=" {% url 'modules' %}">Hesabu</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="{% url 'modules' %}">-Special Needs Education</a>
+                                    <a href="{% url 'modules' %}">Uraia</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="{% url 'modules' %}">-Earl Childhood Education</a>
+                                    <a href="{% url 'modules' %}">Maarifa ya Jamii</a>
                                 </li>
-                                <li class="submenu-item ">
+                                <!-- <li class="submenu-item ">
                                     <a href="{% url 'modules' %}">-Technical and vocational Education Training course</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="{% url 'modules' %}">-Lesson Plan</a>
+                                    <a href="{% url 'modules' %}">-Lesson Plan</a> -->
 
                            
                               
@@ -165,6 +160,7 @@
                 <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
             </div>
         </div>
+        {% endblock sidebar %}
         <div id="main">
             <header class="mb-3">
                 <a href="#" class="burger-btn d-block d-xl-none">
