@@ -1350,8 +1350,11 @@ a {
 .card{
     animation: ease-in-out .8s fadeUp;
 }
-.sidebar-wrapper{
+.welcome-msg{
     animation: ease-in-out .8s fadeUp;
+}
+.sidebar-wrapper{
+    animation: ease-in-out 1.2s fadeUp;
 }
 .video i{
     color: var(--color-secondary);
