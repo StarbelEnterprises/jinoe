@@ -34,7 +34,9 @@
 
 
 
-
+.card-img-top{
+    height:130px;
+}
 
 
 
@@ -343,7 +345,7 @@
     font-size: 1.2rem;
 }
 .card .card-body {
-    padding: 1.5rem;
+    padding:  1.5rem  1.5rem  0rem  1.5rem;
 }
 .card .card-heading {
     color: #555;
@@ -834,9 +836,11 @@
     text-decoration: none;
     color: var(--color-secondary);
 }
-.sidebar-wrapper .menu .sidebar-link i,
-.sidebar-wrapper .menu .sidebar-link svg {
+.sidebar-wrapper .menu .sidebar-link i{
     color: #b57c7c;
+}
+.sidebar-wrapper .menu .sidebar-link svg {
+    color:white;
 }
 .sidebar-wrapper .menu .sidebar-link span {
     margin-left: 1rem;
@@ -852,7 +856,7 @@
 .sidebar-wrapper .menu .sidebar-item.has-sub .sidebar-link:after {
     content: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><path stroke="gray" stroke-width="1" d="M6 9l6 6 6-6"/></svg>');
     position: absolute;
-    color: #ccc;
+    color:white;
     right: 15px;
     top: 12px;
     display: block;
@@ -870,6 +874,7 @@
 }
 .sidebar-wrapper .menu .sidebar-item.active .sidebar-link.has-sub:after {
     content: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><path stroke="%23fff" stroke-width="1" d="M6 9l6 6 6-6"/></svg>');
+    color: white;
 }
 .sidebar-wrapper .menu .submenu {
     list-style: none;
@@ -1388,3 +1393,16 @@ p{
 .logo{
     width: 100%;
 }
+
+.welcome-msg{
+    height: 60px;
+    /* border-radius: 10px; */
+    text-align: center;
+}
+
+.welcome-msg h4{
+    line-height: 60px;
+    color: white;
+}
+
+

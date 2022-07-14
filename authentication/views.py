@@ -9,6 +9,8 @@ def home(request):
 def modules(request):
     return render(request, template_name='dashboard/modules.html')
 
+def single_module(request):
+    return render(request, template_name='dashboard/module_single.html')
 
 def welcome(request):
     return render(request, 'dashboard/welcome.html')

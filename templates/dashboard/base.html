@@ -23,12 +23,13 @@
 
 <body>
     <div id="app">
+        {% block sidebar %}
         <div id="sidebar" class="active">
             <div class="sidebar-wrapper active">
                 <div class="sidebar-header">
                     <div class="d-flex justify-content-between">
                         <div class="logo">
-                            <a href="{% url 'home' %}"><img style="width:100%;" src="{% static 'assets/img/logo.png' %}" alt="Jinoe" srcset=""></a>
+                            <a href="{% url 'welcome' %}"><img style="height:80%; width:80%;" src="{% static 'assets/img/logo.png' %}" alt="Jinoe" srcset=""></a>
                         </div>
                         <div class="toggler">
                             <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -38,48 +39,19 @@
                 <div class="sidebar-menu" style="margin-top:-2rem;">
                     <ul class="menu">
                         <!-- <li class="sidebar-title">Menu</li> -->
-                        <li class="sidebar-item active ">
-            <a href="{% url 'welcome' %}" class='sidebar-link'>
+            
 
-                                <i class="bi bi-grid-fill"></i>
-                                <span>Dashboard</span>
-                            </a>
-                        </li>
-
-                        <li class="sidebar-item  has-sub">
+                        <li class="sidebar-item   active">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-stack"></i>
-                                <span>Training courses</span>
+                                <span>Early Childhood Care Education</span>
                             </a>
-                            <ul class="submenu">
-                                <li class="submenu-item ">
-                                    <a href="{% url 'modules' %}">-Primary School Teacher course</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href=" {% url 'modules' %}">-Primary School Teacher course</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="{% url 'modules' %}">-Special Needs Education</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="{% url 'modules' %}">-Earl Childhood Education</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="{% url 'modules' %}">-Technical and vocational Education Training course</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="{% url 'modules' %}">-Lesson Plan</a>
-
-                           
-                              
-                                
-                            </ul>
                         </li>
 
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-person-badge-fill"></i>
-                                <span>Personal Details</span>
+                                <span>Personal Matters</span>
                             </a>
                             <ul style="margin-left: 0;" class="submenu ">
                                 <li class="submenu-item ">
@@ -97,13 +69,7 @@
                                 <li class="submenu-item ">
                                     <a href="">-Personal Developement</a>
                                 </li>
-                                <li class="submenu-item ">
-                                    <a href="">-My Evaluation Report</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="">-My modules</a>
-                                </li>
-                               
+                            
                                 <li class="submenu-item ">
                                     <a href="">My Assesment Records</a>
                                 </li>
@@ -165,6 +131,7 @@
                 <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
             </div>
         </div>
+        {% endblock sidebar %}
         <div id="main">
             <header class="mb-3">
                 <a href="#" class="burger-btn d-block d-xl-none">
