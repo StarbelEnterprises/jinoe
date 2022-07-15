@@ -1402,6 +1402,10 @@ h6{
     color: var(--color-secondary);
 }
 
+h4{
+    color: var(--color-secondary);
+}
+
 p{
     color: var(--color-secondary);
 }
