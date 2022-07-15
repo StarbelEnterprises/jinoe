@@ -14,5 +14,6 @@ urlpatterns = [
     path('welcome/',  views.welcome , name='welcome'),
     path('live-discussion/',  views.live_discussion , name='live_discussion'),
     path('carrer-profile', views.carrer_profile, name='carrer_profile'),
-    path('forum', views.forum, name='forum')
+    path('forum', views.forum, name='forum'),
+    path('webinar', views.webinar, name='webinar')
 ]

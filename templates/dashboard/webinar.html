@@ -1,0 +1,133 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block contents %}
+            <!-- <div class="page-heading">
+                <h3>Welcome to Jinoe</h3>
+            </div> -->
+            <div class="page-content">
+                <div class="welcome-msg bg-brown mb-3">
+                    <h4>Hello Isaya. Welcome to Jinoe  Webinars</h4>
+                </div>
+               
+                <div class="row ms-1">
+                    <div class="col-12 col-lg-12">
+                      
+                        <div class="row">
+                        
+                            <div class="card">
+                                <div class="row">
+                                    <div class="col-md-10 ">
+                                        <div class="img mt-3 mr-3 mb-3">
+                                           <div class="d-flex" >
+                                            <img height="250" width="250" style="border-radius:10px ;" src="{% static 'dashboard/assets/images/webinar.webp' %}" alt="">
+                                            
+                                            <div class="mt-2 ms-2" >
+                                                <div class="d-block" >
+                                                    <span class="ms-3" > <i class="fa fa-calendar" ></i> 27, July 2022</span>
+                                                    <span class="ms-2" ><i class="fa fa-map-marker" ></i> Dar es salaam</span>
+                                                </div>
+                                                <h4 class="ms-3 mt-1" >The webinar title goes here</h4>
+                                                <p class="ms-3" >
+                                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe voluptatibus
+                                                    reiciendis inventore modi labore error eius magnam rem nemo a!
+                                                     Accusantium error dolorum illo consequatur iste tenetur quae, ipsum quod?
+                                                </p>
+                                                <button data-bs-toggle="modal" data-bs-target="#exampleModalLong2"  class="btn btn-brown ms-3 rounded-pill " >View details</button>
+                                            </div>
+                                           </div>
+                                        </div>
+                                    </div>
+                                   
+                                 </div>
+ 
+                                 
+                             </div>
+
+                           
+                           
+                    <!-- <div class="col-12 col-lg-3">
+
+                    </div> -->
+                </div>
+            </div> 
+
+            
+         <!--scrollbar Modal -->
+         <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+         <div class="modal-dialog modal-lg " role="document">
+             <div class="modal-content">
+                 <div class="modal-header">
+                     <h5 class="modal-title" id="exampleModalLongTitle">Webinar Details</h5>
+                     <button type="button" class="close" data-bs-dismiss="modal"
+                         aria-label="Close">
+                         <i data-feather="x"></i>
+                     </button>
+                 </div>
+                 <div class="modal-body">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-md-10 ">
+                                <div class="d-flex ms-4 " >
+                                     <span class="mt-3" ><i class="fa fa-calendar" ></i> 29, July 2022</span>
+                                     <span class="mt-3 ms-3" ><i class="fa fa-map-marker" ></i> Dar es salaam</span>
+                                     <div class=" mt-4 ms-2 d-block">
+                                     </div>  
+                                </div>
+                                <div class="ms-4" >
+                                    <h4 >The webinar title will be displayed here</h4>
+                                     <p>
+                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio nihil eligendi,
+                                         voluptatem modi, dignissimos dolorem sapiente velit repellendus vero sunt nemo unde placeat necessitatibus dolor eos nulla quia dolores. Voluptas?
+                                     </p>
+                                     <div class="row">
+                                         <div class="col-md-4 mb-3">
+                                             <h4>Host</h4>
+                                             <img class="ms-3 mt-3 mb-3" height="50" width="50" style="border-radius: 50px;" src="{% static 'dashboard/assets/images/faces/1.jpg' %}" alt="">
+                                             <div>
+                                                 <h6 class="" >Isaya Bendera</h6>
+                                                 <small>isayaelib@gmail.com</small>
+                                             </div>
+                                         </div>
+                                         <div class="col-md-4 mb-3">
+                                             <h4>Co-host</h4>
+                                             <img class="ms-3 mt-3 mb-3" height="50" width="50" style="border-radius: 50px;" src="{% static 'dashboard/assets/images/faces/1.jpg' %}" alt="">
+                                             <div>
+                                                 <h6 class="" >Isaya Bendera</h6>
+                                                 <small>isayaelib@gmail.com</small>
+                                             </div>
+                                         </div>
+                                         <div class="col-md-4 mb-3">
+                                             <h4>Presenter</h4>
+                                             <img class="ms-3 mt-3 mb-3" height="50" width="50" style="border-radius: 50px;" src="{% static 'dashboard/assets/images/faces/1.jpg' %}" alt="">
+                                             <div>
+                                                 <h6 class="" >Isaya Bendera</h6>
+                                                 <small>isayaelib@gmail.com</small>
+                                             </div>
+                                         </div>
+                                         <div class="col-md-6 mb-3">
+                                             
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <a class="btn btn-brown rounded-pill mb-3 "  href="">Join webinar</a>
+                            </div>
+                            
+                         </div>
+
+                         
+                     </div>
+                 </div>
+                 <div class="modal-footer">
+                     <button type="button" class="btn btn-light-secondary"
+                         data-bs-dismiss="modal">
+                         <i class="bx bx-x d-block d-sm-none"></i>
+                         <span class="d-none d-sm-block">Close</span>
+                     </button>
+ 
+                 </div>
+             </div>
+         </div>
+     </div>
+    
+            {% endblock contents %}
