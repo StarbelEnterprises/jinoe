@@ -24,6 +24,8 @@ def carrer_profile(request):
     return render(request, 'dashboard/carrer_entry_profile.html')
 
 
+def forum(request):
+    return render(request, 'dashboard/forum.html')
 
 
 
