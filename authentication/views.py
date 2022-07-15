@@ -28,6 +28,10 @@ def forum(request):
     return render(request, 'dashboard/forum.html')
 
 
+def webinar(request):
+    return render(request, 'dashboard/webinar.html')
+
+
 
 
 def landing(request):

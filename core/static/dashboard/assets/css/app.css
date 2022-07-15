@@ -1427,6 +1427,9 @@ h6{
 h4{
     color: var(--color-secondary);
 }
+small{
+    color: var(--color-secondary);
+}
 
 p{
     color: var(--color-secondary);
