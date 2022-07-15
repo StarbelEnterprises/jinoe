@@ -34,15 +34,9 @@
     }
   }
 
-
-
 .card-img-top{
     height:130px;
 }
-
-
-
-
 
 .alert {
     border: none;
@@ -848,7 +842,7 @@
     margin-left: 1rem;
 }
 .sidebar-wrapper .menu .sidebar-link:hover {
-    background-color: #f5f0f0;
+    background-color: var(--color-secondary);
 }
 .sidebar-wrapper .menu .sidebar-item {
     list-style: none;
@@ -869,6 +863,23 @@
 .sidebar-wrapper .menu .sidebar-item.active .sidebar-link span {
     color: #fff;
 }
+
+.sidebar-link:hover span:not(:hover){
+    color: #fff;
+}
+
+.sidebar-link span:hover{
+    color: white;
+}
+
+.sidebar-link:hover i:not(:hover){
+    color: #fff;
+}
+
+.sidebar-link i:hover{
+    color: white;
+}
+
 .sidebar-wrapper .menu .sidebar-item.active .sidebar-link i,
 .sidebar-wrapper .menu .sidebar-item.active .sidebar-link svg {
     fill: #fff;
@@ -904,10 +915,39 @@
     letter-spacing: 0.5px;
     transition: all 0.3s;
     margin-left: -.3rem;
+    /* color: white; */
 }
-/* .sidebar-wrapper .menu .submenu .submenu-item a:hover {
-    margin-left: 0;
-} */
+
+.submenu-item:hover {
+    background-color: var(--color-secondary);
+    border-radius:  5px
+}
+
+.submenu-item{
+    display: flex;
+    align-items: center;
+}
+
+.submenu-item i{
+     color: var(--color-secondary);
+}
+
+.submenu-item:hover a:not(:hover){
+    color: white;
+}
+
+.submenu-item:hover i:not(:hover){
+    color: white;
+}
+
+.sidebar-wrapper .menu .submenu .submenu-item a:hover{
+    color: white;
+}
+.sidebar-wrapper .menu .submenu .submenu-item i:hover{
+    color: white;
+}
+
+
 @media screen and (max-width: 1199px) {
     .sidebar-wrapper {
         position: absolute;
@@ -1445,11 +1485,12 @@ p{
 }
 
 .current {
+    color: white;
     background-color: var(--color-secondary);
 }
 
  .current span:hover{
-    color: var(--color-secondary);;
+    color: wheat
 }
 .current i:hover{
     color: var(--color-secondary);;
@@ -1457,10 +1498,6 @@ p{
 .current span{
     color: white;
 }
-
-.sidebar-item.active{
-    background-color: transparent
+.current:hover span:not(:hover){
+    color: white;
 }
-
-
-
