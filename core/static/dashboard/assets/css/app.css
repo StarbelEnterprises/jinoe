@@ -929,6 +929,8 @@
 }
 
 .submenu-item i{
+    padding-inline: 14px;
+    padding-right: 15px;
      color: var(--color-secondary);
 }
 
