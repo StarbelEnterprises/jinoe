@@ -20,8 +20,8 @@ def welcome(request):
 def live_discussion(request):
     return render(request, 'dashboard/live_discussion.html')
 
-
-
+def carrer_profile(request):
+    return render(request, 'dashboard/carrer_entry_profile.html')
 
 
 

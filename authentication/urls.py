@@ -13,4 +13,5 @@ urlpatterns = [
     path('single-module/',  views.single_module , name='single_module'),
     path('welcome/',  views.welcome , name='welcome'),
     path('live-discussion/',  views.live_discussion , name='live_discussion'),
+    path('carrer-profile', views.carrer_profile, name='carrer_profile')
 ]
