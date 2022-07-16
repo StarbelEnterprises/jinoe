@@ -31,9 +31,6 @@ def forum(request):
 def webinar(request):
     return render(request, 'dashboard/webinar.html')
 
-
-
-
 def landing(request):
     return render(request, template_name='auth/landing.html')
     
