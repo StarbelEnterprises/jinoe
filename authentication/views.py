@@ -1,4 +1,8 @@
 import email
+from urllib import request
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth import login, authenticate, get_user_model, logout
+from django.contrib import messages
 from django.http import JsonResponse
 from django.shortcuts import redirect, render
 from django.views import View
@@ -45,9 +49,30 @@ def webinar(request):
 def landing(request):
     return render(request, template_name='auth/landing.html')
     
-def login(request):
-    #login logic    
-    return render(request, template_name='auth/login.html')
+class Login(View):
+    def get(self, request,*args, **kwargs):
+        form = AuthenticationForm()
+        return render(request, template_name='auth/login.html', context={'login_form': form} )
+
+
+    def post(self, request, *args, **kwags):
+        form = AuthenticationForm(request, data=request.POST)
+        pp.pprint(form.data)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                messages.info(
+                    request, f"You are now logged in as {username}.")
+                return redirect("welcome")
+            else:
+                messages.error(request, "Invalid username or password.")
+        else:
+            messages.error(request, "Invalid username or password.")
+        
+        return render(request, template_name='auth/login.html')
 
 class Register(View):
     def get(self, request, *args, **kwargs):
