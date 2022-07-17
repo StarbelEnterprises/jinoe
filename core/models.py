@@ -1,4 +1,5 @@
 
+from sys import stdout
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime, timezone
@@ -21,6 +22,18 @@ class Levels(models.Model):
      
     def __str__(self):
         return  str(self.name)
+
+class Enrollment(models.Model):
+    level = models.ForeignKey(Levels, on_delete=models.CASCADE, related_name='enrolled_to_set')
+    student = models.ForeignKey(User, on_delete=models.CASCADE, related_name='enrolled_student_set')
+    create_at = models.DateTimeField(auto_created=True, null = True)
+    updated_at = models.DateField(default=datetime.now)
+    class Meta:
+        verbose_name_plural = 'Enrolled Education level'
+        db_table = 'jinoe_enrolled_eduction_level'
+     
+    def __str__(self):
+        return  f'{self.student.username} enrolled to {self.level.name}'
 
 class Modules(models.Model):
     level = models.ForeignKey(Levels, on_delete=models.CASCADE)
