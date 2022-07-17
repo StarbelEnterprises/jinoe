@@ -1,4 +1,6 @@
+from django.http import JsonResponse
 from django.shortcuts import render
+from django.views import View
 from . models import UserProfile
 
 # Create your views here.
@@ -38,9 +40,14 @@ def login(request):
     #login logic    
     return render(request, template_name='auth/login.html')
 
-def register(request):
-    # register logic
-    return render(request, template_name='auth/register.html')
+class Register(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, template_name='auth/register.html')
+    def post(self, request, *args, **kwargs):
+        response = {
+        'success': 'true',
+        'msg': f' You have done request'}
+        return JsonResponse(response)
 
 def Logout(request):
     # logout logic
