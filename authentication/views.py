@@ -2,6 +2,10 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from django.views import View
 from . models import UserProfile
+import pprint
+pp = pprint.PrettyPrinter(indent=4)
+
+
 
 # Create your views here.
 def home(request):
@@ -44,6 +48,7 @@ class Register(View):
     def get(self, request, *args, **kwargs):
         return render(request, template_name='auth/register.html')
     def post(self, request, *args, **kwargs):
+        pp.pprint(request.POST)
         response = {
         'success': 'true',
         'msg': f' You have done request'}

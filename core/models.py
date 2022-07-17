@@ -6,6 +6,7 @@ from authentication.models import UserProfile
 from enum import Enum
 
 class Levels(models.Model):
+    order_by = models.IntegerField(null=True,)
     userprofile = models.ForeignKey(UserProfile, on_delete=models.CASCADE,)
     name = models.CharField(max_length=60, null= True , blank=True)
     create_at = models.DateTimeField(auto_created=True, null = True)
@@ -15,7 +16,7 @@ class Levels(models.Model):
 
 
     class Meta:
-        verbose_name_plural = 'user Levels'
+        verbose_name_plural = 'Eduction Levels'
         db_table = 'jinoe_user_Levels'
      
     def __str__(self):

@@ -1,9 +1,9 @@
 
-let level 
+let level = {}
 
 $('#level').on('change', function(event) {
     console.log(event.type + " event with:", $(this).val());
-    level =$(this).val();
+    level['id'] =$(this).val();
 });
 console.log('level', level)
   
