@@ -27,10 +27,6 @@ def modules(request):
 def single_module(request):
     return render(request, template_name='dashboard/module_single.html')
 
-def welcome(request):
-    return render(request, 'dashboard/welcome.html')
-
-
 
 def live_discussion(request):
     return render(request, 'dashboard/live_discussion.html')
