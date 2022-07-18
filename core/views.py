@@ -7,7 +7,8 @@ from core.models import Enrollment
 def welcome(request):
     query_set = Enrollment.objects.filter(student=request.user)
     context={
-        'enrollment': query_set
+        'enrollment': query_set,
+        'modules': query_set.get_enrolled_modules()
     }
     return render(request, 'dashboard/welcome.html', context=context)
 

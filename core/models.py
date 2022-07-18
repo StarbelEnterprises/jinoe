@@ -1,4 +1,5 @@
 
+import re
 from sys import stdout
 from django.db import models
 from django.contrib.auth.models import User
@@ -35,8 +36,11 @@ class Enrollment(models.Model):
     def __str__(self):
         return  f'{self.student.username} enrolled to {self.level.name}'
 
+    def get_enrolled_modules(self):
+        return self.modules.all()
+
 class Modules(models.Model):
-    level = models.ForeignKey(Levels, on_delete=models.CASCADE)
+    level = models.ForeignKey(Levels, on_delete=models.CASCADE, related_name='modules')
     name = models.CharField(max_length= 60, null= True, blank=True)
     create_at = models.DateTimeField(auto_created=True, null = True)
     updated_at = models.DateField(default=datetime.now)
@@ -120,7 +124,6 @@ class SubTopics(models.Model):
     def __str__(self):
         return str(self.name)
 
-# class Subjects(models.model):
     
 
 
