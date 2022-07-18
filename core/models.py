@@ -1,4 +1,5 @@
 
+from pyexpat import model
 import re
 from sys import stdout
 from django.db import models
@@ -13,9 +14,7 @@ class Levels(models.Model):
     name = models.CharField(max_length=60, null= True , blank=True)
     create_at = models.DateTimeField(auto_created=True, null = True)
     updated_at = models.DateField(default=datetime.now)
-    
     create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='lv_created_by', null=True)
-
 
     class Meta:
         verbose_name_plural = 'Eduction Levels'
@@ -23,7 +22,7 @@ class Levels(models.Model):
      
     def __str__(self):
         return  str(self.name)
-        
+
     def get_modules(self):
         return self.module_set.all()
 
@@ -42,12 +41,17 @@ class Enrollment(models.Model):
     # @property
    
 class Modules(models.Model):
-
+    MODULE_TYPE = (
+        ('normal', 'normal module'),
+        ('core', 'core module'),
+        )
+    module_type = models.CharField(max_length=200,null=True, blank=False, choices=MODULE_TYPE)
     level = models.ForeignKey(Levels, on_delete=models.CASCADE, related_name='module_set')
     name = models.CharField(max_length= 60, null= True, blank=True)
     create_at = models.DateTimeField(auto_created=True, null = True)
+    description = models.TextField(null=True, blank=False)
+    order_by = models.IntegerField(null=True, blank=False)
     updated_at = models.DateField(default=datetime.now)
-    
     create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='md_created_by', null=True)
 
     class Meta:
@@ -55,7 +59,12 @@ class Modules(models.Model):
         db_table = 'jinoe_level_modules'
      
     def __str__(self):
+        print(self.module_type == 'core')
         return  str(self.name)
+
+    @property
+    def get_core_offer_module(self):
+        return self.module_type == 'core'
 
 class Subjects(models.Model):
     module = models.ForeignKey(Modules, on_delete=models.CASCADE)
@@ -72,7 +81,6 @@ class Subjects(models.Model):
     create_at = models.DateTimeField(auto_created=True, null = True)
     updated_at = models.DateField(default=datetime.now)    
     create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sbj_created_by', null=True)
-
 
     class Meta:
         verbose_name_plural = 'Module Subjects'
