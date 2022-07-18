@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'performance_management',
     'assessments',
     'forums',
-    'chatroom'
+    'chatroom',
+    'webinar'
 ]
 
 MIDDLEWARE = [
@@ -86,7 +87,7 @@ WSGI_APPLICATION = 'jinoe.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite5',
     }
 }
 
