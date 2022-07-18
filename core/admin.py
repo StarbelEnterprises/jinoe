@@ -1,13 +1,13 @@
 from django.contrib import admin
 from . models import *
 
-class EnrolledEductionLevel(admin.TabularInline):
+class EnrolledEductionLevel(admin.StackedInline):
     model = Enrollment
-    extra = 5 # how many rows to show
+    extra = 0  # how many rows to show
 
 @admin.register(Levels)
 class EductionLevels(admin.ModelAdmin):
-    inlines:(EnrolledEductionLevel)
+    onlines:(EnrolledEductionLevel)
 admin.site.register(Enrollment)
 admin.site.register(Modules)
 admin.site.register(Subjects)
