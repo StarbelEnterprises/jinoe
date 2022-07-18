@@ -23,6 +23,9 @@ class Levels(models.Model):
      
     def __str__(self):
         return  str(self.name)
+        
+    def get_modules(self):
+        return self.module_set.all()
 
 class Enrollment(models.Model):
     level = models.ForeignKey(Levels, on_delete=models.CASCADE, related_name='enrolled_to_set')
@@ -34,13 +37,13 @@ class Enrollment(models.Model):
         db_table = 'jinoe_enrolled_eduction_level'
      
     def __str__(self):
+        
         return  f'{self.student.username} enrolled to {self.level.name}'
-
-    def get_enrolled_modules(self):
-        return self.modules.all()
-
+    # @property
+   
 class Modules(models.Model):
-    level = models.ForeignKey(Levels, on_delete=models.CASCADE, related_name='modules')
+
+    level = models.ForeignKey(Levels, on_delete=models.CASCADE, related_name='module_set')
     name = models.CharField(max_length= 60, null= True, blank=True)
     create_at = models.DateTimeField(auto_created=True, null = True)
     updated_at = models.DateField(default=datetime.now)

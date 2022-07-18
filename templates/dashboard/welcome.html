@@ -8,7 +8,8 @@
                 <div class="row">
                     <div class="alert level-bg-color" role="alert">
                         <h4 class="alert-heading">Hello {{request.user.username}}.</h4>
-                        <p>Welcome to Jinoe, The Platform to Sharpen Your Teaching Skills.</p>
+                        <h5>Welcome to Jinoe, The Platform to Sharpen Your Teaching Skills.</h5>
+                        <h6>You have been enrolled into {{enrolled_level.level.name}}</h6>
                         <hr>
                       </div>
                 </div>
@@ -17,8 +18,8 @@
                     <div class="col-12 col-lg-9">
                        
                         <div class="row">
-                            {%if enrollmen.modules%}
-                            {%for module in enrollmen.modules.all%}
+                            {%if modules%}
+                            {%for module in modules%}
                             <div class="col-6 col-lg-4 col-md-6">
                                 <div  class="card card-x">
                                     <div class="card-body px-3 ">
@@ -27,7 +28,7 @@
                                                 <img class="card-img-top"  src="{% static 'dashboard/assets/images/flot.jpg' %}"
                                                     alt="Card image cap" />
                                                 <div class="card-body">
-                                                    <h4 class="card-title">Personality, Social and Emotional development</h4>
+                                                    <h4 class="card-title">{{module.name}}</h4>
                                                     <p class="card-text">
                                                         This is where simple module details will be displayed.
                                                     </p>
@@ -42,109 +43,7 @@
                             {%endfor%}
                             {%endif%}
 
-                            <div class="col-6 col-lg-4 col-md-6">
-                                <div class="card card-x">
-                                    <div class="card-body px-3 ">
-                                        <div class="card">
-                                            <div class="card-content">
-                                                <img class="card-img-top"  src="{% static 'dashboard/assets/images/flot.jpg' %}"
-                                                    alt="Card image cap" />
-                                                <div class="card-body">
-                                                    <h4 class="card-title">Language, Communication and Literacy development</h4>
-                                                    <p class="card-text">
-                                                        This is where simple module details will be displayed.
-                                                    </p>
-                                                   
-                                                    <button style="margin-bottom: -30px;" class="btn btn-brown rounded-pill block">View Module</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-6 col-lg-4 col-md-6">
-                                <div class="card card-x">
-                                    <div class="card-body px-3 ">
-                                        <div class="card">
-                                            <div class="card-content">
-                                                <img class="card-img-top"  src="{% static 'dashboard/assets/images/flot.jpg' %}"
-                                                    alt="Card image cap" />
-                                                <div class="card-body">
-                                                    <h4 class="card-title">Creative, Expressive and Aesthetic development</h4>
-                                                    <p class="card-text">
-                                                        This is where simple module details will be displayed.
-                                                    </p>
-                                                   
-                                                    <button style="margin-bottom: -30px;" class="btn btn-brown rounded-pill block">View Module</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-6 col-lg-4 col-md-6">
-                                <div class="card card-x">
-                                    <div class="card-body px-3 ">
-                                        <div class="card">
-                                            <div class="card-content">
-                                                <img class="card-img-top"  src="{% static 'dashboard/assets/images/flot.jpg' %}"
-                                                    alt="Card image cap" />
-                                                <div class="card-body">
-                                                    <h4 class="card-title">Mathematical and Logical thinking development</h4>
-                                                    <p class="card-text">
-                                                        This is where simple module details will be displayed.
-                                                    </p>
-                                                   
-                                                    <button style="margin-bottom: -30px;" class="btn btn-brown rounded-pill block">View Module</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-4 col-md-6">
-                                <div class="card card-x">
-                                    <div class="card-body px-3 ">
-                                        <div class="card">
-                                            <div class="card-content">
-                                                <img class="card-img-top"  src="{% static 'dashboard/assets/images/flot.jpg' %}"
-                                                    alt="Card image cap" />
-                                                <div class="card-body">
-                                                    <h4 class="card-title">Health and Physical Development</h4>
-                                                    <p class="card-text">
-                                                        This is where simple module details will be displayed.
-                                                    </p>
-                                                   
-                                                    <button style="margin-bottom: -30px;" class="btn btn-brown rounded-pill block">View Module</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-6 col-lg-4 col-md-6">
-                                <div class="card card-x">
-                                    <div class="card-body px-3 ">
-                                        <div class="card">
-                                            <div class="card-content">
-                                                <img class="card-img-top"  src="{% static 'dashboard/assets/images/flot.jpg' %}"
-                                                    alt="Card image cap" />
-                                                <div class="card-body">
-                                                    <h4 class="card-title">Development of Environmental awareness</h4>
-                                                    <p class="card-text">
-                                                        This is where simple module details will be displayed.
-                                                    </p>
-                                                   
-                                                    <button style="margin-bottom: -30px;" class="btn btn-brown rounded-pill block">View Module</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                          
                             <nav aria-label="Page navigation example">
                                 <ul class="pagination pagination-dark">
                                     <li class="page-item"><a class="page-link" href="#">
