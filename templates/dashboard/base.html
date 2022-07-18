@@ -40,15 +40,12 @@
                 <div class="sidebar-menu" style="margin-top:-2rem;">
                     <ul class="menu">
                         <!-- <li class="sidebar-title">Menu</li> -->
-            
-                        {% for enrollment in enrollment%}
                         <li class="sidebar-item   active">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-stack"></i>
-                                <span>{{enrollment.level.name}}</span>
+                                <span>{{enrolled_level.level.name}}</span>
                             </a>
                         </li>
-                        {%endfor%}
                         <hr>
                         <li class="sidebar-item menu-link has-sub">
                             <a href="#" class='sidebar-link '>
