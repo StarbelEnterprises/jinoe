@@ -5,9 +5,14 @@
                 <h3>Welcome to Jinoe</h3>
             </div> -->
             <div class="page-content">
-                <div class="welcome-msg bg-brown mb-3">
-                    <h4>Hello Isaya. Welcome to Jinoe, The Platform to Sharpen Your Teaching Skills</h4>
+                <div class="row">
+                    <div class="alert level-bg-color" role="alert">
+                        <h4 class="alert-heading">Hello {{request.user.username}}.</h4>
+                        <p>Welcome to Jinoe, The Platform to Sharpen Your Teaching Skills.</p>
+                        <hr>
+                      </div>
                 </div>
+                
                 <div class="row">
                     <div class="col-12 col-lg-9">
                        
@@ -392,4 +397,5 @@
              </div>
          </div>
      </div>
-            {% endblock contents %}
+     
+ {% endblock contents %}
