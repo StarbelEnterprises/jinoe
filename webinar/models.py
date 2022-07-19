@@ -38,6 +38,13 @@ class WebinerPioneers(models.Model):
             first_name = models.CharField(max_length=60,null=True,blank=True)
             last_name = models.CharField(max_length=60,null=True,blank=True)
             email = models.CharField(max_length=60,null=True,blank=True)
+
+            class WebinerPioneerStatuses(models.TextChoices):
+                    HOSTER = 'HST',_('Hoster')
+                    PRESENTER = 'PRS',_('Presenter')
+                    COHOST  = 'CH',_('Cohost')
+
+            pioneer_category = models.CharField(max_length=30,choices=WebinerPioneerStatuses.choices,default=WebinerPioneerStatuses.HOSTER,)
             image = models.TextField(db_column='data',blank=True)
             short_description = models.TextField()
             create_at = models.DateTimeField(auto_now_add=True)
