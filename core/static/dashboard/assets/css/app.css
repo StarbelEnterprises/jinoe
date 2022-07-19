@@ -1506,3 +1506,14 @@ p{
 .current:hover span:not(:hover){
     color: white;
 }
+
+.level-bg-color{
+    background-color:   #a52a2a62;;
+    opacity: .8;
+    color: var(--color-primary);
+    
+  }
+  .level-bg-color p {
+     font-size: 18px;
+    color: var(--color-primary);
+  }

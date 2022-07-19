@@ -2224,6 +2224,11 @@ textarea:-moz-placeholder {
   color: white;
 }
 
+#message{
+  margin-top: 12px;
+  display: none;
+}
+
 
 
 
