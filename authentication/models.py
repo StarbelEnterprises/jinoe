@@ -25,7 +25,7 @@ class UserProfile(models.Model):
         db_table = 'jinoe_user_profile'
      
     def __str__(self):
-        return  str(self.user.first_name)
+        return  str(self.user.username)
 
     
 @receiver(post_save, sender=User)

@@ -1445,6 +1445,10 @@ p{
 }
 
 .logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     width: 100%;
 }
 
@@ -1516,4 +1520,27 @@ p{
   .level-bg-color p {
      font-size: 18px;
     color: var(--color-primary);
+  }
+ 
+  .show-on-mobile{
+    display: none;
+    height:80%; 
+    width:80%;
+  }
+  
+
+  @media screen and (max-width: 912px) {
+
+    .show-on-mobile{
+        display: flex;
+        height: 100%;
+        width: 36%;
+        
+      }
+
+      header{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
   }
