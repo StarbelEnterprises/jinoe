@@ -5,13 +5,21 @@
                 <h3>Welcome to Jinoe</h3>
             </div> -->
             <div class="page-content">
-                <div class="welcome-msg bg-brown mb-3">
-                    <h4>Hello Isaya. Welcome to Jinoe, The Platform to Sharpen Your Teaching Skills</h4>
+                <div class="row">
+                    <div class="alert level-bg-color" role="alert">
+                        <h4 class="alert-heading">Hello {{request.user.username}}.</h4>
+                        <h5>Welcome to Jinoe, The Platform to Sharpen Your Teaching Skills.</h5>
+                        <h6>You have been enrolled into {{enrolled_level.level.name}}</h6>
+                        <hr>
+                      </div>
                 </div>
+                
                 <div class="row">
                     <div class="col-12 col-lg-9">
-                       
                         <div class="row">
+                            
+                            {%for module in modules%}
+                              {% if not module.get_core_offer_module %}
                             <div class="col-6 col-lg-4 col-md-6">
                                 <div  class="card card-x">
                                     <div class="card-body px-3 ">
@@ -20,7 +28,7 @@
                                                 <img class="card-img-top"  src="{% static 'dashboard/assets/images/flot.jpg' %}"
                                                     alt="Card image cap" />
                                                 <div class="card-body">
-                                                    <h4 class="card-title">Personality, Social and Emotional development</h4>
+                                                    <h4 class="card-title">{{module.name}}</h4>
                                                     <p class="card-text">
                                                         This is where simple module details will be displayed.
                                                     </p>
@@ -32,111 +40,12 @@
                                     </div>
                                 </div>
                             </div>
+                            {%endif%}
+                            {%endfor%}
+                           
 
-                            <div class="col-6 col-lg-4 col-md-6">
-                                <div class="card card-x">
-                                    <div class="card-body px-3 ">
-                                        <div class="card">
-                                            <div class="card-content">
-                                                <img class="card-img-top"  src="{% static 'dashboard/assets/images/flot.jpg' %}"
-                                                    alt="Card image cap" />
-                                                <div class="card-body">
-                                                    <h4 class="card-title">Language, Communication and Literacy development</h4>
-                                                    <p class="card-text">
-                                                        This is where simple module details will be displayed.
-                                                    </p>
-                                                   
-                                                    <button style="margin-bottom: -30px;" class="btn btn-brown rounded-pill block">View Module</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-6 col-lg-4 col-md-6">
-                                <div class="card card-x">
-                                    <div class="card-body px-3 ">
-                                        <div class="card">
-                                            <div class="card-content">
-                                                <img class="card-img-top"  src="{% static 'dashboard/assets/images/flot.jpg' %}"
-                                                    alt="Card image cap" />
-                                                <div class="card-body">
-                                                    <h4 class="card-title">Creative, Expressive and Aesthetic development</h4>
-                                                    <p class="card-text">
-                                                        This is where simple module details will be displayed.
-                                                    </p>
-                                                   
-                                                    <button style="margin-bottom: -30px;" class="btn btn-brown rounded-pill block">View Module</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-6 col-lg-4 col-md-6">
-                                <div class="card card-x">
-                                    <div class="card-body px-3 ">
-                                        <div class="card">
-                                            <div class="card-content">
-                                                <img class="card-img-top"  src="{% static 'dashboard/assets/images/flot.jpg' %}"
-                                                    alt="Card image cap" />
-                                                <div class="card-body">
-                                                    <h4 class="card-title">Mathematical and Logical thinking development</h4>
-                                                    <p class="card-text">
-                                                        This is where simple module details will be displayed.
-                                                    </p>
-                                                   
-                                                    <button style="margin-bottom: -30px;" class="btn btn-brown rounded-pill block">View Module</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-4 col-md-6">
-                                <div class="card card-x">
-                                    <div class="card-body px-3 ">
-                                        <div class="card">
-                                            <div class="card-content">
-                                                <img class="card-img-top"  src="{% static 'dashboard/assets/images/flot.jpg' %}"
-                                                    alt="Card image cap" />
-                                                <div class="card-body">
-                                                    <h4 class="card-title">Health and Physical Development</h4>
-                                                    <p class="card-text">
-                                                        This is where simple module details will be displayed.
-                                                    </p>
-                                                   
-                                                    <button style="margin-bottom: -30px;" class="btn btn-brown rounded-pill block">View Module</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-6 col-lg-4 col-md-6">
-                                <div class="card card-x">
-                                    <div class="card-body px-3 ">
-                                        <div class="card">
-                                            <div class="card-content">
-                                                <img class="card-img-top"  src="{% static 'dashboard/assets/images/flot.jpg' %}"
-                                                    alt="Card image cap" />
-                                                <div class="card-body">
-                                                    <h4 class="card-title">Development of Environmental awareness</h4>
-                                                    <p class="card-text">
-                                                        This is where simple module details will be displayed.
-                                                    </p>
-                                                   
-                                                    <button style="margin-bottom: -30px;" class="btn btn-brown rounded-pill block">View Module</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <nav aria-label="Page navigation example">
+                          
+                            <!-- <nav aria-label="Page navigation example">
                                 <ul class="pagination pagination-dark">
                                     <li class="page-item"><a class="page-link" href="#">
                                             <span aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
@@ -148,7 +57,24 @@
                                             <span aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
                                         </a></li>
                                 </ul>
-                            </nav>
+                            </nav> -->
+                            <div class="pagination">
+                                <span class="step-links">
+                                    {% if modules.has_previous %}
+                                        <a href="?page=1">&laquo; first</a>
+                                        <a href="?page={{ modules.previous_page_number }}">previous</a>
+                                    {% endif %}
+                            
+                                    <span class="current">
+                                        Page {{ modules.number }} of {{ modules.paginator.num_pages }}.
+                                    </span>
+                            
+                                    {% if modules.has_next %}
+                                        <a href="?page={{ modules.next_page_number }}">next</a>
+                                        <a href="?page={{ modules.paginator.num_pages }}">last &raquo;</a>
+                                    {% endif %}
+                                </span>
+                            </div>
                         </div>
                         <!-- <div class="row">
                             <div class="col-12">
@@ -202,7 +128,8 @@
                         </div> -->
                     </div>
                     <div class="col-12 col-lg-3">
-
+                        {%for module in modules%}
+                         {% if module.get_core_offer_module %}
                         <div class="card mb-5 " style="background-color:#a52a2a62;">
                             <div class="card-body px-3 ">
                                 <div class="card">
@@ -210,17 +137,19 @@
                                         <img class="card-img-top"  src="{% static 'dashboard/assets/images/flot.jpg' %}"
                                             alt="Card image cap" />
                                         <div class="card-body">
-                                            <h4 class="card-title">Core Offer</h4>
+                                            <h4 class="card-title">{{module.name}}</h4>
                                             <p class="card-text">
                                                 This is where simple module details will be displayed.
                                             </p>
                                            
-                                            <button style="margin-bottom: -30px; margin-top: 30px;" class="btn btn-brown btn-sm rounded-pill block">View Module</button>
+                                            <a href="{% url 'single_module' %}" style="margin-bottom: -30px;" class="btn btn-brown rounded-pill block">View Module</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        {%endif%}
+                        {%endfor%}
                         
                         <div class="card">
                             <div class="card-header">
@@ -392,4 +321,5 @@
              </div>
          </div>
      </div>
-            {% endblock contents %}
+     
+ {% endblock contents %}
