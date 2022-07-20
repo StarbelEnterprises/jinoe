@@ -10,8 +10,8 @@ class Questions(models.Model):
     topic = models.ForeignKey(Topics,on_delete=models.CASCADE)
     question = models.TextField(null=True,blank=True)
     points = models.IntegerField(default=0)
-    create_at = models.DateTimeField(auto_created=True, null = True)
-    updated_at = models.DateField(default=datetime.now)    
+    create_at = models.DateTimeField(auto_created=True, null = True,editable=False)
+    updated_at = models.DateField(auto_now=True)  
     create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='qn_created_by', null=True)
 
     class Meta:
@@ -24,8 +24,8 @@ class Questions(models.Model):
 class AnswerOptions(models.Model):
     question_id = models.ForeignKey(Questions,on_delete=models.CASCADE,related_name='answer_options_question')
     answer = models.CharField(max_length=60,null=True,blank=True)
-    create_at = models.DateTimeField(auto_created=True, null = True)
-    updated_at = models.DateField(default=datetime.now)    
+    create_at = models.DateTimeField(auto_created=True, null = True,editable=False)
+    updated_at = models.DateField(auto_now=True)   
     create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='ans_opt_created_by', null=True)
 
     class Meta:
@@ -45,8 +45,8 @@ class AnswerLogs(models.Model):
     answer_log = models.CharField(max_length=60,null=True,blank=True)
     scores = models.IntegerField(default=0)
     user_id = models.ForeignKey(User,on_delete=models.CASCADE)
-    create_at = models.DateTimeField(auto_created=True, null = True)
-    updated_at = models.DateField(default=datetime.now)    
+    create_at = models.DateTimeField(auto_created=True, null = True,editable=False)
+    updated_at = models.DateField(auto_now=True)   
     create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='ans_log_created_by', null=True)
 
     class Meta:
@@ -60,8 +60,8 @@ class TopicLikes(models.Model):
     topic_id = models.ForeignKey(Topics,on_delete=models.CASCADE)
     user_id = models.ForeignKey(User,on_delete=models.CASCADE)
     like = models.BooleanField()
-    create_at = models.DateTimeField(auto_created=True, null = True)
-    updated_at = models.DateField(default=datetime.now)    
+    create_at = models.DateTimeField(auto_created=True, null = True,editable=False)
+    updated_at = models.DateField(auto_now=True) 
     create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='topic_like_created_by', null=True)
     
     class Meta:
@@ -75,8 +75,8 @@ class TopicRates(models.Model):
     topic_id = models.ForeignKey(Topics,on_delete=models.CASCADE)
     user_id = models.ForeignKey(User,on_delete=models.CASCADE)
     stars = models.IntegerField(default=0)
-    create_at = models.DateTimeField(auto_created=True, null = True)
-    updated_at = models.DateField(default=datetime.now)    
+    create_at = models.DateTimeField(auto_created=True, null = True,editable=False)
+    updated_at = models.DateField(auto_now=True)   
     create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='topic_rate_created_by', null=True)
 
     class Meta:
