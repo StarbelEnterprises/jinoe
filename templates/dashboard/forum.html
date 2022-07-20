@@ -39,7 +39,7 @@
                                                     <span class="ms-5" >5 <i class="fa fa-thumbs-o-down" ></i></span>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
-                                                    <span data-bs-toggle="modal" data-bs-target="#exampleModalLong2" > 10 <i  class="fa fa-comment-o"></i></span>
+                                                    <span data-bs-toggle="modal" data-bs-target="#forum" > 10 <i  class="fa fa-comment-o"></i></span>
                                                     <span class="ms-5" >2 <i class="fa fa-eye " ></i></span>
                                                 </div>
                                             </div>
@@ -75,7 +75,7 @@
                                                      <span class="ms-5" >5 <i class="fa fa-thumbs-o-down" ></i></span>
                                                  </div>
                                                  <div class="col-md-6 mb-3">
-                                                     <span data-bs-toggle="modal" data-bs-target="#exampleModalLong2" > 10 <i  class="fa fa-comment-o"></i></span>
+                                                     <span data-bs-toggle="modal" data-bs-target="#forum" > 10 <i  class="fa fa-comment-o"></i></span>
                                                      <span class="ms-5" >2 <i class="fa fa-eye " ></i></span>
                                                  </div>
                                              </div>
@@ -111,7 +111,7 @@
                                                      <span class="ms-5" >5 <i class="fa fa-thumbs-o-down" ></i></span>
                                                  </div>
                                                  <div class="col-md-6 mb-3">
-                                                     <span data-bs-toggle="modal" data-bs-target="#exampleModalLong2" > 10 <i  class="fa fa-comment-o"></i></span>
+                                                     <span data-bs-toggle="modal" data-bs-target="#forum" > 10 <i  class="fa fa-comment-o"></i></span>
                                                      <span class="ms-5" >2 <i class="fa fa-eye " ></i></span>
                                                  </div>
                                              </div>
@@ -132,71 +132,6 @@
             </div> 
 
             
-         <!--scrollbar Modal -->
-         <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog"
-         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-         <div class="modal-dialog" role="document">
-             <div class="modal-content">
-                 <div class="modal-header">
-                     <h5 class="modal-title" id="exampleModalLongTitle">Comments</h5>
-                     <button type="button" class="close" data-bs-dismiss="modal"
-                         aria-label="Close">
-                         <i data-feather="x"></i>
-                     </button>
-                 </div>
-                 <div class="modal-body">
-                    <div class="comment-section">
-                        <div class="user d-flex mt-3">
-                            <img class="mt-3" style="height:30px; width: 30px; border-radius: 50px; " src="{% static 'dashboard/assets/images/faces/1.jpg' %}" alt="">
-                            <h5 class="ms-3 mt-3" >Isaya Bendera - 10 July, 2022</h5>
-                            <span class="mt-3 ms-3" ><b>1 reply</b></span>
-                        </div>
-                       
-                       <div class="comment">
-                           <p class="ms-5 text-brown " >
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                                Earum non amet nam.
-                       </div>
-                       <div class="reply-section ms-5">
-                        <div class="user d-flex mt-3">
-                            <img class="mt-3"  style="height:30px; width: 30px; border-radius: 50px; " src="{% static 'dashboard/assets/images/faces/1.jpg' %}" alt="">
-                            <h5 class="ms-3 mt-3" >Isaya Bendera - 10 July, 2022</h5>
-                        </div>
-                       
-                       <div class="reply ms-3">
-                           <p class="ms-5 text-brown " >
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                           </p>
-                       </div>
-                    </div>
-                    </div>
-
-                    <div class="comment-section">
-                        <div class="user d-flex mt-3">
-                            <img class="mt-3" style="height:30px; width: 30px; border-radius: 50px; " src="{% static 'dashboard/assets/images/faces/1.jpg' %}" alt="">
-                            <h5 class="ms-3 mt-3" >Isaya Bendera - 10 July, 2022</h5>
-                            <span class="mt-3 ms-3" ><b>0 replies</b></span>
-                        </div>
-                       
-                       <div class="comment">
-                           <p class="ms-5 text-brown " >
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                                Earum non amet nam.
-                           </p>
-                       </div>
-                       
-                    </div>
-                 </div>
-                 <div class="modal-footer">
-                     <button type="button" class="btn btn-light-secondary"
-                         data-bs-dismiss="modal">
-                         <i class="bx bx-x d-block d-sm-none"></i>
-                         <span class="d-none d-sm-block">Close</span>
-                     </button>
- 
-                 </div>
-             </div>
-         </div>
-     </div>
-    
+       
+            {% include 'includes/modals.html' %}
             {% endblock contents %}
