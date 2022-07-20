@@ -30,7 +30,7 @@
                 <div class="sidebar-header">
                     <div class="d-flex justify-content-between">
                         <div class="logo">
-                            <a href="{% url 'welcome' %}"><img style="height:80%; width:80%;" src="{% static 'assets/img/logo.png' %}" alt="Jinoe" srcset=""></a>
+                            <a href="{% url 'welcome' %}"><img  style="height:80%; width:80%;" src="{% static 'assets/img/jinoe_logo.png' %}" alt="Jinoe" srcset=""></a>
                         </div>
                         <div class="toggler">
                             <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -124,10 +124,17 @@
         </div>
         {% endblock sidebar %}
         <div id="main">
-            <header class="mb-3">
-                <a href="#" class="burger-btn d-block d-xl-none">
+            <header class="mb-3 mt-0">
+                <a href="#" class="burger-btn d-block d-xl-none ">
                     <i class="bi bi-justify fs-3"></i>
                 </a>
+                <div  class="logo d-flex justify-content-center">
+                    <div style="margin-right: 35%;"></div>
+                    <div>
+                        <a href="{% url 'welcome' %}"><img class="show-on-mobile"  src="{% static 'assets/img/jinoe_logo.png' %}"alt="Jinoe" srcset=""></a>
+                    </div>
+                    <div></div>
+                </div>
             </header>
 
         {% block contents %}

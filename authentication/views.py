@@ -53,7 +53,6 @@ class Login(View):
 
     def post(self, request, *args, **kwags):
         form = AuthenticationForm(request, data=request.POST)
-        pp.pprint(form.data)
         if form.is_valid():
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
@@ -78,7 +77,6 @@ class Register(View):
         }
         return render(request, template_name='auth/register.html', context=context)
     def post(self, request, *args, **kwargs):
-        pp.pprint(request.POST)
         post_data = request.POST
         username = post_data.get('username')
         first_name =post_data.get('firstname')
