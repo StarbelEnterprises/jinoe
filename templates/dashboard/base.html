@@ -43,7 +43,14 @@
                         <li class="sidebar-item   active">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-stack"></i>
-                                <span>{{enrolled_level.level.name}}</span>
+                                <span>
+                                    {% if enrolled_level is not none %}
+                                    {{enrolled_level.level.name}}
+                                    {%else%}
+                                     Did not enroll to any of our programs
+                                    {%endif%}
+                                    
+                                </span>
                             </a>
                         </li>
                         <hr>
