@@ -2,7 +2,12 @@ from django.shortcuts import render
 from core.models import Enrollment
 from django.core.paginator import Paginator
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 
+
+
+@login_required(login_url='login')
 def welcome(request):
     try:
         enrolled_level = Enrollment.objects.filter(student=request.user).first()
