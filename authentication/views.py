@@ -10,6 +10,8 @@ from django.views import View
 from core.models import Enrollment, Levels
 from . models import UserProfile
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+
 
 import pprint
 pp = pprint.PrettyPrinter(indent=4)
@@ -24,6 +26,7 @@ def home(request):
 def modules(request):
     return render(request, template_name='dashboard/modules.html')
 
+@login_required(login_url='login')
 def single_module(request):
     return render(request, template_name='dashboard/module_single.html')
 
@@ -107,8 +110,8 @@ class Register(View):
             'msg': f' User exists'}
             return JsonResponse(response)
 
-       
 
-def Logout(request):
-    # logout logic
-    return render(request, template_name='auth/logout.html')
+def logout_user(request):
+	logout(request)
+	return redirect("welcome")      
+
