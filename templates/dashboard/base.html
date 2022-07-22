@@ -43,7 +43,14 @@
                         <li class="sidebar-item   active">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-stack"></i>
-                                <span>{{enrolled_level.level.name}}</span>
+                                <span>
+                                    {% if enrolled_level is not none %}
+                                    {{enrolled_level.level.name}}
+                                    {%else%}
+                                     Did not enroll to any of our programs
+                                    {%endif%}
+                                    
+                                </span>
                             </a>
                         </li>
                         <hr>
@@ -80,7 +87,7 @@
                         <li class="sidebar-item menu-link">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-newspaper"></i>
-                                <span>Daily Global Updates</span>
+                                <span>Global Updates</span>
                             </a>
                         </li>
 
@@ -113,7 +120,7 @@
                                     <a href="auth-forgot-password.html">Change Password</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="/">Logout</a>
+                                    <a href="{%url 'logout'%}">Logout</a>
                                 </li>
                             </ul>
                         </li> 
@@ -128,13 +135,7 @@
                 <a href="#" class="burger-btn d-block d-xl-none ">
                     <i class="bi bi-justify fs-3"></i>
                 </a>
-                <div  class="logo d-flex justify-content-center">
-                    <div style="margin-right: 35%;"></div>
-                    <div>
-                        <a href="{% url 'welcome' %}"><img class="show-on-mobile"  src="{% static 'assets/img/jinoe_logo.png' %}"alt="Jinoe" srcset=""></a>
-                    </div>
-                    <div></div>
-                </div>
+              
             </header>
 
         {% block contents %}

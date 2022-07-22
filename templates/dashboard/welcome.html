@@ -41,91 +41,29 @@
                                 </div>
                             </div>
                             {%endif%}
+                            {%empty%}
+                            No enrolled modules for now
                             {%endfor%}
                            
-
-                          
-                            <!-- <nav aria-label="Page navigation example">
+                            <nav aria-label="Page navigation example">
                                 <ul class="pagination pagination-dark">
-                                    <li class="page-item"><a class="page-link" href="#">
+                                    {% if modules.has_previous %}
+                                    <li class="page-item"><a class="page-link" href="?page">
                                             <span aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
                                         </a></li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item bg-brown"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">
+                                    {% endif %}
+                                    
+                                    <li class="page-item"><a class="page-link" href="?page">
+                                        Page {{ modules.number }} of {{ modules.paginator.num_pages }}.
+                                    </a></li>
+                                    {% if modules.has_next %}
+                                    <li class="page-item"><a class="page-link" href="?page">
                                             <span aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
                                         </a></li>
+                                    {% endif %}
                                 </ul>
-                            </nav> -->
-                            <div class="pagination">
-                                <span class="step-links">
-                                    {% if modules.has_previous %}
-                                        <a href="?page=1">&laquo; first</a>
-                                        <a href="?page={{ modules.previous_page_number }}">previous</a>
-                                    {% endif %}
-                            
-                                    <span class="current">
-                                        Page {{ modules.number }} of {{ modules.paginator.num_pages }}.
-                                    </span>
-                            
-                                    {% if modules.has_next %}
-                                        <a href="?page={{ modules.next_page_number }}">next</a>
-                                        <a href="?page={{ modules.paginator.num_pages }}">last &raquo;</a>
-                                    {% endif %}
-                                </span>
-                            </div>
+                            </nav>  
                         </div>
-                        <!-- <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h4>Your Lessons and Schedule</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <table class="table" >
-                                            <thead>
-                                                <th>#</th>
-                                                <th>Lessons</th>
-                                                <th>Star Date</th>
-                                                <th>Finish Date</th>
-                                                <th>Actions</th>
-                                            </thead>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Kusoma Module</td>
-                                                <td> July, 28 2022.</td>
-                                                <td> August, 28 2022.</td>
-                                                <td>
-                                                    <span><i class="bi bi-pencil-square" ></i></span>
-                                                    <span class="ms-4" ><i class="bi bi-trash" ></i></span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Hesabu Module</td>
-                                                <td> July, 28 2022.</td>
-                                                <td> August, 28 2022.</td>
-                                                <td>
-                                                    <span><i class="bi bi-pencil-square" ></i></span>
-                                                    <span class="ms-4" ><i class="bi bi-trash" ></i></span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Uraia Module</td>
-                                                <td> July, 28 2022.</td>
-                                                <td> August, 28 2022.</td>
-                                                <td>
-                                                    <span><i class="bi bi-pencil-square" ></i></span>
-                                                    <span class="ms-4" ><i class="bi bi-trash" ></i></span>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
                     <div class="col-12 col-lg-3">
                         {%for module in modules%}
@@ -179,147 +117,6 @@
                 </div>
             </div>
 
-
-            <!--scrollbar Modal -->
-        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-        <div class="modal-dialog modal-xl " role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">My Assesment Report</h5>
-                    <button type="button" class="close" data-bs-dismiss="modal"
-                        aria-label="Close">
-                        <i data-feather="x"></i>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <table class="table" >
-                        <thead class="bg-brown" >
-                            <th>#</th>
-                            <th>Module</th>
-                            <th>Score</th>
-                            <th>Remark</th>
-                            <th>Actions</th>
-                        </thead>
-                        <tr>
-                            <td>1</td>
-                            <td>Personality, Social and Emotional development</td>
-                            <td> 89</td>
-                            <td> Exellent</td>
-                            <td>
-                                <span><i class="bi bi-eye" ></i></span>
-                                <span><i class="bi bi-download ms-2" ></i></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Language, Communication and Literacy development</td>
-                            <td> 79</td>
-                            <td> Very Good.</td>
-                            <td>
-                                <span><i class="bi bi-eye" ></i></span>
-                                <span><i class="bi bi-download ms-2" ></i></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Creative, Expressive and Aesthetic development</td>
-                            <td> 89</td>
-                            <td> Exellent.</td>
-                            <td>
-                                <span><i class="bi bi-eye" ></i></span>
-                                <span><i class="bi bi-download ms-2" ></i></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" ><b>Total</b></td>
-                            <td colspan="3" ><b>344</b></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" ><b>Average</b></td>
-                            <td colspan="3" ><b>85.5</b></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-light-secondary"
-                        data-bs-dismiss="modal">
-                        <i class="bx bx-x d-block d-sm-none"></i>
-                        <span class="d-none d-sm-block">Close</span>
-                    </button>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-         <!--scrollbar Modal -->
-         <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog"
-         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-         <div class="modal-dialog modal-xl " role="document">
-             <div class="modal-content">
-                 <div class="modal-header">
-                     <h5 class="modal-title" id="exampleModalLongTitle">Lessons and Schedules</h5>
-                     <button type="button" class="close" data-bs-dismiss="modal"
-                         aria-label="Close">
-                         <i data-feather="x"></i>
-                     </button>
-                 </div>
-                 <div class="modal-body">
-                     <table class="table" >
-                         <thead class="bg-brown" >
-                             <th>#</th>
-                             <th>Module</th>
-                             <th>Start Date</th>
-                             <th>End Date</th>
-                             <th>Actions</th>
-                         </thead>
-                         <tr>
-                             <td>1</td>
-                             <td>Personality, Social and Emotional development</td>
-                             <td> 28, July 2022</td>
-                             <td> 28, August 2022</td>
-                             <td>
-                                <span><i class="bi bi-plus-square" ></i></span>
-                                <span><i class="bi bi-pencil-square ms-2 " ></i></span>
-                                <span><i class="bi bi-trash ms-2" ></i></span>
-                             </td>
-                         </tr>
-                         <tr>
-                             <td>2</td>
-                             <td>Language, Communication and Literacy development</td>
-                             <td> 28, September 2022</td>
-                             <td> 28, October 2022</td>
-                             <td>
-                                <span><i class="bi bi-plus-square" ></i></span>
-                                <span><i class="bi bi-pencil-square ms-2" ></i></span>
-                                <span><i class="bi bi-trash ms-2" ></i></span>
-                             </td>
-                         </tr>
-                         <tr>
-                             <td>3</td>
-                             <td>Creative, Expressive and Aesthetic development</td>
-                             <td> 28, Dec 2022</td>
-                             <td> 28, January 2022</td>
-                             <td>
-                                <span><i class="bi bi-plus-square" ></i></span>
-                                <span><i class="bi bi-pencil-square ms-2" ></i></span>
-                                <span><i class="bi bi-trash ms-2" ></i></span>
-                             </td>
-                         </tr>
-                     </table>
-                 </div>
-                 <div class="modal-footer">
-                     <button type="button" class="btn btn-light-secondary"
-                         data-bs-dismiss="modal">
-                         <i class="bx bx-x d-block d-sm-none"></i>
-                         <span class="d-none d-sm-block">Close</span>
-                     </button>
- 
-                 </div>
-             </div>
-         </div>
-     </div>
+            {% include 'includes/modals.html' %}
      
  {% endblock contents %}
