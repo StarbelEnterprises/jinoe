@@ -81,6 +81,7 @@ class Register(View):
         return render(request, template_name='auth/register.html', context=context)
     def post(self, request, *args, **kwargs):
         post_data = request.POST
+        pp.pprint(post_data)
         username = post_data.get('username')
         first_name =post_data.get('firstname')
         last_name = post_data.get('lastname')
