@@ -22,9 +22,9 @@ function showTab(n) {
     document.getElementById("nextBtn").innerHTML = "Next";
     console.log(n)
     if (n === 1) {
-        console.log(' can submit form 1 containing')
-        const myname1=document.getElementById('firstname').value
-        const myname2= document.getElementById('lastname').value
+        console.log('can submit form 1 containing')
+        const myname1 = document.getElementById('firstname').value
+        const myname2 = document.getElementById('lastname').value
         console.log(myname1, myname2)
     }
     if (n === 2){
