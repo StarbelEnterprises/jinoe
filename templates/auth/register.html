@@ -76,7 +76,7 @@ button:hover {
 }
 </style>
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="hero d-flex align-items-center" >
+  <section class="hero d-flex align-items-center" >
     <div class="container">
       <div class="row">
         <div class="col-xl-4">
@@ -86,7 +86,6 @@ button:hover {
           </blockquote>
           <div class="d-block" data-aos="fade-up" data-aos-delay="200">
             <form id="regForm" method="POST">
-              <h1>Register:</h1>
               {%csrf_token%}
               <!-- One "tab" for each step in the form: -->
               <div class="tab">Name:
