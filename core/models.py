@@ -88,7 +88,7 @@ class Modules(models.Model):
         ('core', 'core module'),
         )
     module_type = models.CharField(max_length=200,null=True, blank=False, choices=MODULE_TYPE)
-    # module_sub_level_entry_id = models.ForeignKey(SubLevelEntry, on_delete=models.CASCADE, related_name='module_set',default=0)
+    Level = models.ForeignKey(Levels, on_delete=models.CASCADE, related_name='module_set',default=0)
     name = models.CharField(max_length= 60, null= True, blank=True)
     create_at = models.DateTimeField(auto_created=True, null = True,editable=False)
     updated_at = models.DateField(auto_now=True)   
