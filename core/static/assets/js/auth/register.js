@@ -8,7 +8,7 @@ $('#level').on('change', function(event) {
 console.log('level', level)
   
 
-$('#signupform').on('submit', function(e) {
+$('#regForm').on('submit', function(e) {
     const registerData = {}
     const csrfToken = document.querySelector("[name=csrfmiddlewaretoken]").value;
     registerData['csrfmiddlewaretoken'] = csrfToken;
