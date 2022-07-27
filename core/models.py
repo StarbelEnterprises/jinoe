@@ -71,7 +71,7 @@ class SubLevelEntry(models.Model):
     create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='stlv_entry_created_by', null=True)
 
     class Meta:
-        verbose_name_plural = 'Eduction Sub Level Set Elements'
+        verbose_name_plural = 'Eduction Sub Level Entry'
         db_table = 'jinoe_sub_level_set_elements'
      
     def __str__(self):
