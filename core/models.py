@@ -8,6 +8,8 @@ from datetime import datetime, timezone
 from authentication.models import UserProfile
 from enum import Enum
 from django.utils.translation import gettext_lazy as _
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 class Levels(models.Model):
     order_by = models.IntegerField(null=True,)
@@ -41,6 +43,44 @@ class Enrollment(models.Model):
         
         return  f'{self.student.username} enrolled to {self.level.name}'
     # @property
+
+# class SubLevelSet(models.Model):
+#     sub_level_set_level_id = models.ForeignKey(Levels,on_delete=models.CASCADE,related_name="sub_level_set_level_id_col")
+#     name = models.CharField(max_length=60,null=False,blank=True)
+#     create_at = models.DateTimeField(auto_created=True, null = True,editable=False)
+#     updated_at = models.DateField(auto_now=True)    
+#     create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='stlv_created_by', null=True)
+
+#     class Meta:
+#         verbose_name_plural = 'Eduction Sub Level Sets'
+#         db_table = 'jinoe_sub_level_set'
+     
+#     def __str__(self):
+#         return  str(self.name)  
+
+#     @receiver(post_save, sender=Levels)
+#     def create_or_update_sub_level_set(sender, instance, created, **kwargs):
+#         if created:
+#             SubLevelSet.objects.create(sub_level_set_level_id=instance)
+
+# class SubLevelEntry(models.Model):
+#     sub_level_entry_set_id = models.ForeignKey(SubLevelSet,on_delete=models.CASCADE,related_name="sub_level_entry_set_id_col")
+#     name = models.CharField(max_length=60,null=False,blank=True)
+#     create_at = models.DateTimeField(auto_created=True, null = True,editable=False)
+#     updated_at = models.DateField(auto_now=True)    
+#     create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='stlv_entry_created_by', null=True)
+
+#     class Meta:
+#         verbose_name_plural = 'Eduction Sub Level Set Elements'
+#         db_table = 'jinoe_sub_level_set_elements'
+     
+#     def __str__(self):
+#         return  str(self.name)
+
+#     @receiver(post_save, sender=SubLevelSet)
+#     def create_or_update_sub_level_set_entry(sender, instance, created, **kwargs):
+#         if created:
+#             SubLevelEntry.objects.create(sub_level_elem_set_id=instance)
    
 class Modules(models.Model):
     MODULE_TYPE = (
@@ -48,7 +88,7 @@ class Modules(models.Model):
         ('core', 'core module'),
         )
     module_type = models.CharField(max_length=200,null=True, blank=False, choices=MODULE_TYPE)
-    level = models.ForeignKey(Levels, on_delete=models.CASCADE, related_name='module_set')
+    Level = models.ForeignKey(Levels, on_delete=models.CASCADE, related_name='module_set',default=0)
     name = models.CharField(max_length= 60, null= True, blank=True)
     create_at = models.DateTimeField(auto_created=True, null = True,editable=False)
     updated_at = models.DateField(auto_now=True)   
