@@ -56,8 +56,8 @@ class Enrollment(models.Model):
 #         db_table = 'jinoe_sub_level_set'
      
 #     def __str__(self):
-#         return  str(self.name)
-    
+#         return  str(self.name)  
+
 #     @receiver(post_save, sender=Levels)
 #     def create_or_update_sub_level_set(sender, instance, created, **kwargs):
 #         if created:
