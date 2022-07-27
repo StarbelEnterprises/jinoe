@@ -10,7 +10,6 @@ urlpatterns = [
     #these shoul go to repective app on phase 2
     path('home/',  views.home , name='home'),
     path('modules/',  views.modules , name='modules'),
-    path('single-module/',  views.single_module , name='single_module'),
     path('live-discussion/',  views.live_discussion , name='live_discussion'),
     path('carrer-profile', views.carrer_profile, name='carrer_profile'),
     path('forum', views.forum, name='forum'),
