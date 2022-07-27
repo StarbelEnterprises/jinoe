@@ -56,21 +56,26 @@ class Login(View):
 
     def post(self, request, *args, **kwags):
         form = AuthenticationForm(request, data=request.POST)
+        pp.pprint(form.data)
+        print(form.is_valid())
         if form.is_valid():
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
             user = authenticate(username=username, password=password)
             if user is not None:
+                print(' it works bus something is wrong')
                 login(request, user)
                 messages.info(
                     request, f"You are now logged in as {username}.")
                 return redirect("welcome")
             else:
+                print('user no exists')
                 messages.error(request, "Invalid username or password.")
         else:
             messages.error(request, "Invalid username or password.")
-        
-        return render(request, template_name='auth/login.html')
+
+            print('something')
+            return render(request, template_name='auth/login.html')
 
 class Register(View):
     def get(self, request, *args, **kwargs):
@@ -86,7 +91,7 @@ class Register(View):
         first_name =post_data.get('firstname')
         last_name = post_data.get('lastname')
         email =post_data.get('email')
-        password = post_data.get('password')
+        password = post_data.get('password1')
         enrolled_level = post_data.get('enrolled_to')
        
         if not (User.objects.filter(username=username).exists() and User.objects.filter(email=email).exists()):
