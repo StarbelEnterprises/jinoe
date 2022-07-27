@@ -80,7 +80,7 @@ button:hover {
     <div   class="container">
       <div class="row">
         <div class="col-xl-4">
-          <h4 data-aos="fade-up">Welcome to Jinoe Plaform</h4>
+          <h1 data-aos="fade-up">Welcome to Jinoe Plaform</h1>
           <div class="d-block" data-aos="fade-up" data-aos-delay="200">
             <form id="regForm" method="POST">
               {%csrf_token%}
@@ -91,7 +91,7 @@ button:hover {
               </div>
               <div class="tab">   <h5>Contact Info:</h5>
                 <p><input placeholder="E-mail..." oninput="this.className = ''" name="email" id="email"></p>
-                <p><input placeholder="Phone..." oninput="this.className = ''" name="phone" id="phone"></p>
+                <p><input type="number" placeholder="Phone..." oninput="this.className = ''" name="phone" id="phone"></p>
               </div>
               <div class="tab"> <h5>Get Enrolled to:</h5>
                 <div class="col-md-12">
@@ -99,7 +99,7 @@ button:hover {
                   {% for eduction_level in eduction_levels%}
                   <div class="radio-card d-flex">
                     <div  class="form-check stream-card">
-                      <input style="margin: 10px;" class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                      <input style="margin: 10px;" class="form-check-input"  type="radio" name="enrolled_to" id="enrolled_to" value="{{eduction_level.id}}" checked>
                       <label class="form-check-label" for="exampleRadios1">
                         {{eduction_level.name}}
                       </label>
@@ -111,9 +111,15 @@ button:hover {
              
               <div class="tab"> <h5>Login Info:</h5>
                 <p><input placeholder="Username..." oninput="this.className = ''" name="username"></p>
-                <p><input placeholder="Password..." oninput="this.className = ''" name="password" type="password"></p>
+                <p><input placeholder="Password..." oninput="this.className = ''" name="password1" type="password"></p>
+                <p><input placeholder="Comfirm Password..." oninput="this.className = ''" name="password2" type="password"></p>
+
               </div>
               <div style="overflow:auto;">
+                <div id ="message" class="alert alert-success" role="alert">
+                
+                </div>
+
                 <div style="float:right;">
                   <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
                   <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
@@ -128,74 +134,6 @@ button:hover {
                 <span class="step"></span>
               </div>
             </form>
-              <!-- <form action="" id="regForm" class="login-form" method="POST">
-                {%csrf_token%}
-                <div class="tab">:
-                  <div class="row">
-                    <div class="col-md-6">
-                        <input type="text" class="form-control mb-3" name="username" id="username" placeholder="Username">
-                    </div>
-                    <div class="col-md-6">
-                        <input type="email" class="form-control mb-3 " name="email" id="email" placeholder="Email">
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" class="form-control mb-3 " name="firstname" id="firstname" placeholder="First Name">
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" class="form-control mb-3 " name="lastname" id="lastname" placeholder="Last Name">
-                    </div>
-                    <div class="col-md-6">
-                        <input type="password" class="form-control mb-3" name="password" id="password" placeholder="Password">
-                    </div>
-                    <div class="col-md-6">
-                        <input type="password" class="form-control mb-3" name="comfirm_password" id="comfirm_password"  placeholder="Confirm Password">
-                    </div>
-                    <div class="col-md-12">
-                        <select name="level" id="level" class="form-control mb-3" >
-                          <option value="">Select Eduction level you want to register to</option>
-                          {% for eduction_level in eduction_levels%}
-                            <option value="{{eduction_level.id}}">{{eduction_level.name}}</option>
-                          {%endfor%}
-                        </select>
-                    </div>
-                   <button type="submit" class="btn-get-started">Sign Up</button> 
-                    <div id ="message" class="alert alert-secondary" role="alert">
-                     Your account has been created successifully<a href="{% url 'login' %}" class="alert-link"> click here to login</a>
-                    </div>
-                  </div>
-                </div>
-              
-                <div class="tab">Contact Info:
-                  <p><input placeholder="E-mail..." oninput="this.className = ''" name="email"></p>
-                  <p><input placeholder="Phone..." oninput="this.className = ''" name="phone"></p>
-                </div>
-                <div class="tab">Birthday:
-                  <p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>
-                  <p><input placeholder="mm" oninput="this.className = ''" name="nn"></p>
-                  <p><input placeholder="yyyy" oninput="this.className = ''" name="yyyy"></p>
-                </div>
-                <div class="tab">Login Info:
-                  <p><input placeholder="Username..." oninput="this.className = ''" name="uname"></p>
-                  <p><input placeholder="Password..." oninput="this.className = ''" name="pword" type="password"></p>
-                </div>
-                <div style="overflow:auto;">
-                  <div style="float:right;">
-                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-                  </div>
-                </div>
-               Circles which indicates the steps of the form:
-                <div style="text-align:center;margin-top:40px;">
-                  <span class="step"></span>
-                  <span class="step"></span>
-                  <span class="step"></span>
-                  <span class="step"></span>
-                </div>
-              </form> -->
-              <!-- <div class="d-block login-links" data-aos="fade-up" data-aos-delay="200">
-                <p class="mt-3" >Already have an account? <a class="text-white" href="{% url 'login' %}">Login Here</a></p>
-              </div> -->
-
           </div>
 
         </div>

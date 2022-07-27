@@ -87,7 +87,7 @@ class Register(View):
         last_name = post_data.get('lastname')
         email =post_data.get('email')
         password = post_data.get('password')
-        enrolled_level = post_data.get('enrolled_to[id]')
+        enrolled_level = post_data.get('enrolled_to')
        
         if not (User.objects.filter(username=username).exists() and User.objects.filter(email=email).exists()):
             User.objects.create_user(

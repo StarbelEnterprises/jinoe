@@ -82,7 +82,9 @@ ajaxCall = (data) => {
           console.log('submited after 2 sec');
           console.log(data.msg)
           const messages = document.getElementById('message')
+          messages.innerHTML =`Your account has been created successifully<a href="/login" class="alert-link"> click here to login</a>`
           messages.style.display='block'
+
         },
         failure: function(error) {
             console.log(error)
