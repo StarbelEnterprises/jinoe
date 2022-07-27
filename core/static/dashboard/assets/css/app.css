@@ -1547,6 +1547,21 @@ p{
     height:80%; 
     width:80%;
   }
+
+  .radio-card input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .select-level-radio{
+ height: 20px;
+ width: 5px;
+  }
+
+  .stream-card{
+    border: 1px solid white; display: flex; padding: 20px; width: 100%; margin-bottom: 12px; border-radius: 10px;
+  }
   
 
   @media screen and (max-width: 912px) {

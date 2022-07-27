@@ -516,7 +516,7 @@ section {
 .hero {
   width: 100%;
   min-height: 100vh;
-  background: url("../img/hero-bg.jpg") top center;
+  background: url("../img/bunner.jpg") top center;
   background-size: cover;
   position: relative;
   padding: 120px 0;
@@ -549,6 +549,7 @@ section {
 
 .hero .container {
   z-index: 1;
+  padding: 24px;
 }
 
 @media (min-width: 1365px) {
@@ -2249,6 +2250,12 @@ textarea:-moz-placeholder {
   margin-top: 12px;
   display: none;
 }
+
+.stream-card{
+  border: 1px solid white; display: flex; padding: 20px; width: 100%; margin-bottom: 12px; border-radius: 10px;
+}
+
+
 
 
 
