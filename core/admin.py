@@ -1,6 +1,8 @@
 from django.contrib import admin
 from . models import *
 
+admin.site.site_header = 'Jinoe Admin'
+
 class EnrolledEductionLevel(admin.StackedInline):
     model = Enrollment
     extra = 0  # how many rows to show
