@@ -1566,6 +1566,23 @@ p{
     margin-bottom: 12px;
     border-radius: 10px;
   }
+
+  /* .chapter-link{
+   list-style-type:;
+  } */
+
+  .chapter{
+    margin-top: 12px;
+    display:  flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: wheat;
+  }
+
+  .chapter hr{
+     width: 50%;
+  }
   
 
   @media screen and (max-width: 912px) {
