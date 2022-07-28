@@ -17,7 +17,7 @@ class SubjectSchedules(models.Model):
             COMPLETED  = 'CMP',_('Completed')
             POSTPONED = 'PS',_('Postponed')
 
-        subject_id = models.ForeignKey(Subjects,on_delete=models.CASCADE)
+        subject_id = models.ForeignKey(Modules,on_delete=models.CASCADE)
         user_id = models.ForeignKey(User,on_delete=models.CASCADE)
         startTime = models.DateTimeField()
         endTime = models.DateTimeField()
