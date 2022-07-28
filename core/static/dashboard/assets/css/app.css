@@ -55,6 +55,10 @@
     }
   }
 
+
+.text-brown{
+    color: var(--color-secondary);
+  }
 .card-img-top{
     height:130px;
 }
