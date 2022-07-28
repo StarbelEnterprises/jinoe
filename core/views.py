@@ -1,5 +1,7 @@
+
 from django.shortcuts import render
-from core.models import Enrollment, SubTopics
+from django.views import View
+from core.models import Chapter, Enrollment, Modules, SubTopics, Topics
 from django.core.paginator import Paginator
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
@@ -30,12 +32,14 @@ def welcome(request):
         raise 
 
 
+class ModuleDetails(View):
+    def get(self, request, pk, *args, **argus):
+        module =  Modules.objects.get(pk=pk)
+       
+        context = {
+        'module': module
+        }
 
-@login_required(login_url='login')
-def single_module(request):
-    subtopics = SubTopics.objects.all()
-    context = {
-        'subtopics':subtopics
-    }
-    return render(request, template_name='dashboard/module_single.html',context=context)
-
+        return render(request, template_name='dashboard/module_single.html',context=context)
+    def post(self, request, pk, *args, **argus):
+        pass

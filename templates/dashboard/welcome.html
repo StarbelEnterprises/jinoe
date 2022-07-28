@@ -24,10 +24,9 @@
                                 <div class="card-body">
                                   <h5 class="card-title">{{module.name}}</h5>
                                   <p class="card-text">{{module.description}}.</p>
-                                  <a href="{% url 'single_module' %}" class="btn  btn-brown rounded-pill block">View Topics</a>
+                                  <a href="{% url 'single_module' module.id %}" class="btn  btn-brown rounded-pill block">View Topics</a>
                                 </div>
                               </div>
-                            
                             {%endif%}
                             {%empty%}
                             No enrolled modules for now
