@@ -15,11 +15,11 @@
                 
                 <div class="row">
                     <div class="col-12 col-lg-9">
-                        
                         <div class="row">
                             {%for module in modules%}
                               {% if not module.get_core_offer_module %}
-                              <div class="card card-x" style="width: 18rem;">
+                            
+                                 <div class="card card-x" style="width: 17rem;">
                                 <img src="{% static 'dashboard/assets/images/flot.jpg' %}" class="card-img-top" alt="...">
                                 <div class="card-body">
                                   <h5 class="card-title">{{module.name}}</h5>
@@ -31,6 +31,7 @@
                             {%empty%}
                             No enrolled modules for now
                             {%endfor%}
+                        </div>
                            
                             <nav aria-label="Page navigation example">
                                 <ul class="pagination pagination-dark">
@@ -50,7 +51,7 @@
                                     {% endif %}
                                 </ul>
                             </nav>  
-                        </div>
+                   
                     </div>
                     <div class="col-12 col-lg-3">
                         {%for module in modules%}
