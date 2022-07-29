@@ -1,13 +1,15 @@
 
+import json
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.views import View
-from core.models import Chapter, Enrollment, Modules, SubTopics, Topics
+from core.models import Chapter, Enrollment, Modules, SubSubTopic, SubTopics, Topics
 from django.core.paginator import Paginator
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
+from django.core import serializers
 
 
 
@@ -43,8 +45,15 @@ class ModuleDetails(View):
 
         return render(request, template_name='dashboard/module_single.html',context=context)
 
-def subtopicDetails(request,):
-    response = {
-        'success': 'true',
-        'msg': f' we can get some data'}
-    return JsonResponse(response)
+    def post(self, request, pk, *args, **argus):
+        print( request.POST.get('id'))
+        subtopic = get_object_or_404(SubTopics, id=request.POST.get('id'))
+        subsubtopic = serializers.serialize("json", SubSubTopic.objects.filter(sub_sub_topic_id=subtopic))
+    
+        
+    
+        response = {
+            'success': 'true',
+            'data':subsubtopic,
+            'msg': f' we can get some data'}
+        return JsonResponse(response, safe= False)
