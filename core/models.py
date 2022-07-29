@@ -140,7 +140,7 @@ class Topics(models.Model):
          COMPLETED = 'CMP',_('Completed')
 
     topic_status = models.CharField(max_length=30,choices=TopicsProgressStatuses.choices,default=TopicsProgressStatuses.NOT_STARTED,)
-    media = models.CharField(max_length=200,null=True,blank=True)
+    media = models.FileField(max_length=200,null=True,blank=True)
     create_at = models.DateTimeField(auto_created=True, null = True,editable=False)
     updated_at = models.DateField(auto_now=True)   
     create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='topic_created_by', null=True)
@@ -163,7 +163,7 @@ class SubTopics(models.Model):
          COMPLETED = 'CMP',_('Completed')
 
     sub_topic_status = models.CharField(max_length=30,choices=SubTopicsProgressStatuses.choices,default=SubTopicsProgressStatuses.NOT_STARTED,)
-    sub_tipic_media = models.CharField(max_length=200,null=True,blank=True)
+    sub_tipic_media = models.FileField(max_length=200,null=True,blank=True)
     create_at = models.DateTimeField(auto_created=True, null = True,editable=False)
     updated_at = models.DateField(auto_now=True)   
     create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sub_topic_created_by', null=True)
