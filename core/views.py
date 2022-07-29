@@ -1,4 +1,5 @@
 
+from django.http import JsonResponse
 from django.shortcuts import render
 from django.views import View
 from core.models import Chapter, Enrollment, Modules, SubTopics, Topics
@@ -41,5 +42,9 @@ class ModuleDetails(View):
         }
 
         return render(request, template_name='dashboard/module_single.html',context=context)
-    def post(self, request, pk, *args, **argus):
-        pass
+
+def subtopicDetails(request,):
+    response = {
+        'success': 'true',
+        'msg': f' we can get some data'}
+    return JsonResponse(response)
