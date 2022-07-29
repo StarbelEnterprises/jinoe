@@ -291,10 +291,12 @@
                     
                     <div class="recent-message d-flex px-4 py-3">
                         <div class="avatar avatar-lg">
-                            <video width="100" height="50" >
-                                <source src="/static/dashboard/assets/videos/demovideo.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                            <a  data-toggle="modal" data-target="#subsub">
+                                <video width="100" height="50" >
+                                    <source src="/static/dashboard/assets/videos/demovideo.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </a>  
                         </div>
                         <div class="name ms-4 mt-1">
                             <h6 class="mb-1">Hank Schrader</h6>
@@ -999,6 +1001,158 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-dark btn-sm rounded-pill" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+ 
+  
+  <!-- Modal -->
+  <div class="modal fade" id="subsub" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered modal-lg modal-dialog-scrollable modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Sub sub title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="row" id="topic-1" >
+                <div class="col-12 col-lg-12">
+                    <div class="row">
+                
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body video">
+                                    <video width="320" height="240" controls>
+                                        <source src="/static/dashboard/assets/videos/demovideo.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                        </video>
+                                </div>
+                                <div class="row mt-0">
+                                    <div class="col-md-4">
+                                        <button  data-toggle="modal" data-target="#staticBackdrop" class="btn btn-brown rounded-pill ms-4 mb-3" >Take Module Assesment</button>
+                                    </div>
+                                    <div class="col-md-2 mt-1 d-flex">
+                                        <span style="font-weight: bold; font-size: 18px;" >300K</span>
+                                        <i style="font-size:18px;" class="bi bi-hand-thumbs-up text-danger ms-1 " ></i>
+                        
+                                    </div>
+                                    <div class="col-md-2 mt-1 d-flex">
+                                        
+                                        <span style="font-weight: bold; font-size: 18px;margin-left: 20px;" >10</span>
+                                            <i style="font-size:18px;" class="bi bi-hand-thumbs-down text-danger ms-1 mt-1" ></i>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button class="btn btn-brown rounded-pill ms-4 mb-3" >Add Comment</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-12 col-xl-12">
+                            <div class="card" >
+                                <div class="card-header">
+                                    <h5>Module Comments and Reviews</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                        <div class="rate-value d-block bg-brown text-center">
+                                            <br>
+                                            <div class=" mr-2">
+                                                <span></span>
+                                                <span >4.6</span>
+                                            </div>
+                                            <div class=" mb-2 mt-2 " >
+                                                <span><i class="bi bi-star-fill text-warning" ></i></span>
+                                                <span><i class="bi bi-star-fill text-warning" ></i></span>
+                                                <span><i class="bi bi-star-fill text-warning" ></i></span>
+                                                <span><i class="bi bi-star-half text-warning" ></i></span>
+                                            </div>
+                                            <div class=" mb-3 mr-2" >
+                                                <span>Total Average Reviews</span>
+                                            </div>
+                                            <div class="mt-2"><span></span></div>
+                                        </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="progress progress-warning  mb-2">
+                                                <div class="progress-bar" role="progressbar" style="width: 35%"
+                                                    aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <div class="progress progress-warning  mb-2">
+                                                <div class="progress-bar " role="progressbar" style="width: 50%"
+                                                    aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <div class="progress progress-warning  mb-2">
+                                                <div class="progress-bar" role="progressbar" style="width: 45%"
+                                                    aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <div class="progress progress-warning  mb-2">
+                                                <div class="progress-bar" role="progressbar" style="width: 30%"
+                                                    aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <div class="progress progress-warning  mb-2">
+                                                <div class="progress-bar" role="progressbar" style="width: 10%"
+                                                    aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <h6>5 stars</h6>
+                                            <h6>4 stars</h6>
+                                            <h6>3 stars</h6>
+                                            <h6>2 stars</h6>
+                                            <h6>1 stars</h6>
+                                        </div>
+                                    </div>
+                                        <div class="comment-section">
+                                            <div class="user d-flex mt-3">
+                                                <img style="height:50px; width: 50px; border-radius: 50px; " src="{% static 'dashboard/assets/images/faces/1.jpg' %}" alt="">
+                                                <h5 class="ms-3 mt-3" >Isaya Bendera - 10 July, 2022</h5>
+                                            </div>
+                                            
+                                            <div class="comment">
+                                                <p class="ms-5 text-brown " >
+                                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                                                    Earum non amet nam quam quae eveniet eius commodi quasi, sit, fugiat fugit recusandae eaque rerum! 
+                                                    Labore nesciunt libero ad dolor minima?
+                                                </p>
+                                            </div>
+                                            <div class="reply-section ms-5">
+                                            <div class="user d-flex mt-3">
+                                                <img style="height:50px; width: 50px; border-radius: 50px; " src="{% static 'dashboard/assets/images/faces/1.jpg' %}" alt="">
+                                                <h5 class="ms-3 mt-3" >Isaya Bendera - 10 July, 2022</h5>
+                                            </div>
+                                            
+                                            <div class="reply">
+                                                <p class="ms-5 text-brown " >
+                                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                                                    Earum non amet nam quam quae eveniet eius commodi quasi, sit, fugiat fugit recusandae eaque rerum! 
+                                                    Labore nesciunt libero ad dolor minima?
+                                                </p>
+                                            </div>
+                                        </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark btn-sm rounded-pill " data-dismiss="modal">Close</button>
+         
         </div>
       </div>
     </div>
