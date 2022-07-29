@@ -186,7 +186,7 @@ class SubSubTopic(models.Model):
          COMPLETED = 'CMP',_('Completed')
 
     sub_sub_topic_status = models.CharField(max_length=30,choices=SubSubTopicsProgressStatuses.choices,default=SubSubTopicsProgressStatuses.NOT_STARTED,)
-    sub_sub_topic_media = models.CharField(max_length=200,null=True,blank=True)
+    sub_sub_topic_media = models.FileField(max_length=200,null=True,blank=True)
     create_at = models.DateTimeField(auto_created=True, null = True,editable=False)
     updated_at = models.DateField(auto_now=True)   
     create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sub_sub_topic_created_by', null=True)
@@ -197,6 +197,49 @@ class SubSubTopic(models.Model):
     
     def __str__(self):
         return str(self.sub_sub_topic_name)
+
+class SubSubTopicVideos(models.Model):
+    video_sub_sub_topic_id = models.ForeignKey(SubSubTopic,on_delete=models.CASCADE,related_name="video_sub_sub_topic_id_col")
+    sub_sub_topic_video_media = models.FileField(max_length=200,null=False,blank=True)
+    create_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateField(auto_now=True)    
+    create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='video_sub_sub_topic_created_by', null=True)
+
+    class Meta:
+        verbose_name_plural = 'Topic Sub Subtopic Videos'
+        db_table = 'jinoe_topic_sub_subtopic_videos'    
+    
+    def __str__(self):
+        return str(self.sub_sub_topic_video_media)
+
+class SubTopicVideos(models.Model):
+    video_sub_topic_id = models.ForeignKey(SubTopics,on_delete=models.CASCADE,related_name="video_sub_topic_id_col")
+    sub_topic_video_media = models.FileField(max_length=200,null=False,blank=True)
+    create_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateField(auto_now=True)    
+    create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='video_sub_topic_created_by', null=True)
+
+    class Meta:
+        verbose_name_plural = 'Topic Subtopic Videos'
+        db_table = 'jinoe_topic_subtopic_videos'    
+    
+    def __str__(self):
+        return str(self.sub_topic_video_media)
+
+class TopicVideos(models.Model):
+    video_topic_id = models.ForeignKey(Topics,on_delete=models.CASCADE,related_name="video_topic_id_col")
+    topic_video_media = models.FileField(max_length=200,null=False,blank=True)
+    create_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateField(auto_now=True)    
+    create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='topic_video_created_by', null=True)
+
+    class Meta:
+        verbose_name_plural = 'Topic Videos'
+        db_table = 'jinoe_topic_videos'    
+    
+    def __str__(self):
+        return str(self.topic_video_media)
+
 
 
     
