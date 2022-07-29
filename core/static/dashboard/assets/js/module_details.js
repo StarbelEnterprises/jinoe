@@ -161,7 +161,6 @@ allsubtopiclinks.forEach((element)=>{
           <div id="sub-sub-content-list" class="card-content pb-4 ">
           </div>
       </div>
-      
   </div>`
     }
 
@@ -177,27 +176,30 @@ ajaxCall = (data) => {
        success: function(response){
          console.log('submited after 2 sec');
          const parseJson = JSON.parse(response.data)
-        let subSubContentList = document.getElementById('sub-sub-content-list');
-        subSubContentList.innerHTML = ''
-        let html =''
-        
+         let subSubContentList = document.getElementById('sub-sub-content-list');
+         subSubContentList.innerHTML = ''
+         let html = ''
+        if( parseJson.length !== 0){
+      
+            for (let i = 0; i < parseJson.length; i++) {
+                html += ` <div class="recent-message d-flex px-4 py-3">
+                <div class="avatar avatar-lg">
+                    <video width="100" height="50" >
+                        <source src="/static/dashboard/assets/videos/demovideo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="name ms-4 mt-1">
+                    <h6 class="mb-1">${parseJson[i].fields.sub_sub_topic_name}</h6>
+                    <small class="text-muted mb-0">@johnducky</small>
+                </div>
+            </div>`
+            }
+            subSubContentList.innerHTML = html
+        }else{
+            subSubContentList.innerHTML = `<div class="alert alert-danger" role="alert">No sub topic contents!</div>`
+        }
      
-         for (let i = 0; i < parseJson.length; i++) {
-            console.log(parseJson[i].fields.sub_sub_topic_name)
-            html += ` <div class="recent-message d-flex px-4 py-3">
-            <div class="avatar avatar-lg">
-                <video width="100" height="50" >
-                    <source src="/static/dashboard/assets/videos/demovideo.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="name ms-4 mt-1">
-                <h6 class="mb-1">${parseJson[i].fields.sub_sub_topic_name}</h6>
-                <small class="text-muted mb-0">@johnducky</small>
-            </div>
-        </div>`
-          }
-          subSubContentList.innerHTML = html
        },
        failure: function(error) {
            console.log(error)
