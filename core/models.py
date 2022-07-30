@@ -27,7 +27,7 @@ class Levels(models.Model):
         return  str(self.name)
 
     def get_modules(self):
-        return self.module_set.all()
+        return self.module_set.all().order_by('order_by')
 
 class Enrollment(models.Model):
     level = models.ForeignKey(Levels, on_delete=models.CASCADE, related_name='enrolled_to_set')
@@ -42,7 +42,6 @@ class Enrollment(models.Model):
     def __str__(self):
         
         return  f'{self.student.username} enrolled to {self.level.name}'
-    # @property
 
 class SubLevelSet(models.Model):
     sub_level_set_level_id = models.ForeignKey(Levels,on_delete=models.CASCADE,related_name="sub_level_set_level_id_col")
@@ -127,7 +126,7 @@ class Chapter(models.Model):
         db_table = 'jinoe_module_chapters'    
     
     def __str__(self):
-        return str(self.name)
+        return f'[Module-] {self. module_chapter_id.name}--{self.name}'
 
 class Topics(models.Model):
     topic_chapter_id = models.ForeignKey(Chapter, on_delete=models.CASCADE,related_name="topic_subject_id_col",default=0)
@@ -146,11 +145,11 @@ class Topics(models.Model):
     create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='topic_created_by', null=True)
     
     class Meta:
-        verbose_name_plural = 'Subject Topics'
+        verbose_name_plural = 'Module Topics'
         db_table = 'jinoe_subject_topics'    
     
     def __str__(self):
-        return str(self.name)
+        return f'{self.topic_chapter_id}--{self.name}'
 
 class SubTopics(models.Model):
     sub_tipic_topic_id = models.ForeignKey(Topics, on_delete=models.CASCADE,related_name="sub_tipic_topic_id_col",default=0)
@@ -173,7 +172,7 @@ class SubTopics(models.Model):
         db_table = 'jinoe_topic_subtopics'    
     
     def __str__(self):
-        return str(self.sub_topic_name)
+        return f'{self.sub_tipic_topic_id.name}-->{self.sub_topic_name}'
 
 class SubSubTopic(models.Model):
     sub_sub_topic_id = models.ForeignKey(SubTopics, on_delete=models.CASCADE,related_name="sub_sub_topic_id_col")
