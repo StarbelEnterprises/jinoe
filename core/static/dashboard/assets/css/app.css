@@ -1596,6 +1596,29 @@ p{
     cursor: pointer;
     border: 1px solid var(--color-secondary);
   }
+
+  .top-content{
+    display: flex;
+    font-size: 50px;
+    align-items: center;
+   
+  }
+  .top-content a{
+    color: var(--color-secondary);
+  }
+
+  .top-content a:hover{
+    color: var(--color-secondary);
+
+  }
+  
+  .document-url {
+    display: flex;
+    font-size: 16px;
+    font-style: italic;
+    justify-content: flex-end;
+    width: 100%;
+  }
   
 
   @media screen and (max-width: 912px) {
