@@ -247,61 +247,23 @@
             </div>
             <div class="card">
                 <div class="card-header">
-                    <h4>Subtopics</h4>
+                    <h4>Moduli zingine</h4>
                 </div>
                 <div class="card-content pb-4">
-                    
-                    <div class="recent-message d-flex px-4 py-3">
-                        <div class="avatar avatar-lg">
-                            <a  data-toggle="modal" data-target="#subsub">
-                                <video width="100" height="50" >
-                                    <source src="/static/dashboard/assets/videos/demovideo.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </a>  
+                    {%for other_modules in enrolled_module %}
+                    {%if other_modules.id is not  module.id  %}
+                        <div class="recent-message d-flex px-4 py-3">
+                            <div class="avatar avatar-lg">
+                            
+                            </div>
+                            <div class="name ms-4 mt-1">
+                                <h6 class="mb-1">{{ other_modules.name}}</h6>
+                                <small class="text-muted mb-0">{{module.module_Level_id.name}}</small>
+                            </div>
                         </div>
-                        <div class="name ms-4 mt-1">
-                            <h6 class="mb-1">Hank Schrader</h6>
-                            <small class="text-muted mb-0">@johnducky</small>
-                        </div>
-                    </div>
+                    {%endif%}
+                    {%endfor%}
 
-                    <div class="recent-message d-flex px-4 py-3">
-                        <div class="avatar avatar-lg">
-                            <video width="100" height="50" >
-                                <source src="/static/dashboard/assets/videos/demovideo.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <div class="name ms-4 mt-1">
-                            <h6 class="mb-1">Hank Schrader</h6>
-                            <small class="text-muted mb-0">@johnducky</small>
-                        </div>
-                    </div>
-                    <div class="recent-message d-flex px-4 py-3">
-                        <div class="avatar avatar-lg">
-                            <video width="100" height="50" >
-                                <source src="/static/dashboard/assets/videos/demovideo.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <div class="name ms-4 mt-1">
-                            <h6 class="mb-1">Hank Schrader</h6>
-                            <small class="text-muted mb-0">@johnducky</small>
-                        </div>
-                    </div>
-                    <div class="recent-message d-flex px-4 py-3">
-                        <div class="avatar avatar-lg">
-                            <video width="100" height="50" >
-                                <source src="/static/dashboard/assets/videos/demovideo.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <div class="name ms-4 mt-1">
-                            <h6 class="mb-1">Hank Schrader</h6>
-                            <small class="text-muted mb-0">@johnducky</small>
-                        </div>
-                    </div>
                 </div>
             </div>
             
@@ -456,10 +418,7 @@
                     
                     <div class="recent-message d-flex px-4 py-3">
                         <div class="avatar avatar-lg">
-                            <video width="100" height="50" >
-                                <source src="/static/dashboard/assets/videos/demovideo.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                          
                         </div>
                         <div class="name ms-4 mt-1">
                             <h6 class="mb-1">Hank Schrader</h6>
@@ -469,10 +428,7 @@
 
                     <div class="recent-message d-flex px-4 py-3">
                         <div class="avatar avatar-lg">
-                            <video width="100" height="50" >
-                                <source src="/static/dashboard/assets/videos/demovideo.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                          
                         </div>
                         <div class="name ms-4 mt-1">
                             <h6 class="mb-1">Hank Schrader</h6>
@@ -481,10 +437,7 @@
                     </div>
                     <div class="recent-message d-flex px-4 py-3">
                         <div class="avatar avatar-lg">
-                            <video width="100" height="50" >
-                                <source src="/static/dashboard/assets/videos/demovideo.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                          
                         </div>
                         <div class="name ms-4 mt-1">
                             <h6 class="mb-1">Hank Schrader</h6>
@@ -493,10 +446,7 @@
                     </div>
                     <div class="recent-message d-flex px-4 py-3">
                         <div class="avatar avatar-lg">
-                            <video width="100" height="50" >
-                                <source src="/static/dashboard/assets/videos/demovideo.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                          
                         </div>
                         <div class="name ms-4 mt-1">
                             <h6 class="mb-1">Hank Schrader</h6>
@@ -657,10 +607,7 @@
                     
                     <div class="recent-message d-flex px-4 py-3">
                         <div class="avatar avatar-lg">
-                            <video width="100" height="50" >
-                                <source src="/static/dashboard/assets/videos/demovideo.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                          
                         </div>
                         <div class="name ms-4 mt-1">
                             <h6 class="mb-1">Umuhimu wa elimu bora ya awali</h6>
@@ -670,10 +617,7 @@
 
                     <div class="recent-message d-flex px-4 py-3">
                         <div class="avatar avatar-lg">
-                            <video width="100" height="50" >
-                                <source src="/static/dashboard/assets/videos/demovideo.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                          
                         </div>
                         <div class="name ms-4 mt-1">
                             <h6 class="mb-1">Kipindi cha mpito</h6>
@@ -682,10 +626,7 @@
                     </div>
                     <div class="recent-message d-flex px-4 py-3">
                         <div class="avatar avatar-lg">
-                            <video width="100" height="50" >
-                                <source src="/static/dashboard/assets/videos/demovideo.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                          
                         </div>
                         <div class="name ms-4 mt-1">
                             <h6 class="mb-1">Hank Schrader</h6>
@@ -694,10 +635,7 @@
                     </div>
                     <div class="recent-message d-flex px-4 py-3">
                         <div class="avatar avatar-lg">
-                            <video width="100" height="50" >
-                                <source src="/static/dashboard/assets/videos/demovideo.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                         
                         </div>
                         <div class="name ms-4 mt-1">
                             <h6 class="mb-1">Hank Schrader</h6>
@@ -856,10 +794,7 @@
                     
                     <div class="recent-message d-flex px-4 py-3">
                         <div class="avatar avatar-lg">
-                            <video width="100" height="50" >
-                                <source src="/static/dashboard/assets/videos/demovideo.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                           
                         </div>
                         <div class="name ms-4 mt-1">
                             <h6 class="mb-1">Hank Schrader</h6>
@@ -869,10 +804,7 @@
 
                     <div class="recent-message d-flex px-4 py-3">
                         <div class="avatar avatar-lg">
-                            <video width="100" height="50" >
-                                <source src="/static/dashboard/assets/videos/demovideo.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                           
                         </div>
                         <div class="name ms-4 mt-1">
                             <h6 class="mb-1">Hank Schrader</h6>
@@ -881,10 +813,7 @@
                     </div>
                     <div class="recent-message d-flex px-4 py-3">
                         <div class="avatar avatar-lg">
-                            <video width="100" height="50" >
-                                <source src="/static/dashboard/assets/videos/demovideo.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                           
                         </div>
                         <div class="name ms-4 mt-1">
                             <h6 class="mb-1">Hank Schrader</h6>
@@ -893,10 +822,7 @@
                     </div>
                     <div class="recent-message d-flex px-4 py-3">
                         <div class="avatar avatar-lg">
-                            <video width="100" height="50" >
-                                <source src="/static/dashboard/assets/videos/demovideo.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                           
                         </div>
                         <div class="name ms-4 mt-1">
                             <h6 class="mb-1">Hank Schrader</h6>
