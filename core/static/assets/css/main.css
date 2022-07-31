@@ -67,6 +67,8 @@ h6 {
   font-family: var(--font-primary);
 }
 
+
+
 /*--------------------------------------------------------------
 # Sections & Section Header
 --------------------------------------------------------------*/
@@ -2254,6 +2256,7 @@ textarea:-moz-placeholder {
 .stream-card{
   border: 1px solid white; display: flex; padding: 20px; width: 100%; margin-bottom: 12px; border-radius: 10px;
 }
+
 
 
 

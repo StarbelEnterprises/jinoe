@@ -12,7 +12,7 @@ class WebinerUpdates(models.Model):
     try:
         header = models.CharField(max_length=100,null=False,blank=True)
         message = models.TextField(null=True,blank=True)
-        image = models.TextField(db_column='data',blank=True)
+        image = models.FileField(null=False,blank=True)
         location = models.CharField(max_length=60,null=False,blank=True)
         event_date = models.DateField(default=datetime.now)
         create_at = models.DateTimeField(auto_now_add=True)
@@ -45,7 +45,7 @@ class WebinerPioneers(models.Model):
                     COHOST  = 'CH',_('Cohost')
 
             pioneer_category = models.CharField(max_length=30,choices=WebinerPioneerStatuses.choices,default=WebinerPioneerStatuses.HOSTER,)
-            image = models.TextField(db_column='data',blank=True)
+            image = models.FileField(null=False,blank=True)
             short_description = models.TextField()
             create_at = models.DateTimeField(auto_now_add=True)
             updated_at = models.DateField(auto_now=True)

@@ -10,7 +10,7 @@ class Discussion(models.Model):
     discussion_user_id = models.ForeignKey(User,on_delete=models.CASCADE,related_name='discussion_user_id_col')
     header = models.CharField(max_length=300,null=False,blank=True)
     main_body = models.TextField(null=True,blank=True)
-    image = models.TextField(db_column='data',blank=True)
+    image = models.FileField(null=False,blank=True)
     create_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)   
     create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='disc_created_by', null=True)

@@ -55,6 +55,10 @@
     }
   }
 
+
+.text-brown{
+    color: var(--color-secondary);
+  }
 .card-img-top{
     height:130px;
 }
@@ -1493,25 +1497,38 @@ p{
     transform: scale(.9);
 }
 
+.long-card{
+    height: 200px;
+    border-radius: 8px;
+}
+
+.long-card p, h2{
+    color: black;
+}
+
+.card-content{
+    padding-top: 15px;
+}
+
 .card-text{
-    display: -webkit-box;
+    /* display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     max-width: 200px;
     overflow: hidden;
     text-overflow: ellipsis;
-    height:46px;
+    height:46px; */
 
 }
 
 .card-title{
-    display: -webkit-box;
+    /* display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     max-width: 200px;
     overflow: hidden;
     text-overflow: ellipsis;
-    height:46px;
+    height:46px; */
 }
 
 .current {
@@ -1566,6 +1583,55 @@ p{
     margin-bottom: 12px;
     border-radius: 10px;
   }
+
+  /* .chapter-link{
+   list-style-type:;
+  } */
+
+  .chapter{
+    margin-top: 12px;
+    display:  flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: wheat;
+  }
+
+  .chapter hr{
+     width: 50%;
+  }
+  .subsubtopic-video{
+    padding: 4px;
+    cursor: pointer;
+  }
+
+  .subsubtopic-video:hover{
+    cursor: pointer;
+    border: 1px solid var(--color-secondary);
+  }
+
+  .top-content{
+    display: flex;
+    font-size: 50px;
+    align-items: center;
+   
+  }
+  .top-content a{
+    color: var(--color-secondary);
+  }
+
+  .top-content a:hover{
+    color: var(--color-secondary);
+
+  }
+  
+  .document-url {
+    display: flex;
+    font-size: 16px;
+    font-style: italic;
+    justify-content: flex-end;
+    width: 100%;
+  }
   
 
   @media screen and (max-width: 912px) {
@@ -1583,3 +1649,164 @@ p{
         justify-content: space-between;
     }
   }
+
+  .p{
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  .topic-link {
+    display: flex;
+    position: relative;
+  }
+
+.active-arrow {
+position: absolute;
+ display: none;
+ font-size: 20px;
+ color: var(--color-secondary);
+ border-radius: none;
+
+}
+
+.topic-link:hover .active-arrow{
+    display: inline;
+    border-radius: none;
+}
+
+.topic-link:hover a:not(.current) .active-arrow{
+ display: none;
+}
+
+/* Style video player btn */
+
+.video-box{
+    position: relative;
+    width: 100%;
+    margin: 100px, auto;
+}
+.video-box video{
+    width: 100%;
+}
+
+.video-box .video-play-btn{
+    display:block;
+    background-color: var(--color-secondary);
+    color: #fff;
+    margin: auto;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.video-box .video-play-btn i{
+    line-height: 110px;
+    margin: 10px;
+    font-size: 40px;
+    color: wheat;
+}
+
+.video-box .video-play-btn::before, .video-box .video-play-btn::after{
+    content: " ";
+    position: absolute;
+    border: 2px solid var(--color-secondary);
+    border-radius: 50%;
+    top: -20px;
+    left: -20px;
+    top: -20px;
+    bottom: -20px;
+    right: -20px;
+    animation: animate 1.5s linear infinite;
+    opacity: 0;
+}
+
+.video-box .video-play-btn::after{
+    animation-delay: .5s;
+}
+@keyframes animate {
+    0%
+    {
+        transform: scale(.5);
+    }
+    50%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        transform: scale(1.5);
+
+    }
+    
+}
+
+/* style*/
+
+.comment-assignment{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.assigment-container{
+    width: 70%;
+}
+
+.assigment-container button{
+   border: 1px solid var(--color-secondary);
+   background-color: wheat;
+   color:var(--color-secondary);
+}
+
+.dislike-btn:hover, .like-btn:hover{
+    padding: 4px;
+border-radius: 100%;
+color: white;
+background-color: var(--color-secondary) ;
+    
+}
+
+.like-btn:hover i{
+     color: wheat;
+}
+
+
+.dislikes a, .likes a{
+    color: #000;
+}
+
+.dislikes a:hover i, .likes a:hover i{
+    
+    color: var(--color-secondary);
+}
+
+.like-and-comment-container{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.dislike-likes-container{
+    display: flex;
+    
+}
+
+.coment button{
+    background-color: wheat;
+    color: var(--color-secondary);
+    border: 1px solid var(--color-secondary);
+
+}
+
+
+
+
+
