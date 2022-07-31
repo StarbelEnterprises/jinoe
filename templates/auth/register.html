@@ -121,8 +121,8 @@ button:hover {
                 </div>
 
                 <div style="float:right;">
-                  <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                  <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                  <button style="border-radius: 20px;" type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                  <button  style="border-radius: 20px;" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
                 </div>
               </div>
             </div>
@@ -136,8 +136,14 @@ button:hover {
             </form>
           </div>
 
-        </div>
       </div>
+      <div style="margin-top: 12px;" class="d-flex">
+         <p style="color: white;"> i aready have an account </p>
+        <div>-</div>
+        <a style="color: wheat;" href="{% url 'login'%}"> login </a>
+      </div>
+    </div>
+      
     </div>
   </section><!-- End Hero Section -->
 
