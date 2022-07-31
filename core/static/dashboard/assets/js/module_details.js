@@ -1,5 +1,4 @@
 const allsubtopiclinks = [...document.getElementsByClassName('sub-topic-link')]
-console.log('we in')
 
 allsubtopiclinks.forEach((element)=>{
  element.addEventListener('click', (event)=>{
@@ -176,13 +175,14 @@ ajaxCall = (data) => {
        success: function(response){
          console.log('submited after 2 sec');
          const parseJson = JSON.parse(response.data)
+         console.log(parseJson)
          let subSubContentList = document.getElementById('sub-sub-content-list');
          subSubContentList.innerHTML = ''
          let html = ''
         if( parseJson.length !== 0){
       
             for (let i = 0; i < parseJson.length; i++) {
-                html += ` <div class="recent-message d-flex px-4 py-3">
+                html += `<a id="${parseJson[i].pk}" onclick='handleSubsubTopicDetailModalDisplay(this)'> <div class="recent-message subsubtopic-video d-flex px-4 py-3">
                 <div class="avatar avatar-lg">
                     <video width="100" height="50" >
                         <source src="/static/dashboard/assets/videos/demovideo.mp4" type="video/mp4">
@@ -193,7 +193,7 @@ ajaxCall = (data) => {
                     <h6 class="mb-1">${parseJson[i].fields.sub_sub_topic_name}</h6>
                     <small class="text-muted mb-0">@johnducky</small>
                 </div>
-            </div>`
+            </div></a>`
             }
             subSubContentList.innerHTML = html
         }else{
@@ -205,4 +205,12 @@ ajaxCall = (data) => {
            console.log(error)
        }
    })
+}
+
+
+function handleSubsubTopicDetailModalDisplay(element){
+ console.log('clicked', element.id)
+ 
+ $('#subsubmodal').modal('show')
+  
 }

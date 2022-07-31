@@ -1587,6 +1587,15 @@ p{
   .chapter hr{
      width: 50%;
   }
+  .subsubtopic-video{
+    padding: 4px;
+    cursor: pointer;
+  }
+
+  .subsubtopic-video:hover{
+    cursor: pointer;
+    border: 1px solid var(--color-secondary);
+  }
   
 
   @media screen and (max-width: 912px) {
