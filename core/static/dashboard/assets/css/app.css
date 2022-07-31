@@ -1613,3 +1613,10 @@ p{
         justify-content: space-between;
     }
   }
+
+
+
+  .p{
+    margin-left: -10px;
+    margin-right: -10px;
+  }
