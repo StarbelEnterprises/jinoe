@@ -22,6 +22,7 @@
                         <i class="bi bi-house-fill"></i>
                         <span>Home -> {{module.module_Level_id.name}}/{{module.name}} </span>
                     </a>
+                    <i class="bi bi-arrow-right-square-fill active-arrow"></i>
                 </li>
               <hr>
                 <!-- <li class="sidebar-title">Menu</li> -->
@@ -30,12 +31,15 @@
                         <div class="chapter">
                             <h6 >{{chapter.name}}</h6> <hr>
                         </div>
+
                     </li>
                     {%for topic in chapter.topic_subject_id_col.all%}
                     <li class="sidebar-item  has-sub"> 
-                        <a href="#" class='sidebar-link topic-link {%if forloop.counter == 1 %} current {%endif%}'>
-                            <i class="bi bi-pause-circle"></i>
+                        <a href="#" class='sidebar-link topic-link   topic-link  {%if forloop.counter == 100 %} current {%endif%}'>
+                            <i class="bi bi-file-earmark-play"></i>
                             <span>{{topic.name}}</span>
+                            <i class="bi bi-arrow-right-square-fill active-arrow"></i>
+
                         </a>
                        
                         <div class="progress" style="height: 2px; margin-top: 2px">
@@ -92,23 +96,22 @@
     <div class="document-url">
         ~{{module.module_Level_id.name}}/{{module.name}}/
     </div>
-    
-   
-
-
     <section class="row" id="main-content-container" >
         <div class="col-12 col-lg-9">
             <div class="row">
-                Kuhusu moduli hii...
+               
             </div>
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-body video">
-                            <video width="320" height="240" controls>
+                        <div class="card-body video video-box">
+                            <video width="320" height="240" controls  autoplay muted>
                                 <source src="/static/dashboard/assets/videos/demovideo.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
-                                </video>
+                            </video>
+                            <div class="video-play-btn">
+                                <i class="bi bi-play-circle-fill"></i>
+                            </div>
                         </div>
                         <div class="row mt-0">
                             <div class="col-md-4">

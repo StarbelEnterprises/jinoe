@@ -1637,9 +1637,102 @@ p{
     }
   }
 
-
-
   .p{
     margin-left: -10px;
     margin-right: -10px;
   }
+  .topic-link {
+    display: flex;
+    position: relative;
+  }
+
+.active-arrow {
+position: absolute;
+ display: none;
+ font-size: 20px;
+ color: var(--color-secondary);
+ border-radius: none;
+
+}
+
+.topic-link:hover .active-arrow{
+    display: inline;
+    border-radius: none;
+}
+
+.topic-link:hover a:not(.current) .active-arrow{
+ display: none;
+}
+
+/* Style video player btn */
+
+.video-box{
+    position: relative;
+    width: 100%;
+    margin: 100px, auto;
+}
+.video-box video{
+    width: 100%;
+}
+
+.video-box .video-play-btn{
+    display:block;
+    background-color: var(--color-secondary);
+    color: #fff;
+    margin: auto;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.video-box .video-play-btn i{
+    line-height: 110px;
+    margin: 10px;
+    font-size: 40px;
+    color: wheat;
+}
+
+.video-box .video-play-btn::before, .video-box .video-play-btn::after{
+    content: " ";
+    position: absolute;
+    border: 2px solid var(--color-secondary);
+    border-radius: 50%;
+    top: -20px;
+    left: -20px;
+    top: -20px;
+    bottom: -20px;
+    right: -20px;
+    animation: animate 1.5s linear infinite;
+    opacity: 0;
+}
+
+.video-box .video-play-btn::after{
+    animation-delay: .5s;
+}
+@keyframes animate {
+    0%
+    {
+        transform: scale(.5);
+    }
+    50%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        transform: scale(1.5);
+
+    }
+    
+}
+
+
+
+
