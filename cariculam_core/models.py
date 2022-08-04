@@ -57,10 +57,6 @@ class CariculamSubLevelSet(models.Model):
     def __str__(self):
         return  str(self.name)
     
-    # @receiver(post_save, sender=Levels)
-    # def create_or_update_sub_level_set(sender, instance, created, **kwargs):
-    #     if created:
-    #         SubLevelSet.objects.create(sub_level_set_level_id=instance)
 
 class CariculamSubLevelEntry(models.Model):
     sub_level_entry_set_id = models.ForeignKey(CariculamSubLevelSet,on_delete=models.CASCADE,related_name="c_sub_level_entry_set_id_col")
@@ -76,10 +72,6 @@ class CariculamSubLevelEntry(models.Model):
     def __str__(self):
         return  str(self.name)
 
-    # @receiver(post_save, sender=SubLevelSet)
-    # def create_or_update_sub_level_set_entry(sender, instance, created, **kwargs):
-    #     if created:
-    #         SubLevelEntry.objects.create(sub_level_elem_set_id=instance)
    
 class CariculamModules(models.Model):
     MODULE_TYPE = (

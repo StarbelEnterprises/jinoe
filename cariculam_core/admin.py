@@ -5,7 +5,7 @@ admin.site.site_header = 'Jinoe Admin'
 
 class EnrolledEductionLevel(admin.StackedInline):
     model = CariculamEnrollment
-    extra = 0  # how many rows to show
+    extra = 0 
 
 @admin.register(CariculamLevels)
 class EductionLevels(admin.ModelAdmin):
@@ -13,7 +13,7 @@ class EductionLevels(admin.ModelAdmin):
 admin.site.register(CariculamEnrollment)
 admin.site.register(CariculamModules)
 admin.site.register(CariculamSubjects)
-# admin.site.register(Topics)
+
 
 admin.site.register(CariculamSubLevelSet)
 admin.site.register(CariculamSubLevelEntry)
@@ -53,5 +53,4 @@ class TopicsAdmin(admin.ModelAdmin):
 
 admin.site.register(CariculamSubTopics,SubTopicsAdmin)
 admin.site.register(CariculamTopics,TopicsAdmin)
-# admin.site.register(SubTopics,SubTopicAdmin)
 admin.site.register(CariculamSubSubTopic,SubSubTopicAdmin)
