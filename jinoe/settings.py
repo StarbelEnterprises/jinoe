@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'webinar',
     'cariculam_core',
     'cariculam_interactive',
-    'cariculam_sub_topic_interactive'
+    'cariculam_sub_topic_interactive',
+    'cariculam_chatroom'
 ]
 
 MIDDLEWARE = [
