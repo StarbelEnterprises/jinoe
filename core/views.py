@@ -57,3 +57,9 @@ class ModuleDetails(View):
             'data':subsubtopic,
             'msg': f' we can get some data'}
         return JsonResponse(response, safe= False)
+
+
+
+
+def landing(request):
+    return render(request, 'dashboard/landing.html')
