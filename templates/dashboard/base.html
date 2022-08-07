@@ -45,11 +45,10 @@
                                 <i class="bi bi-stack"></i>
                                 <span>
                                     {% if enrolled_level is not none %}
-                                    {{enrolled_level.level.name}}
-                                    {%else%}
-                                     Did not enroll to any of our programs
-                                    {%endif%}
-                                    
+                                        {{ enrolled_level.level.name }}
+                                    {% else %}
+                                        Did not enroll to any of our programs
+                                    {%endif%} 
                                 </span>
                             </a>
                         </li>
@@ -148,8 +147,6 @@
 <script src="{% static 'dashboard/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js' %}"></script>
 <script src="{% static 'dashboard/assets/js/bootstrap.bundle.min.js' %}"></script>
 
-<script src="{% static 'dashboard/assets/vendors/apexcharts/apexcharts.js' %}"></script>
-<script src="{% static 'dashboard/assets/js/pages/dashboard.js' %}"></script>
 <script src="{% static 'dashboard/assets/js/single_modules.js' %}"></script>
 
 
