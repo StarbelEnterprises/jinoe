@@ -59,7 +59,3 @@ class ModuleDetails(View):
         return JsonResponse(response, safe= False)
 
 
-
-
-def landing(request):
-    return render(request, 'dashboard/landing.html')
