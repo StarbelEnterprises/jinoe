@@ -14,12 +14,12 @@
                 </div>
                 
                 <div class="nav-btns mt-2 mb-3" >
-                    <a class="btn btn-brown rounded-pill btn-lg" >Modules</a>
-                    <a class="btn btn-brown rounded-pill btn-lg ms-4 " >Curriculum</a>
+                    <button class="btn btn-brown rounded-pill btn-lg .module " >Modules</button>
+                    <button class="btn btn-brown rounded-pill btn-lg ms-4 .curriculum " >Curriculum</button>
                 </div>
 
 
-                <div class="row">
+                <div class="row" id="module">
                     <div class="col-12 col-lg-9">
                         <div class="row">
                             {%for module in modules%}
@@ -128,7 +128,7 @@
                     </div>
                 </div>
  <!--========================================= Curriculum starts ===================================== -->
-                <div class="row" style="display: none;">
+                <div class="row" style="display: none;" id="curriculum">
                     <div class="col-12 col-lg-9">
                         <div class="row">
                             {%for module in modules%}
@@ -372,8 +372,24 @@
             </div>
         </div>
         <!-- end global forum update -->
-
         {% include 'includes/modals.html' %}
 
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>
+   $(document).ready(function(){
+    
+        $(document).on('click', '.module', function(){
+            $('#module').show()
+            $('#curriculum').hide()
+        })
+        $(document).on('click', '.curriculum', function(){
+            $('#module').hide()
+            $('#curriculum').show()
+            console.log('it works')
+        })
+   })
+</script>
      
  {% endblock contents %}
