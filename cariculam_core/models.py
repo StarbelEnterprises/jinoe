@@ -10,6 +10,7 @@ from enum import Enum
 from django.utils.translation import gettext_lazy as _
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from core.models import Enrollment, Levels
 
 class CariculamLevels(models.Model):
     order_by = models.IntegerField(null=True,)
@@ -107,7 +108,7 @@ class CariculamModules(models.Model):
         return self.module_type == 'cariculam_core'
 
 class CariculamSubjects(models.Model):
-    module_subject_id = models.ForeignKey(CariculamModules, on_delete=models.CASCADE,related_name="c_module_subject_id_col",default=0)
+    Level_id = models.ForeignKey(Levels, on_delete=models.CASCADE, related_name='subject_set',default=0)
     name = models.CharField(max_length=60,null=True,blank=True)
     create_at = models.DateTimeField(auto_created=True, null = True,editable=False)
     updated_at = models.DateField(auto_now=True)   
@@ -118,7 +119,7 @@ class CariculamSubjects(models.Model):
         db_table = 'jinoe_cariculam_module_subjects'    
     
     def __str__(self):
-        return f'[Module-] {self. module_chapter_id.name}--{self.name}'
+        return f'[Module-] {self.name}'
 
 class CariculamTopics(models.Model):
     topic_subject_id = models.ForeignKey(CariculamSubjects, on_delete=models.CASCADE,related_name="c_topic_subject_id_col",default=0)

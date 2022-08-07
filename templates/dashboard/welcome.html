@@ -131,9 +131,7 @@
                 <div class="row" style="display: none;" id="curriculum">
                     <div class="col-12 col-lg-9">
                         <div class="row">
-                            {%for module in modules%}
-                              {% if not module.get_core_offer_module %}
-
+                            {%for module in curriculum %}
                               <div class="col-md-6">
                                 <div class="long-card text-center
                                     {% if forloop.counter ==  1  %}
@@ -159,8 +157,6 @@
                                     </div>
                                  </div>
                               </div>
-  
-                            {%endif%}
                             {%empty%}
                             No enrolled modules for now
                             {%endfor%}
