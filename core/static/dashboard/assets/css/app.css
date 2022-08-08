@@ -1807,6 +1807,28 @@ background-color: var(--color-secondary) ;
 }
 
 
+.nav-btns{
+    display: flex;
+
+}
+.nav-btns button {
+    width: 500px ;
+}
+
+.nav-btns button:hover{
+    border: 1px solid var(--color-secondary);
+    background-color: wheat;
+    color: var(--color-secondary);
+
+}
+
+.nav-btns button:focus{
+    border: 1px solid var(--color-secondary);
+    background-color: wheat;
+    color: var(--color-secondary);
+}
+
+
 
 
 
