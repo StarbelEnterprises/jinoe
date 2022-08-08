@@ -15,21 +15,18 @@ from django.core import serializers
 
 class CurriculumDetails(View):
     def get(self, request, pk, *args, **argus):
-        module =  Modules.objects.get(pk=pk)
-       
+        module =  CariculamSubjects.objects.get(pk=pk)
+        curriculum_level = Enrollment.objects.filter(student=request.user).first()
+        enrolled_curruculum = curriculum_level.level.get_currilum() 
         context = {
-        'module': module
+        'subject': module,
+        'enrolled_subjects':  enrolled_curruculum
         }
-
-        return render(request, template_name='curriculum/module_single.html',context=context)
+        return render(request, template_name='curriculum/module_single.html', context=context)
 
     def post(self, request, pk, *args, **argus):
-        print( request.POST.get('id'))
         subtopic = get_object_or_404(SubTopics, id=request.POST.get('id'))
         subsubtopic = serializers.serialize("json", SubSubTopic.objects.filter(sub_sub_topic_id=subtopic))
-    
-        
-    
         response = {
             'success': 'true',
             'data':subsubtopic,
