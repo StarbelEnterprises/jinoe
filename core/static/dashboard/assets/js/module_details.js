@@ -25,7 +25,7 @@ allsubtopiclinks.forEach((element)=>{
               <div class="card">
                   <div class="card-body video">
                       <video  width="320" height="240" controls autoplay>
-                          <source src="/static/dashboard/assets/videos/demovideo.mp4" type="video/mp4">
+                          <source src="/static/dashboard/assets/videos/ukuaji.m4v" type="video/mp4">
                           Your browser does not support the video tag.
                           </video>
                   </div>
@@ -185,7 +185,7 @@ ajaxCall = (data) => {
                 html += `<a id="${parseJson[i].pk}" onclick='handleSubsubTopicDetailModalDisplay(this)'> <div class="recent-message subsubtopic-video d-flex px-4 py-3">
                 <div class="avatar avatar-lg">
                     <video width="100" height="50">
-                        <source src="/static/dashboard/assets/videos/demovideo.mp4" type="video/mp4">
+                        <source src="/static/dashboard/assets/videos/ukuaji.m4v" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>

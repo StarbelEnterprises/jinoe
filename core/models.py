@@ -28,6 +28,8 @@ class Levels(models.Model):
 
     def get_modules(self):
         return self.module_set.all().order_by('order_by')
+    def get_currilum(self):
+        return self.subject_set.all()
 
 class Enrollment(models.Model):
     level = models.ForeignKey(Levels, on_delete=models.CASCADE, related_name='enrolled_to_set')
@@ -35,6 +37,7 @@ class Enrollment(models.Model):
     create_at = models.DateTimeField(auto_created=True, null = True,editable=False)
     updated_at = models.DateField(auto_now=True)
     create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='enrol_created_by', null=True)
+    
     class Meta:
         verbose_name_plural = 'Enrolled Education level'
         db_table = 'jinoe_enrolled_eduction_level'

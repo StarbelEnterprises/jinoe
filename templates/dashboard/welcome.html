@@ -14,8 +14,8 @@
                 </div>
                 
                 <div class="nav-btns mt-2 mb-3" >
-                    <button class="btn btn-brown rounded-pill btn-lg .module " >Modules</button>
-                    <button class="btn btn-brown rounded-pill btn-lg ms-4 .curriculum " >Curriculum</button>
+                    <button class="btn btn-brown  btn-lg module " >Modules</button>
+                    <button class="btn btn-brown  btn-lg ms-4 curriculum " >Curriculum</button>
                 </div>
 
 
@@ -131,9 +131,7 @@
                 <div class="row" style="display: none;" id="curriculum">
                     <div class="col-12 col-lg-9">
                         <div class="row">
-                            {%for module in modules%}
-                              {% if not module.get_core_offer_module %}
-
+                            {%for module in curriculum %}
                               <div class="col-md-6">
                                 <div class="long-card text-center
                                     {% if forloop.counter ==  1  %}
@@ -155,12 +153,10 @@
                                     <div class="card-content"> 
                                         <h4 class="mt-4" >{{module.name}}</h4>
                                         <p>{{module.description|truncatechars:"50"}}</p>
-                                        <p> <a style="width:150px;" href="{% url 'single_module' module.id %}" class="btn  btn-brown rounded-pill block mb-3">View Topics</a></p>
+                                        <p> <a style="width:150px;" href="{% url 'curriculum_details' module.id %}" class="btn  btn-brown rounded-pill block mb-3">View Topics</a></p>
                                     </div>
                                  </div>
                               </div>
-  
-                            {%endif%}
                             {%empty%}
                             No enrolled modules for now
                             {%endfor%}
