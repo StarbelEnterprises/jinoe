@@ -15,11 +15,11 @@ from django.core import serializers
 
 class CurriculumDetails(View):
     def get(self, request, pk, *args, **argus):
-        module =  CariculamSubjects.objects.get(pk=pk)
+        subject =  CariculamSubjects.objects.get(pk=pk)
         curriculum_level = Enrollment.objects.filter(student=request.user).first()
         enrolled_curruculum = curriculum_level.level.get_currilum() 
         context = {
-        'subject': module,
+        'module': subject,
         'enrolled_subjects':  enrolled_curruculum
         }
         return render(request, template_name='curriculum/module_single.html', context=context)
