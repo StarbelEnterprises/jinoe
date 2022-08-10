@@ -142,7 +142,7 @@ class CariculamTopics(models.Model):
         db_table = 'jinoe_cariculam_subject_topics'    
     
     def __str__(self):
-        return f'{self.topic_chapter_id}--{self.name}'
+        return f'{self. topic_subject_id.name}--{self.name}'
 
 class CariculamSubTopics(models.Model):
     sub_tipic_topic_id = models.ForeignKey(CariculamTopics, on_delete=models.CASCADE,related_name="c_sub_tipic_topic_id_col",default=0)
