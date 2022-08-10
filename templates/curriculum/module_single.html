@@ -20,33 +20,32 @@
                 <li class="sidebar-item  has-sub"> 
                     <a href="#" class='sidebar-link topic-link  current'>
                         <i class="bi bi-house-fill"></i>
-                        <span>Home -> {{module.module_Level_id.name}}/{{module.name}} </span>
+                        <span>Home -> {{module_datails.Level_id.name}}/{{module_datails.name}} </span>
                     </a>
                     <i class="bi bi-arrow-right-square-fill active-arrow"></i>
                 </li>
               <hr>
-                <!-- <li class="sidebar-title">Menu</li> -->
-                 {% for chapter in  module.module_chapter_id_col.all%}
-                    <li class="chapter-link">
+                <!-- <li class="sidebar-title">Menu</li>  -->
+                
+                 <li class="chapter-link">
                         <div class="chapter">
-                            <h6 >{{chapter.name}}</h6> <hr>
+                            <h6 >Topics</h6> <hr>
                         </div>
 
                     </li>
-                    {%for topic in chapter.topic_subject_id_col.all%}
+                    {%for topic in module_datails.c_topic_subject_id_col.all%}
                     <li class="sidebar-item  has-sub"> 
                         <a href="#" class='sidebar-link topic-link   topic-link  {%if forloop.counter == 100 %} current {%endif%}'>
                             <i class="bi bi-file-earmark-play"></i>
                             <span>{{topic.name}}</span>
                             <i class="bi bi-arrow-right-square-fill active-arrow"></i>
-
                         </a>
                        
                         <div class="progress" style="height: 2px; margin-top: 2px">
                             <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         <ul class="submenu mt-3">
-                            {%for subtopic in topic.sub_tipic_topic_id_col.all%}
+                            {%for subtopic in topic.c_sub_tipic_topic_id_col.all%}
                             <li class="submenu-item sub-topic-item ">
                                 {%csrf_token%}
                                 <i class="bi bi-play-circle"></i></i><a href="#" id="{{subtopic.id}}" class="sub-topic-link">{{subtopic.sub_topic_name}}</a>
@@ -62,7 +61,7 @@
                     {%empty%}
                     No topics for now
                     {%endfor%}
-                {%endfor%}
+            
                 <li class="sidebar-item  has-sub">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-lock-fill"></i>
