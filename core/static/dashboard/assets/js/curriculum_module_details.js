@@ -1,6 +1,6 @@
-const allsubtopiclinks = [...document.getElementsByClassName('sub-topic-link')]
+const allCurriculumSubtopiclinks = [...document.getElementsByClassName('curriculum-sub-topic-link')]
 
-allsubtopiclinks.forEach((element)=>{
+allCurriculumSubtopiclinks.forEach((element)=>{
  element.addEventListener('click', (event)=>{
     if(event.target.tagName == "A"){
       const subtopicId = event.target.id

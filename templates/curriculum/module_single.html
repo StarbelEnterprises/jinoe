@@ -35,7 +35,7 @@
                     </li>
                     {%for topic in module_datails.c_topic_subject_id_col.all%}
                     <li class="sidebar-item  has-sub"> 
-                        <a href="#" class='sidebar-link topic-link   topic-link  {%if forloop.counter == 100 %} current {%endif%}'>
+                        <a href="#" class='sidebar-link topic-link   topic-link  {%if forloop.counter == 1000 %} current {%endif%}'>
                             <i class="bi bi-file-earmark-play"></i>
                             <span>{{topic.name}}</span>
                             <i class="bi bi-arrow-right-square-fill active-arrow"></i>
@@ -48,7 +48,7 @@
                             {%for subtopic in topic.c_sub_tipic_topic_id_col.all%}
                             <li class="submenu-item sub-topic-item ">
                                 {%csrf_token%}
-                                <i class="bi bi-play-circle"></i></i><a href="#" id="{{subtopic.id}}" class="sub-topic-link">{{subtopic.sub_topic_name}}</a>
+                                <i class="bi bi-play-circle"></i></i><a href="#" id="{{subtopic.id}}" class="curriculum-sub-topic-link">{{subtopic.sub_topic_name}}</a>
                                 <div class="progress" style="height: 2px;">
                                     <div class="progress-bar" role="progressbar" aria-label="Example 1px high" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
