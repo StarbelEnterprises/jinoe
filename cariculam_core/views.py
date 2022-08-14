@@ -17,10 +17,11 @@ class CurriculumDetails(View):
     def get(self, request, pk, *args, **argus):
         module =  CariculamSubjects.objects.get(pk=pk)
         curriculum_level = Enrollment.objects.filter(student=request.user).first()
-        enrolled_curruculum = curriculum_level.level.get_currilum() 
+        enrolled_curruculum_module = curriculum_level.level.get_currilum() 
         context = {
         'module_datails': module,
-        'enrolled_curruculum':  enrolled_curruculum
+        'curriculum_level': curriculum_level,
+        'enrolled_curruculum':  enrolled_curruculum_module
         }
         return render(request, template_name='curriculum/module_single.html', context=context)
 
