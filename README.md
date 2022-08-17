@@ -27,10 +27,13 @@ Note: Remember to Create PR  to `develop` one you feature or fix is done.
     
     Do you have  a new feature to work on? Do this >
         1:  git checkout develop
-        2:  create your feature branch `develop
+        2:  create your feature branch from `develop`
         3: work on your feature
-        4: push your featue when done 
-        5: Create PR pointing to develop
+        4: Commit and push your featue when done 
+        5: Create PR pointing to develop. 
+        6: wait for reviews 
+        7: merge to develop when reviews are done.
+        8: done. ):
     done
    
    `  
