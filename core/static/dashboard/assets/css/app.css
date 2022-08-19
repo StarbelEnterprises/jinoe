@@ -1419,6 +1419,9 @@ a {
 .card{
     animation: ease-in-out .8s fadeUp;
 }
+.long-card{
+    animation: ease-in-out .8s fadeUp;
+}
 .welcome-msg{
     animation: ease-in-out .8s fadeUp;
 }
