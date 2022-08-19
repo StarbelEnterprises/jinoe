@@ -1507,6 +1507,7 @@ p{
 
 .long-card p, h2{
     color: black;
+    font-size: 2vh;
 }
 
 .card-content{
