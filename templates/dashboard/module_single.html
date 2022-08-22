@@ -88,7 +88,9 @@
         <a data-toggle="tooltip" data-placement="top" title="Tooltip on top" href="{% url 'welcome'%}"><i class="bi bi-caret-left-fill"></i></a>
     
         <div class="welcome-msg bg-brown mb-3">
-            <h4 style="padding-inline: 20px;" >Hi, {{request.user.username}} Karibu  usome na ufahamu  zaidi kuhusu <b style="color: wheat;"> {{module.name}}</b></h4>
+            <h4 class="mt-2" style="padding-inline: 20px;" >
+                Hi, {{request.user.username}} Karibu  usome na ufahamu  zaidi kuhusu 
+                <b style="color: wheat;"> {{module.name}}</b></h4>
         </div>
     </div>
     <div class="document-url">

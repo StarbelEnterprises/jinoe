@@ -1478,13 +1478,13 @@ p{
 }
 
 .welcome-msg{
-    height: 60px;
+   
     /* border-radius: 10px; */
     text-align: center;
 }
 
 .welcome-msg h4{
-    line-height: 60px;
+    /* line-height: 60px; */
     color: white;
 }
 
