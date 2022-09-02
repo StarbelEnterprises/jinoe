@@ -12,7 +12,7 @@ allCurriculumSubtopiclinks.forEach((element)=>{
 
      let mainContentContainer = document.getElementById('main-content-container')
       mainContentContainer.innerHTML=""
-      ajaxCall(subtopicData);
+      curriculum_ajaxCall(subtopicData);
       mainContentContainer.innerHTML=`
        <div class="col-12 col-lg-9">
       <div class="row">
@@ -165,7 +165,7 @@ allCurriculumSubtopiclinks.forEach((element)=>{
 }) 
 
 
-ajaxCall = (data) => {
+curriculum_ajaxCall = (data) => {
    $.ajax({
        type : "POST", 
        url: window.location.href,
@@ -173,7 +173,7 @@ ajaxCall = (data) => {
        success: function(response){
          console.log('submited after 2 sec');
          const parseJson = JSON.parse(response.data)
-         console.log(parseJson)
+         console.log(parseJson);
          let subSubContentList = document.getElementById('sub-sub-content-list');
          subSubContentList.innerHTML = ''
          let html = ''
