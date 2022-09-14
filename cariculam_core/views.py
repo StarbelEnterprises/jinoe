@@ -26,10 +26,15 @@ class CurriculumDetails(View):
         return render(request, template_name='curriculum/module_single.html', context=context)
 
     def post(self, request, pk, *args, **argus):
-        subtopic = get_object_or_404(CariculamSubTopics, id=request.POST.get('id'))
-        subsubtopic = serializers.serialize("json", CariculamSubSubTopic.objects.filter(sub_sub_topic_id=subtopic))
+        print(request.POST.get('id'))
+        subtopic = CariculamSubTopics.objects.get(id=request.POST.get('id'))
+    
+        json_subsubtopic = serializers.serialize("json", CariculamSubSubTopic.objects.filter(sub_sub_topic_id__id=subtopic.id))
+        json_subtopic_details = serializers.serialize("json", [CariculamSubTopics.objects.get(id=request.POST.get('id'))])
+
         response = {
             'success': 'true',
-            'data': subsubtopic,
-            'msg': f' we can get some data'}
+            'subsubtopic': json_subsubtopic,
+            'subtopic': json_subtopic_details,
+            'msg': f' Request made successfully'}
         return JsonResponse(response, safe= False)

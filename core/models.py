@@ -176,6 +176,10 @@ class SubTopics(models.Model):
     
     def __str__(self):
         return f'{self.sub_tipic_topic_id.name}-->{self.sub_topic_name}'
+    
+    @property
+    def get_media(self):
+        return self.sub_tipic_media.url
 
 class SubSubTopic(models.Model):
     sub_sub_topic_id = models.ForeignKey(SubTopics, on_delete=models.CASCADE,related_name="sub_sub_topic_id_col")
