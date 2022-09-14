@@ -181,9 +181,9 @@ curriculum_ajaxCall = (data) => {
          video_card.innerHTML = `<video  width="320" height="240" controls autoplay>
          <source src="/media/${subtopic_parse_json[0].fields.sub_tipic_media}" type="video/mp4">
          Your browser does not support the video tag.
-         </video>`
-           
-           
+         </video>
+         <div class="video-title"><h5>${subtopic_parse_json[0].fields.sub_topic_name}</h5></div>
+         `
         if( subsubtopic_parse_json.length !== 0){
       
             for (let i = 0; i < subsubtopic_parse_json.length; i++) {
