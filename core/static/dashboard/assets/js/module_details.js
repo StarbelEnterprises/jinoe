@@ -12,7 +12,7 @@ allsubtopiclinks.forEach((element)=>{
 
      let mainContentContainer = document.getElementById('main-content-container')
       mainContentContainer.innerHTML=""
-      ajaxCall(subtopicData);
+      module_ajaxCall(subtopicData);
       mainContentContainer.innerHTML=`
        <div class="col-12 col-lg-9">
       <div class="row">
@@ -21,11 +21,8 @@ allsubtopiclinks.forEach((element)=>{
       <div class="row">
           <div class="col-12">
               <div class="card">
-                  <div class="card-body video">
-                      <video  width="320" height="240" controls autoplay>
-                          <source src="/static/dashboard/assets/videos/ukuaji.m4v" type="video/mp4">
-                          Your browser does not support the video tag.
-                          </video>
+                  <div class="card-body video" id="video-position">
+                   
                   </div>
                   <div class="row mt-0">
                       <div class="col-md-4">
@@ -165,18 +162,22 @@ allsubtopiclinks.forEach((element)=>{
 }) 
 
 
-ajaxCall = (data) => {
+module_ajaxCall = (data) => {
    $.ajax({
        type : "POST", 
        url: window.location.href,
        data: data,
        success: function(response){
-         console.log('submited after 2 sec');
-         const parseJson = JSON.parse(response.data)
-         console.log(parseJson)
+         const subtopic = JSON.parse(response.subtopic_details);
+         const parseJson = JSON.parse(response.data);
          let subSubContentList = document.getElementById('sub-sub-content-list');
-         subSubContentList.innerHTML = ''
-         let html = ''
+         subSubContentList.innerHTML = '';
+         let html = '';
+         let video_card = document.getElementById('video-position')
+         video_card.innerHTML = `<video  width="320" height="240" controls autoplay>
+         <source src="/media/${subtopic[0].fields.sub_tipic_media}" type="video/mp4">
+         Your browser does not support the video tag.
+         </video>`
         if( parseJson.length !== 0){
       
             for (let i = 0; i < parseJson.length; i++) {
@@ -200,14 +201,12 @@ ajaxCall = (data) => {
      
        },
        failure: function(error) {
-           console.log(error)
        }
    })
 }
 
 
 function handleSubsubTopicDetailModalDisplay(element){
- console.log('clicked', element.id)
  
  $('#subsubmodal').modal('show')
   

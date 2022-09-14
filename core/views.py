@@ -51,12 +51,14 @@ class ModuleDetails(View):
 
     def post(self, request, pk, *args, **argus):
         print( request.POST.get('id'))
-        subtopic = get_object_or_404(SubTopics, id=request.POST.get('id'))
+        subtopic = SubTopics.objects.get(id=request.POST.get('id') )
         subsubtopic = serializers.serialize("json", SubSubTopic.objects.filter(sub_sub_topic_id=subtopic))
+        json_subtopic_details = serializers.serialize("json",[SubTopics.objects.get(id=request.POST.get('id'))],)
         response = {
             'success': 'true',
-            'data':subsubtopic,
-            'msg': f' we can get some data'}
+            'subtopic_details': json_subtopic_details,
+            'data': subsubtopic,
+            'msg': f'request is made successfully'}
         return JsonResponse(response, safe= False)
 
 
