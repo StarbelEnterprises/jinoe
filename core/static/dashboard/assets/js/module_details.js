@@ -169,9 +169,7 @@ module_ajaxCall = (data) => {
        data: data,
        success: function(response){
          const subtopic = JSON.parse(response.subtopic_details);
-         console.log(subtopic[0]);
          const parseJson = JSON.parse(response.data);
-         console.log(parseJson);
          let subSubContentList = document.getElementById('sub-sub-content-list');
          subSubContentList.innerHTML = '';
          let html = '';
@@ -203,14 +201,12 @@ module_ajaxCall = (data) => {
      
        },
        failure: function(error) {
-           console.log(error)
        }
    })
 }
 
 
 function handleSubsubTopicDetailModalDisplay(element){
- console.log('clicked', element.id)
  
  $('#subsubmodal').modal('show')
   

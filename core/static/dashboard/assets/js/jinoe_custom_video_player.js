@@ -2,14 +2,10 @@ let videoElem = document.getElementById("intro-video");
 let playButton = document.getElementById("intro-video-play-btn");
 
 playButton.addEventListener('click',  handlePlaybtn, false)
-// playVideo();
-// handlePlaybtn()
-
 if (videoElem.paused) {
   playVideo();
   playButton.style.display="block"
 } else {
-  // videoElem.pause();
   playButton.style.display="none"
 }
 
