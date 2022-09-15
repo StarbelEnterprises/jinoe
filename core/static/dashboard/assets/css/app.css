@@ -1478,13 +1478,18 @@ p{
 }
 
 .welcome-msg{
-    height: 60px;
-    /* border-radius: 10px; */
+    padding-block: 12px;
+    height: 100px auto;
+    text-overflow: clip;
+    width: 100%;
+    border-radius: 5px;
     text-align: center;
 }
 
 .welcome-msg h4{
-    line-height: 60px;
+    padding: 0;
+    font-size: 1.94vw;
+    line-height: auto;
     color: white;
 }
 
@@ -1508,27 +1513,6 @@ p{
 
 .card-content{
     padding-top: 15px;
-}
-
-.card-text{
-    /* display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    max-width: 200px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    height:46px; */
-
-}
-
-.card-title{
-    /* display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    max-width: 200px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    height:46px; */
 }
 
 .current {
@@ -1742,7 +1726,6 @@ position: absolute;
     100%
     {
         transform: scale(1.5);
-
     }
     
 }
@@ -1827,7 +1810,6 @@ background-color: var(--color-secondary) ;
     background-color: wheat;
     color: var(--color-secondary);
 }
-
 
 
 
