@@ -64,14 +64,14 @@
                 <li class="sidebar-item  has-sub">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-lock-fill"></i>
-                        <span>Settings</span>
+                        <span>Mipangilio</span>
                     </a>
                     <ul class="submenu ">
                         <li class="submenu-item">
-                            <a href="auth-forgot-password.html">Change Password</a>
+                            <a href="auth-forgot-password.html">Badili nywila</a>
                         </li>
                         <li class="submenu-item ">
-                            <a href="/">Logout</a>
+                            <a href="/">Ondoka</a>
                         </li>
                        
                     </ul>
@@ -88,7 +88,9 @@
         <a data-toggle="tooltip" data-placement="top" title="Tooltip on top" href="{% url 'welcome'%}"><i class="bi bi-caret-left-fill"></i></a>
     
         <div class="welcome-msg bg-brown mb-3">
-            <h4 style="padding-inline: 20px;" >Hi, {{request.user.username}} Karibu  usome na ufahamu  zaidi kuhusu <b style="color: wheat;"> {{module.name}}</b></h4>
+            <h4 class="mt-2" style="padding-inline: 20px;" >
+                Habari, {{request.user.username}} Karibu  usome na ufahamu  zaidi kuhusu 
+                <b style="color: wheat;"> {{module.name}}</b></h4>
         </div>
     </div>
     <div class="document-url">
@@ -116,7 +118,7 @@
                         </div>
                         <div class="comment-assignment">
                             <div class="assigment-container">
-                                <button  data-toggle="modal" data-target="#staticBackdrop" class="btn btn-brown rounded-pill ms-4 mb-3" >Take Module Assesment</button>
+                                <button  data-toggle="modal" data-target="#staticBackdrop" class="btn btn-brown rounded-pill ms-4 mb-3" >Fanya Tathmini ya Moduli</button>
                             </div>
                             <div class="like-and-comment-container">
                                 <div class="dislike-likes-container">
@@ -136,7 +138,7 @@
                                 </div>
                             
                                 <div class="coment">
-                                    <button class="btn btn-brown rounded-pill mx-4 mb-3" >Add Comment</button>
+                                    <button class="btn btn-brown rounded-pill mx-4 mb-3" >Toa Maoni</button>
                                 </div>
                             </div>
                         </div>
@@ -148,7 +150,7 @@
                 <div class="col-12 col-xl-12">
                     <div class="card" >
                         <div class="card-header">
-                            <h5>Module Comments and Reviews</h5>
+                            <h5>Maoni na Mapitio ya Moduli</h5>
                         </div>
                         <div class="card-body">
                             <div class="row">
@@ -166,7 +168,7 @@
                                         <span><i class="bi bi-star-half text-warning" ></i></span>
                                     </div>
                                     <div class=" mb-3 mr-2" >
-                                        <span>Total Average Reviews</span>
+                                        <span>Wastani wa Mapitio</span>
                                     </div>
                                     <div class="mt-2"><span></span></div>
                                 </div>
@@ -194,11 +196,11 @@
                                     </div>
                                 </div>
                                 <div class="col-md-2">
-                                    <h6>5 stars</h6>
-                                    <h6>4 stars</h6>
-                                    <h6>3 stars</h6>
-                                    <h6>2 stars</h6>
-                                    <h6>1 stars</h6>
+                                    <h6>Nyota 5</h6>
+                                    <h6>Nyota 4</h6>
+                                    <h6>Nyota 3</h6>
+                                    <h6>Nyota 2</h6>
+                                    <h6>Nyota 1</h6>
                                 </div>
                             </div>
                                 <div class="comment-section">
@@ -239,8 +241,8 @@
                 <div class="card-body py-4 px-5">
                     <div class="d-flex align-items-center">
                         <div class="ms-0 name">
-                            <h6 class="text-muted mb-3">Click subscribe for more</h6>
-                                <button style="background-color:#853636;" class="btn text-white rounded-pill" >Subscribe Now </button>
+                            <h6 class="text-muted mb-3">Bonyeza hapa kujiandikisha</h6>
+                                <button style="background-color:#853636;" class="btn text-white rounded-pill" >Jiandikishe </button>
                             
                         </div>
                     </div>

@@ -7,15 +7,15 @@
             <div class="page-content">
                 <div class="row">
                     <div class="alert level-bg-color" role="alert">
-                        <h4 class="alert-heading">Hello {{request.user.username}}.</h4>
-                        <h5>Welcome to Jinoe, The Platform to Sharpen Your Teaching Skills.</h5>
-                        <h6>You have been enrolled into {{enrolled_level.level.name}}</h6>
+                        <h4 class="alert-heading">Habari {{request.user.username}}.</h4>
+                        <h5>Karibu kwenye Jinoe, Jukwaa la mfumo mtandaoni kuogeza  Ustadi Wako wa Kufundisha na kuboresha uzoefu wa kitaalamu.</h5>
+                        <h6>Umeandikishwa kwenye {{enrolled_level.level.name}}</h6>
                       </div>
                 </div>
                 
                 <div class="nav-btns mt-2 mb-3" >
-                    <button class="btn btn-brown  btn-lg module " >Modules</button>
-                    <button class="btn btn-brown  btn-lg ms-4 curriculum " >Curriculum</button>
+                    <button id="module" class="btn btn-brown  btn-lg module " >Moduli</button>
+                    <button id="curr" class="btn btn-brown  btn-lg ms-4 curriculum " >Mtaala</button>
                 </div>
 
 
@@ -46,14 +46,14 @@
                                     <div class="card-content"> 
                                         <h4 class="mt-4" >{{module.name}}</h4>
                                         <p>{{module.description|truncatechars:"50"}}</p>
-                                        <p> <a style="width:150px;" href="{% url 'single_module' module.id %}" class="btn  btn-brown rounded-pill block mb-3">View Topics</a></p>
+                                        <p> <a style="width:150px;" href="{% url 'single_module' module.id %}" class="btn  btn-brown rounded-pill block mb-3">Tazama mada</a></p>
                                     </div>
                                  </div>
                               </div>
   
                             {%endif%}
                             {%empty%}
-                            No enrolled modules for now
+                           Hakuna masomo kwa sasa.
                             {%endfor%}
                         </div>
                            
@@ -100,24 +100,24 @@
                         
                         <div class="card">
                             <div class="card-header">
-                                <h4>Recent Notifications</h4>
+                                <h4>Taarifa za hivi karibuni</h4>
                             </div>
                             <div class="card-content pb-4">
                                 <div class="recent-message d-flex px-4 py-3">
                                     <div class="name ms-4">
-                                        <h6 class="mb-1">New Message</h6>
-                                        <h6 class="text-muted mb-0">from John Doe - 2 hour ago</h6>
+                                        <h6 class="mb-1">Ujumbe mpya</h6>
+                                        <h6 class="text-muted mb-0">kutoka John Doe - saa 2 zilipita</h6>
                                     </div>
                                 </div>
                                 <div class="recent-message d-flex px-4 py-3">
                                     <div class="name ms-4">
-                                        <h6 class="mb-1">New Updates</h6>
-                                        <h6 class="text-muted mb-0">from administration - 55 mins ago</h6>
+                                        <h6 class="mb-1">Ujumbe mpya</h6>
+                                        <h6 class="text-muted mb-0">kutoka utawala - Dakika 55 zilipita</h6>
                                     </div>
                                 </div>
                               
                                 <div class="px-4">
-                                    <button class='btn btn-block btn-sm  btn-brown rounded-pill font-bold mt-3'>Clear All</button>
+                                    <button class='btn btn-block btn-sm  btn-brown rounded-pill font-bold mt-3'>Futa zote</button>
                                 </div>
                             </div>
                             
@@ -234,7 +234,7 @@
             <!-- global forum update starts -->
             <div class="page-content" id="g-forum" style="display: none;" >
                 <div class="welcome-msg bg-brown mb-3">
-                    <h4>Hello Isaya. Welcome to Jinoe Teacher's Forum</h4>
+                    <h4>Habari Isaya. Karibu  Jinoe</h4>
                 </div>
                
                 <div class="row">
@@ -365,19 +365,5 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-<script>
-   $(document).ready(function(){
-    
-        $(document).on('click', '.module', function(){
-            $('#module').show()
-            $('#curriculum').hide()
-        })
-        $(document).on('click', '.curriculum', function(){
-            $('#module').hide()
-            $('#curriculum').show()
-            console.log('it works')
-        })
-   })
-</script>
-     
- {% endblock contents %}
+ 
+{% endblock contents %}

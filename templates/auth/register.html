@@ -80,20 +80,20 @@ button:hover {
     <div   class="container">
       <div class="row">
         <div class="col-xl-4">
-          <h1 data-aos="fade-up">Welcome to Jinoe Plaform</h1>
+          <h1 data-aos="fade-up">Karibu Jinoe</h1>
           <div class="d-block" data-aos="fade-up" data-aos-delay="200">
             <form id="regForm" method="POST">
               {%csrf_token%}
               <!-- One "tab" for each step in the form: -->
-              <div class="tab"> <h5>Personal info:</h5>
+              <div class="tab"> <h5>Taarifa Binafsi:</h5>
                 <p><input class="form-control mb-3" placeholder="First name..." oninput="this.className = ''"  name="firstname" id="firstname"></p>
                 <p><input  class="form-control mb-3" placeholder="Last name..." oninput="this.className = ''" name="lastname"  id="lastname"></p>
               </div>
-              <div class="tab">   <h5>Contact Info:</h5>
+              <div class="tab">   <h5>Taarifa za Mawasiliano:</h5>
                 <p><input placeholder="E-mail..." oninput="this.className = ''" name="email" id="email"></p>
                 <p><input type="number" placeholder="Phone..." oninput="this.className = ''" name="phone" id="phone"></p>
               </div>
-              <div class="tab"> <h5>Get Enrolled to:</h5>
+              <div class="tab"> <h5>Changua Mafunzo:</h5>
                 <div class="col-md-12">
                 
                   {% for eduction_level in eduction_levels%}
@@ -109,7 +109,7 @@ button:hover {
               </div>
               </div>
              
-              <div class="tab"> <h5>Login Info:</h5>
+              <div class="tab"> <h5>Taarifa za kuingia:</h5>
                 <p><input placeholder="Username..." oninput="this.className = ''" name="username"></p>
                 <p><input placeholder="Password..." oninput="this.className = ''" name="password1" type="password"></p>
                 <p><input placeholder="Comfirm Password..." oninput="this.className = ''" name="password2" type="password"></p>
@@ -138,9 +138,9 @@ button:hover {
 
       </div>
       <div style="margin-top: 12px;" class="d-flex">
-         <p style="color: white;"> i aready have an account </p>
+         <p style="color: white;">Je una account tayari? </p>
         <div>-</div>
-        <a style="color: wheat;" href="{% url 'login'%}"> login </a>
+        <a style="color: wheat;" href="{% url 'login'%}"> Ingia </a>
       </div>
     </div>
       
