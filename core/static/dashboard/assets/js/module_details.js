@@ -177,7 +177,7 @@ module_ajaxCall = (data) => {
          <source src="/media/${subtopic[0].fields.sub_tipic_media}" type="video/mp4">
          Your browser does not support the video tag.
          </video>
-         <div class="vidio-title"><h5>Title here</h5></div>
+         <div class="vidio-title"><h5>${subtopic[0].fields.sub_topic_name}</h5></div>
 `
         if( parseJson.length !== 0){
       
