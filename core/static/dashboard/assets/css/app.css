@@ -1478,18 +1478,22 @@ p{
 }
 
 .welcome-msg{
+
     padding-block: 12px;
     height: 100px auto;
     text-overflow: clip;
     width: 100%;
     border-radius: 5px;
+
     text-align: center;
 }
 
 .welcome-msg h4{
+
     padding: 0;
     font-size: 1.94vw;
     line-height: auto;
+
     color: white;
 }
 
