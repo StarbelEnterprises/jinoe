@@ -8,7 +8,7 @@ db.sqlite4
 db.sqlite5
 db.sqlite6
 
-# media
+/media/
 
 # Backup files # 
 *.bak 

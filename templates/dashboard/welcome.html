@@ -84,15 +84,12 @@
                             <div class="card-body px-3 ">
                                 <div class="card">
                                     <div class="card-content" style="background-color: #a52a2a62;">
-                                        <img class="card-img-top"  src="{% static 'dashboard/assets/images/flot.jpg' %}"
-                                            alt="Card image cap" />
                                         <div class="card-body">
                                             <h4 class="card-title">{{module.name}}</h4>
                                             <p class="card-text">
-                                                This is where simple module details will be displayed.
+                                                {{module.description}}
                                             </p>
-                                           
-                                            <a href="{% url 'single_module' %}" style="margin-bottom: -30px;" class="btn btn-brown rounded-pill block">View Module</a>
+                                            <a href="{% url 'single_module'  module.id %}" style="margin-bottom: -30px;" class="btn btn-brown rounded-pill block">View Topics</a>
                                         </div>
                                     </div>
                                 </div>
@@ -189,15 +186,14 @@
                             <div class="card-body px-3 ">
                                 <div class="card">
                                     <div class="card-content" style="background-color: #a52a2a62;">
-                                        <img class="card-img-top"  src="{% static 'dashboard/assets/images/flot.jpg' %}"
-                                            alt="Card image cap" />
+                                       
                                         <div class="card-body">
                                             <h4 class="card-title">{{module.name}}</h4>
                                             <p class="card-text">
-                                                This is where simple module details will be displayed.
+                                                {{module.description}}
                                             </p>
                                            
-                                            <a href="{% url 'single_module' %}" style="margin-bottom: -30px;" class="btn btn-brown rounded-pill block">View Module</a>
+                                            <a href="{% url 'single_module' module.id %}" style="margin-bottom: -30px;" class="btn btn-brown rounded-pill block">View Topics</a>
                                         </div>
                                     </div>
                                 </div>
@@ -233,11 +229,7 @@
                     </div>
                 </div>
 <!--========================================= Curriculum ends ===================================== -->
-
-
             </div>
-
-
 
             <!-- global forum update starts -->
             <div class="page-content" id="g-forum" style="display: none;" >

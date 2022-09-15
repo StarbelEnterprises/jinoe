@@ -12,7 +12,7 @@ allCurriculumSubtopiclinks.forEach((element)=>{
 
      let mainContentContainer = document.getElementById('main-content-container')
       mainContentContainer.innerHTML=""
-      ajaxCall(subtopicData);
+      curriculum_ajaxCall(subtopicData);
       mainContentContainer.innerHTML=`
        <div class="col-12 col-lg-9">
       <div class="row">
@@ -21,11 +21,8 @@ allCurriculumSubtopiclinks.forEach((element)=>{
       <div class="row">
           <div class="col-12">
               <div class="card">
-                  <div class="card-body video">
-                      <video  width="320" height="240" controls autoplay>
-                          <source src="/static/dashboard/assets/videos/ukuaji.m4v" type="video/mp4">
-                          Your browser does not support the video tag.
-                          </video>
+                  <div class="card-body video" id="video-position">
+                      
                   </div>
                   <div class="row mt-0">
                       <div class="col-md-4">
@@ -133,7 +130,7 @@ allCurriculumSubtopiclinks.forEach((element)=>{
                                   </p>
                               </div>
                           </div>
-                          </div>
+                        </div>
                   </div>
               </div>
           </div>
@@ -153,7 +150,7 @@ allCurriculumSubtopiclinks.forEach((element)=>{
       </div>
       <div class="card">
           <div class="card-header">
-              <h4>Subtopics</h4>
+              <h4>Sub Sub  topic</h4>
           </div>
           <div id="sub-sub-content-list" class="card-content pb-4 ">
           </div>
@@ -165,22 +162,32 @@ allCurriculumSubtopiclinks.forEach((element)=>{
 }) 
 
 
-ajaxCall = (data) => {
+curriculum_ajaxCall = (data) => {
    $.ajax({
        type : "POST", 
        url: window.location.href,
        data: data,
        success: function(response){
-         console.log('submited after 2 sec');
-         const parseJson = JSON.parse(response.data)
-         console.log(parseJson)
+         const subsubtopic_parse_json = JSON.parse(response.subsubtopic)
+         const subtopic_parse_json = JSON.parse(response.subtopic)
+    
          let subSubContentList = document.getElementById('sub-sub-content-list');
          subSubContentList.innerHTML = ''
-         let html = ''
-        if( parseJson.length !== 0){
+           let html = ''
+           
+        //    display a video dynamically
+           
+        let video_card = document.getElementById('video-position')
+         video_card.innerHTML = `<video  width="320" height="240" controls autoplay>
+         <source src="/media/${subtopic_parse_json[0].fields.sub_tipic_media}" type="video/mp4">
+         Your browser does not support the video tag.
+         </video>
+         <div class="video-title"><h5>${subtopic_parse_json[0].fields.sub_topic_name}</h5></div>
+         `
+        if( subsubtopic_parse_json.length !== 0){
       
-            for (let i = 0; i < parseJson.length; i++) {
-                html += `<a id="${parseJson[i].pk}" onclick='handleSubsubTopicDetailModalDisplay(this)'> <div class="recent-message subsubtopic-video d-flex px-4 py-3">
+            for (let i = 0; i < subsubtopic_parse_json.length; i++) {
+                html += `<a id="${parseJson[i].pk} "onclick='handleSubsubTopicDetailModalDisplay(this)'> <div class="recent-message subsubtopic-video d-flex px-4 py-3">
                 <div class="avatar avatar-lg">
                     <video width="100" height="50">
                         <source src="/static/dashboard/assets/videos/ukuaji.m4v" type="video/mp4">
@@ -200,15 +207,12 @@ ajaxCall = (data) => {
      
        },
        failure: function(error) {
-           console.log(error)
        }
    })
 }
 
 
-function handleSubsubTopicDetailModalDisplay(element){
- console.log('clicked', element.id)
- 
+function handleSubsubTopicDetailModalDisplay(element){ 
  $('#subsubmodal').modal('show')
   
 }

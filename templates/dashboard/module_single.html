@@ -8,7 +8,7 @@
         <div class="sidebar-header">
             <div class="d-flex justify-content-between">
                 <div class="logo">
-                    <a href="{% url 'welcome' %}"><img  style="height:80%; width:80%;" src="{% static 'assets/img/jinoe_logo.png' %}"alt="Jinoe" srcset=""></a>
+                    <a href="{% url 'welcome' %}"><img  style="height:80%; width:80%;" src="{% static 'assets/img/logo.png' %}"alt="Jinoe" srcset=""></a>
                 </div>
                 <div class="toggler">
                     <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -18,9 +18,9 @@
         <div class="sidebar-menu" style="margin-top:-2rem;">
             <ul class="menu">
                 <li class="sidebar-item  has-sub"> 
-                    <a href="#" class='sidebar-link topic-link  current'>
+                    <a href="{% url 'single_module' module.id %}" class='sidebar-link topic-link  current'>
                         <i class="bi bi-house-fill"></i>
-                        <span>Home -> {{module.module_Level_id.name}}/{{module.name}} </span>
+                        <span>Home </span>
                     </a>
                     <i class="bi bi-arrow-right-square-fill active-arrow"></i>
                 </li>
@@ -110,6 +110,9 @@
                             <div id="intro-video-play-btn" class="video-play-btn">
                                 <i class="bi bi-play-circle-fill"></i>
                             </div>
+                        <div class="video-title">
+                            <h5>{{module.name}}</h5>
+                        </div>
                         </div>
                         <div class="comment-assignment">
                             <div class="assigment-container">
@@ -249,17 +252,17 @@
                 </div>
                 <div class="card-content pb-4">
                     {%for other_modules in enrolled_module %}
-                    {%if other_modules.id is not  module.id  %}
-                        <div class="recent-message d-flex px-4 py-3">
-                            <div class="avatar avatar-lg">
-                            
+                        {%if other_modules.id is not  module.id  %}
+                            <div class="recent-message d-flex px-4 py-3">
+                                <div class="avatar avatar-lg">
+                                
+                                </div>
+                                <div class="name ms-4 mt-1">
+                                    <h6 class="mb-1">{{ other_modules.name}}</h6>
+                                    <small class="text-muted mb-0">{{module.module_Level_id.name}}</small>
+                                </div>
                             </div>
-                            <div class="name ms-4 mt-1">
-                                <h6 class="mb-1">{{ other_modules.name}}</h6>
-                                <small class="text-muted mb-0">{{module.module_Level_id.name}}</small>
-                            </div>
-                        </div>
-                    {%endif%}
+                        {%endif%}
                     {%endfor%}
 
                 </div>
@@ -282,7 +285,10 @@
                             <video width="320" height="240" controls>
                                 <source src="/static/dashboard/assets/videos/demovideo.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
-                                </video>
+                            </video>
+                            <div class="video-title">
+                                <h5>Title here</h5>
+                            </div>
                         </div>
                         <div class="row mt-0">
                             <div class="col-md-4">
@@ -291,10 +297,8 @@
                             <div class="col-md-2 mt-1 d-flex">
                                 <span style="font-weight: bold; font-size: 18px;" >300K</span>
                                 <i style="font-size:18px;" class="bi bi-hand-thumbs-up text-danger ms-1 " ></i>
-                
                             </div>
                             <div class="col-md-2 mt-1 d-flex">
-                                
                                 <span style="font-weight: bold; font-size: 18px;margin-left: 20px;" >10</span>
                                     <i style="font-size:18px;" class="bi bi-hand-thumbs-down text-danger ms-1 mt-1" ></i>
                             </div>
