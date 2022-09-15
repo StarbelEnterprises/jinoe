@@ -8,7 +8,7 @@
         <div class="sidebar-header">
             <div class="d-flex justify-content-between">
                 <div class="logo">
-                    <a href="{% url 'welcome' %}"><img  style="height:80%; width:80%;" src="{% static 'assets/img/jinoe_logo.png' %}"alt="Jinoe" srcset=""></a>
+                    <a href="{% url 'welcome' %}"><img  style="height:80%; width:80%;" src="{% static 'assets/img/logo.png' %}"alt="Jinoe" srcset=""></a>
                 </div>
                 <div class="toggler">
                     <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -20,7 +20,7 @@
                 <li class="sidebar-item  has-sub"> 
                     <a href="#" class='sidebar-link topic-link  current'>
                         <i class="bi bi-house-fill"></i>
-                        <span>Home -> {{module_datails.Level_id.name}}/{{module_datails.name}} </span>
+                        <span>Home</span>
                     </a>
                     <i class="bi bi-arrow-right-square-fill active-arrow"></i>
                 </li>
@@ -92,9 +92,9 @@
             <h4 style="padding-inline: 20px;" >Hi, {{request.user.username}} Karibu  usome na ufahamu  zaidi kuhusu <b style="color: wheat;"> {{module_datails.name}}</b></h4>
         </div>
     </div>
-    <div class="document-url">
+    <!-- <div class="document-url">
         ~{{module_datails.Level_id.name}}/{{module_datails.name}}/
-    </div>
+    </div> -->
     <section class="row" id="main-content-container" >
         <div class="col-12 col-lg-9">
             <div class="row">
@@ -111,6 +111,9 @@
                             </video>
                             <div id="intro-video-play-btn" class="video-play-btn">
                                 <i class="bi bi-play-circle-fill"></i>
+                            </div>
+                            <div class="video-title">
+                                <h5>{{module_datails.name}}</h5>
                             </div>
                         </div>
                         <div class="row mt-0">

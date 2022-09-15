@@ -177,7 +177,9 @@ module_ajaxCall = (data) => {
          video_card.innerHTML = `<video  width="320" height="240" controls autoplay>
          <source src="/media/${subtopic[0].fields.sub_tipic_media}" type="video/mp4">
          Your browser does not support the video tag.
-         </video>`
+         </video>
+         <div class="vidio-title"><h5>Title here</h5></div>
+`
         if( parseJson.length !== 0){
       
             for (let i = 0; i < parseJson.length; i++) {
