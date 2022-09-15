@@ -14,8 +14,8 @@
                 </div>
                 
                 <div class="nav-btns mt-2 mb-3" >
-                    <button id="module" class="btn btn-brown  btn-lg module " >Moduli</button>
-                    <button id="curr" class="btn btn-brown  btn-lg ms-4 curriculum " >Mtaala</button>
+                    <button class="btn btn-brown  btn-lg module ">Moduli</button>
+                    <button  class="btn btn-brown  btn-lg ms-4 curriculum">Mtaala</button>
                 </div>
 
 
@@ -365,5 +365,18 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
- 
+<script>
+    $(document).ready(function(){
+     
+         $(document).on('click', '.module', function(){
+             $('#module').show()
+             $('#curriculum').hide()
+         })
+         $(document).on('click', '.curriculum', function(){
+             $('#module').hide()
+             $('#curriculum').show()
+            
+         })
+    })
+ </script>
 {% endblock contents %}
