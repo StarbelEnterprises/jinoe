@@ -150,12 +150,12 @@
                                     <div class="card-content"> 
                                         <h4 class="mt-4" >{{module.name}}</h4>
                                         <p>{{module.description|truncatechars:"50"}}</p>
-                                        <p> <a style="width:150px;" href="{% url 'curriculum_details' module.id %}" class="btn  btn-brown rounded-pill block mb-3">View Topics</a></p>
+                                        <p> <a style="width:150px;" href="{% url 'curriculum_details' module.id %}" class="btn  btn-brown rounded-pill block mb-3">Tazama mada</a></p>
                                     </div>
                                  </div>
                               </div>
                             {%empty%}
-                            No enrolled modules for now
+                            Hakuna mada kwa sasa
                             {%endfor%}
                         </div>
                            
@@ -193,7 +193,7 @@
                                                 {{module.description}}
                                             </p>
                                            
-                                            <a href="{% url 'single_module' module.id %}" style="margin-bottom: -30px;" class="btn btn-brown rounded-pill block">View Topics</a>
+                                            <a href="{% url 'single_module' module.id %}" style="margin-bottom: -30px;" class="btn btn-brown rounded-pill block">Tazama mada</a>
                                         </div>
                                     </div>
                                 </div>
@@ -204,24 +204,24 @@
                         
                         <div class="card">
                             <div class="card-header">
-                                <h4>Recent Notifications</h4>
+                                <h4>Taarifa za hivi karibuni</h4>
                             </div>
                             <div class="card-content pb-4">
                                 <div class="recent-message d-flex px-4 py-3">
                                     <div class="name ms-4">
-                                        <h6 class="mb-1">New Message</h6>
-                                        <h6 class="text-muted mb-0">from John Doe - 2 hour ago</h6>
+                                        <h6 class="mb-1">Ujumbe mpya</h6>
+                                        <h6 class="text-muted mb-0">kutoka John Doe - saa 2 zilipita</h6>
                                     </div>
                                 </div>
                                 <div class="recent-message d-flex px-4 py-3">
                                     <div class="name ms-4">
-                                        <h6 class="mb-1">New Updates</h6>
-                                        <h6 class="text-muted mb-0">from administration - 55 mins ago</h6>
+                                        <h6 class="mb-1">Ujumbe mpya</h6>
+                                        <h6 class="text-muted mb-0">kutoka utawala - Dakika 55 zilipita</h6>
                                     </div>
                                 </div>
                               
                                 <div class="px-4">
-                                    <button class='btn btn-block btn-sm  btn-brown rounded-pill font-bold mt-3'>Clear All</button>
+                                    <button class='btn btn-block btn-sm  btn-brown rounded-pill font-bold mt-3'>Futa zote</button>
                                 </div>
                             </div>
                             
