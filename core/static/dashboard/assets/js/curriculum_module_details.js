@@ -48,7 +48,7 @@ allCurriculumSubtopiclinks.forEach((element)=>{
           <div class="col-12 col-xl-12">
               <div class="card" >
                   <div class="card-header">
-                      <h5>Wastani wa Mapitio</h5>
+                      <h5>Maoni na Mapitio ya Moduli</h5>
                   </div>
                   <div class="card-body">
                       <div class="row">
@@ -66,7 +66,7 @@ allCurriculumSubtopiclinks.forEach((element)=>{
                                   <span><i class="bi bi-star-half text-warning" ></i></span>
                               </div>
                               <div class=" mb-3 mr-2" >
-                                  <span>Total Average Reviews</span>
+                                  <span>Wastani wa Mapitio</span>
                               </div>
                               <div class="mt-2"><span></span></div>
                           </div>
