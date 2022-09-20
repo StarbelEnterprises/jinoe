@@ -109,8 +109,8 @@ allsubtopiclinks.forEach((element)=>{
                       
                       <div class="comment">
                           <p class="ms-5 text-brown " >
-                              Ni mafunzo mazuri sana ya kuvutia, Tungependa kupata mafunzo zaidi ili tuweze kuwa na ujuzi mzuri,Lakini kwa ujumla
-                               tumepata wakati mzuri kujifunza.
+                          Ni mafunzo mazuri sana ya kuvutia, Tungependa kupata mafunzo zaidi ili tuweze kuwa na ujuzi mzuri, Lakini kwa ujumla
+                          tumepata wakati mzuri kujifunza.
                           </p>
                       </div>
                       <div class="reply-section ms-5">
@@ -121,8 +121,8 @@ allsubtopiclinks.forEach((element)=>{
                       
                       <div class="reply">
                           <p class="ms-5 text-brown " >
-                             Huu mfumo umetuwezesha sana kupata elimu bila ya tatizo wakati wowote mahali popote tunapenda sana mada pia nazo ni za kuvutia sana,
-                             hasa video zenye zenye kuonesha na maandishi pia.
+                          Huu mfumo umetuwezesha sana kupata elimu bila ya tatizo wakati wowote mahali popote. Tunapenda sana mada pia nazo ni za kuvutia sana,
+                          hasa video zenye  kuonesha na maandishi pia.
                           </p>
                       </div>
                   </div>
