@@ -26,7 +26,7 @@ allsubtopiclinks.forEach((element)=>{
                   </div>
                   <div class="row mt-0">
                       <div class="col-md-4">
-                          <button  data-toggle="modal" data-target="#staticBackdrop" class="btn btn-brown rounded-pill ms-4 mb-3" >Maoni na Mapitio ya Moduli</button>
+                          <button  data-toggle="modal" data-target="#staticBackdrop" class="btn btn-brown rounded-pill ms-4 mb-3" >Maoni na mapitio ya moduli</button>
                       </div>
                       <div class="col-md-2 mt-1 d-flex">
                           <span style="font-weight: bold; font-size: 18px;" >300K</span>
@@ -38,7 +38,7 @@ allsubtopiclinks.forEach((element)=>{
                               <i style="font-size:18px;" class="bi bi-hand-thumbs-down text-danger ms-1 mt-1" ></i>
                       </div>
                       <div class="col-md-4">
-                          <button class="btn btn-brown rounded-pill ms-4 mb-3" >Toa Maoni</button>
+                          <button class="btn btn-brown rounded-pill ms-4 mb-3" >Toa maoni</button>
                       </div>
                   </div>
               </div>
@@ -48,7 +48,7 @@ allsubtopiclinks.forEach((element)=>{
           <div class="col-12 col-xl-12">
               <div class="card" >
                   <div class="card-header">
-                      <h5>Maoni na Mapitio ya Moduli</h5>
+                      <h5>Maoni na mapitio ya moduli</h5>
                   </div>
                   <div class="card-body">
                       <div class="row">
@@ -103,8 +103,8 @@ allsubtopiclinks.forEach((element)=>{
                       </div>
                       <div class="comment-section">
                       <div class="user d-flex mt-3">
-                          <img style="height:50px; width: 50px; border-radius: 50px; " src="{% static 'dashboard/assets/images/faces/1.jpg' %}" alt="">
-                          <h5 class="ms-3 mt-3" >Isaya Bendera - 10 July, 2022</h5>
+                          <img style="height:50px; width: 50px; border-radius: 50px; " src="/static/dashboard/assets/images/faces/1.jpg" alt="">
+                          <h5 class="ms-3 mt-3" >Isaya Bendera - 10 julai, 2022</h5>
                       </div>
                       
                       <div class="comment">
@@ -115,8 +115,8 @@ allsubtopiclinks.forEach((element)=>{
                       </div>
                       <div class="reply-section ms-5">
                       <div class="user d-flex mt-3">
-                          <img style="height:50px; width: 50px; border-radius: 50px; " src="{% static 'dashboard/assets/images/faces/1.jpg' %}" alt="">
-                          <h5 class="ms-3 mt-3" >Isaya Bendera - 10 July, 2022</h5>
+                          <img style="height:50px; width: 50px; border-radius: 50px; " src="/static/dashboard/assets/images/faces/1.jpg" alt="">
+                          <h5 class="ms-3 mt-3" >Isaya Bendera - 10 julai 2022</h5>
                       </div>
                       
                       <div class="reply">
