@@ -146,7 +146,7 @@ allCurriculumSubtopiclinks.forEach((element)=>{
       </div>
       <div class="card">
           <div class="card-header">
-              <h4>Subtopics</h4>
+              <h4>Mada ndogo ndogo.</h4>
           </div>
           <div id="sub-sub-content-list" class="card-content pb-4 ">
           </div>
@@ -198,7 +198,7 @@ curriculum_ajaxCall = (data) => {
             }
             subSubContentList.innerHTML = html
         }else{
-            subSubContentList.innerHTML = `<div class="alert alert-danger" role="alert">No sub topic contents!</div>`
+            subSubContentList.innerHTML = `<div class="alert alert-danger" role="alert">Hakuna mada zilizowekwa kwa sasa! </div>`
         }
      
        },
