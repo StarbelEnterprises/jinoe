@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="alert level-bg-color" role="alert">
                         <h4 class="alert-heading">Habari {{request.user.username}}.</h4>
-                        <h5>Karibu JINOE, Jukwaa la Mafunzo Endelevu kwa walimu kazini (MEWAKA) kuogeza  Ustadi Wako wa Kufundisha na kuboresha uzoefu wa kitaalamu.</h5>
+                        <h5>Karibu JINOE, jukwaa mtandaoni la Mafunzo Endelevu kwa Walimu Kazini (MEWAKA) kuongeza  ustadi wako wa kufundisha na kuboresha uzoefu wa kitaalamu.</h5>
                         <h6>Umeandikishwa kwenye {{enrolled_level.level.name}}</h6>
                       </div>
                 </div>
@@ -16,6 +16,7 @@
                 <div class="nav-btns mt-2 mb-3" >
                     <button class="btn btn-brown  btn-lg module ">Moduli</button>
                     <button  class="btn btn-brown  btn-lg ms-4 curriculum">Mtaala</button>
+                    <button  class="btn btn-brown  btn-lg ms-4 mtambuka">Masuala Mtambuka</button>
                 </div>
 
 
@@ -97,6 +98,13 @@
                         </div>
                         {%endif%}
                         {%endfor%}
+                        <div class="card">
+                            <div class="card-content pb-4">
+                                <div class="px-4">
+                                    <button class='btn btn-block btn-sm  btn-brown rounded-pill font-bold mt-3'>Live Chat</button>
+                                </div>
+                            </div>
+                        </div>
                         
                         <div class="card">
                             <div class="card-header">
@@ -201,7 +209,13 @@
                         </div>
                         {%endif%}
                         {%endfor%}
-                        
+                        <div class="card">
+                            <div class="card-content pb-4">
+                                <div class="px-4">
+                                    <button class='btn btn-block btn-sm  btn-brown rounded-pill font-bold mt-3'>Live Chat</button>
+                                </div>
+                            </div>
+                        </div>
                         <div class="card">
                             <div class="card-header">
                                 <h4>Taarifa za hivi karibuni</h4>
@@ -228,7 +242,158 @@
                         </div>
                     </div>
                 </div>
-<!--========================================= Curriculum ends ===================================== -->
+<!-- *****************************************MASUALA MTAMBUKA**********************************************-->
+<div class="row" style="display: none;" id="mtambuka">
+    <div class="col-12 col-lg-9">
+        <div class="row">
+            <!-- {%for module in curriculum %}
+              <div class="col-md-6">
+                <div class="long-card text-center
+                    {% if forloop.counter ==  1  %}
+                        bg-light-success
+                    {% elif  forloop.counter ==  2 %}
+                        btn-secondary
+                    {% elif forloop.counter ==  3 %}
+                        bg-light-warning
+                    {% elif  forloop.counter ==  4 %}
+                        bg-info
+                    {% elif  forloop.counter ==  5 %}
+                        btn-light-danger
+                    {% elif  forloop.counter ==  7 %}
+                        bg-info
+                    {% elif  forloop.counter ==  8 %}
+                        bg-primary
+                    {% endif %}
+                 mb-4 ">
+                    <div class="card-content"> 
+                        <h4 class="mt-4" >{{module.name}}</h4>
+                        <p>{{module.description|truncatechars:"50"}}</p>
+                        <p> <a style="width:150px;" href="{% url 'curriculum_details' module.id %}" class="btn  btn-brown rounded-pill block mb-3">Tazama mada</a></p>
+                    </div>
+                 </div>
+              </div>
+            {%empty%}
+            Hakuna mada kwa sasa
+            {%endfor%} -->
+            <div class="col-md-6">
+                <div class="long-card text-center bg-light-success mb-4">
+                    <div class="card-content"> 
+                        <h4 class="mt-4" >Jinsia</h4>
+                        <p>Masuala yahusuyo Jinsia</p>
+                        <p> <a style="width:150px;" href="" class="btn  btn-brown rounded-pill block mb-3">Tazama mada</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="long-card text-center btn-secondary mb-4">
+                    <div class="card-content"> 
+                        <h4 class="mt-4" >Mazingira</h4>
+                        <p>Masuala ya Mazingira na mabadiliko ya Tabia Nchi</p>
+                        <p> <a style="width:150px;" href="" class="btn  btn-brown rounded-pill block mb-3">Tazama mada</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="long-card text-center bg-light-warning mb-4">
+                    <div class="card-content"> 
+                        <h4 class="mt-4" >STEM</h4>
+                        <p>Masuala yahusuyo STEM</p>
+                        <p> <a style="width:150px;" href="" class="btn  btn-brown rounded-pill block mb-3">Tazama mada</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="col-md-6">
+                <div class="long-card text-center btn-light-primary mb-4">
+                    <div class="card-content"> 
+                        <h4 class="mt-4" >MTAMBUKA 4</h4>
+                        <p>Yahusu mtambuka 4</p>
+                        <p> <a style="width:150px;" href="" class="btn  btn-brown rounded-pill block mb-3">Tazama mada</a></p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+           
+            <nav aria-label="Page navigation example">
+                <ul class="pagination pagination-dark">
+                    {% if modules.has_previous %}
+                    <li class="page-item"><a class="page-link" href="?page">
+                            <span aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
+                        </a></li>
+                    {% endif %}
+                    
+                    <li class="page-item"><a class="page-link" href="?page">
+                        Page {{ modules.number }} of {{ modules.paginator.num_pages }}.
+                    </a></li>
+                    {% if modules.has_next %}
+                    <li class="page-item"><a class="page-link" href="?page">
+                            <span aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
+                        </a></li>
+                    {% endif %}
+                </ul>
+            </nav>  
+   
+    </div>
+    <div class="col-12 col-lg-3">
+        {%for module in modules%}
+         {% if module.get_core_offer_module %}
+        <div class="card mb-5 " style="background-color:#a52a2a62;">
+            <div class="card-body px-3 ">
+                <div class="card">
+                    <div class="card-content" style="background-color: #a52a2a62;">
+                       
+                        <div class="card-body">
+                            <h4 class="card-title">{{module.name}}</h4>
+                            <p class="card-text">
+                                {{module.description}}
+                            </p>
+                           
+                            <a href="{% url 'single_module' module.id %}" style="margin-bottom: -30px;" class="btn btn-brown rounded-pill block">Tazama mada</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {%endif%}
+        {%endfor%}
+        <div class="card">
+            <div class="card-content pb-4">
+                <div class="px-4">
+                    <button class='btn btn-block btn-sm  btn-brown rounded-pill font-bold mt-3'>Live Chat</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h4>Taarifa za hivi karibuni</h4>
+            </div>
+            <div class="card-content pb-4">
+                <div class="recent-message d-flex px-4 py-3">
+                    <div class="name ms-4">
+                        <h6 class="mb-1">Ujumbe mpya</h6>
+                        <h6 class="text-muted mb-0">kutoka John Doe - saa 2 zilipita</h6>
+                    </div>
+                </div>
+                <div class="recent-message d-flex px-4 py-3">
+                    <div class="name ms-4">
+                        <h6 class="mb-1">Ujumbe mpya</h6>
+                        <h6 class="text-muted mb-0">kutoka utawala - Dakika 55 zilipita</h6>
+                    </div>
+                </div>
+              
+                <div class="px-4">
+                    <button class='btn btn-block btn-sm  btn-brown rounded-pill font-bold mt-3'>Futa zote</button>
+                </div>
+            </div>            
+            
+        </div>
+
+       
+    </div>
+</div>
+<!--========================================= Mtambuka ends ===================================== -->
             </div>
 
             <!-- global forum update starts -->
@@ -375,6 +540,12 @@
          $(document).on('click', '.curriculum', function(){
              $('#module').hide()
              $('#curriculum').show()
+            
+         })
+         $(document).on('click', '.mtambuka', function(){
+             $('#module').hide()
+             $('#curriculum').hide()
+             $('#mtambuka').show()
             
          })
     })
